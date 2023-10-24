@@ -1,0 +1,65 @@
+---
+title: "Welcome"
+---
+
+Getting your machine ready for software development can sometime be challenging, especially if over time you've accumulated lots of software for individual classes.
+
+This site offers a process for preparing your computer for python developing using VS code and Quarto.  Those on Mac and Linux have an easier time.  Those on Windows have a tougher time because of the multitude of shells (e.g., CMD, powershell-5 or powershell-core).
+
+## Cleaning
+
+This process requires removal of previously installed versions of python, conda or others. It also requires disabling of Windows convienences that get in the way of python.
+
+- [ ] Disable managed app execution aliases
+- [ ] Remove old versions of python
+
+## Install Pyenv
+
+(add powershell scripts here)
+
+## Install Poetry
+
+OUTSIDE of pyenv.  Do not use pyenv, rather use recommand poetry install
+
+```{powershell}
+(Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | python -
+```
+Then add this version of poetry to your path
+
+- [ ] control panel | User Accounts | Change my environment variables
+
+        %APPDATA%\Python\Scripts
+
+## Update Powershell profile
+
+
+
+```{powershell}
+
+code $profile
+then add:
+
+
+$env:DENO_NO_UPDATE_CHECK=1               # to warning about deno upgrades
+$env:DENO_TLS_CA_STORE="system"           # to stop the BAD CERTIFICATE deno warning
+$env:PYDEVD_DISABLE_FILE_VALIDATION=1     # for Python 3.11 above, to disable warning message RE: debugging
+$env:VIRTUAL_ENV_DISABLE_PROMPT=0         # disable venv prompt change
+
+$env:QUARTO_PYTHON=$(pyenv which python)  # to work with pyenv
+$var = $(poetry env info -e 2> $null)
+if ($var -ne $null) {
+  Write-Output "Setting QUARTO_PYTHON for detected Poetry VENV"
+  $env:QUARTO_PYTHON=$var                 # to work with venv in pyenv
+}
+
+```
+
+## VS Code setup
+
+- [ ] Set vscode to use Powershell
+- [ ] Set vscode to show current venv
+
+
+## References
+
+* [Learning about VS Code virtual environments](https://code.visualstudio.com/docs/python/environments)
