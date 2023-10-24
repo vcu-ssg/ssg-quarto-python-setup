@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Welcome",
     "section": "",
-    "text": "Getting your machine ready for software development can sometime be challenging, especially if over time you’ve accumulated lots of software for individual classes.\nThis site offers a process for preparing your computer for python developing using VS code and Quarto. Those on Mac and Linux have an easier time. Those on Windows have a tougher time because of the multitude of shells (e.g., CMD, powershell-5 or powershell-core)."
+    "text": "Getting your machine ready for software development can sometime be challenging, especially if over time you’ve accumulated lots of software for individual classes.\nThis site offers a process for preparing your computer for python development using VS code and Quarto. Those on Mac (zsh shell) and Linux (bash shell) have an easier time. Those on Windows have a tougher time because of the multitude of shells (e.g., CMD, powershell-5 or powershell-core)."
   },
   {
     "objectID": "index.html#cleaning",
@@ -25,28 +25,28 @@
     "href": "index.html#install-pyenv",
     "title": "Welcome",
     "section": "Install Pyenv",
-    "text": "Install Pyenv"
+    "text": "Install Pyenv\nLink to install instructions here\n# open an administrator Window\n\nSet-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine;\nInvoke-WebRequest -UseBasicParsing -Uri \"https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/install-pyenv-win.ps1\" -OutFile \"./install-pyenv-win.ps1\"; &\"./install-pyenv-win.ps1\";"
   },
   {
     "objectID": "index.html#install-poetry",
     "href": "index.html#install-poetry",
     "title": "Welcome",
     "section": "Install Poetry",
-    "text": "Install Poetry\nOUTSIDE of pyenv. Do not use pyenv, rather use recommand poetry install\n(Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | python -\nThen add this version of poetry to your path\n\ncontrol panel | User Accounts | Change my environment variables\n  %APPDATA%\\Python\\Scripts"
+    "text": "Install Poetry\nOUTSIDE of pyenv. Do not use pyenv, rather use recommand poetry install\n(Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | python -\nThen add this version of poetry to your path\n\nControl Panel | small icons | User Accounts | Change my environment variables\n  %APPDATA%\\Python\\Scripts"
   },
   {
     "objectID": "index.html#update-powershell-profile",
     "href": "index.html#update-powershell-profile",
     "title": "Welcome",
     "section": "Update Powershell profile",
-    "text": "Update Powershell profile\n\n$env:DENO_NO_UPDATE_CHECK=1               # to warning about deno upgrades\n$env:DENO_TLS_CA_STORE=\"system\"           # to stop the BAD CERTIFICATE deno warning\n$env:PYDEVD_DISABLE_FILE_VALIDATION=1     # for Python 3.11 above, to disable warning message RE: debugging\n$env:VIRTUAL_ENV_DISABLE_PROMPT=0         # disable venv prompt change\n\n$env:QUARTO_PYTHON=$(pyenv which python)  # to work with pyenv\n$var = $(poetry env info -e 2&gt; $null)\nif ($var -ne $null) {\n  Write-Output \"Setting QUARTO_PYTHON for detected Poetry VENV\"\n  $env:QUARTO_PYTHON=$var                 # to work with venv in pyenv\n}"
+    "text": "Update Powershell profile\n\ncode $profile\nthen add:\n\n\n$env:DENO_NO_UPDATE_CHECK=1               # to warning about deno upgrades\n$env:DENO_TLS_CA_STORE=\"system\"           # to stop the BAD CERTIFICATE deno warning\n$env:PYDEVD_DISABLE_FILE_VALIDATION=1     # for Python 3.11 above, to disable warning message RE: debugging\n$env:VIRTUAL_ENV_DISABLE_PROMPT=0         # disable venv prompt change\n\n$env:QUARTO_PYTHON=$(pyenv which python)  # to work with pyenv\n$var = $(poetry env info -e 2&gt; $null)\nif ($var -ne $null) {\n  Write-Output \"Setting QUARTO_PYTHON for detected Poetry VENV\"\n  $env:QUARTO_PYTHON=$var                 # to work with venv in pyenv\n}"
   },
   {
     "objectID": "index.html#vs-code-setup",
     "href": "index.html#vs-code-setup",
     "title": "Welcome",
     "section": "VS Code setup",
-    "text": "VS Code setup\n\nSet vscode to use Powershell\nSet vscode to show current venv"
+    "text": "VS Code setup\n\nSet vscode to use powershell\nSet vscode to show current virtual environment"
   },
   {
     "objectID": "index.html#references",
@@ -54,5 +54,26 @@
     "title": "Welcome",
     "section": "References",
     "text": "References\n\nLearning about VS Code virtual environments"
+  },
+  {
+    "objectID": "index.html#checklist",
+    "href": "index.html#checklist",
+    "title": "Welcome",
+    "section": "Checklist",
+    "text": "Checklist\n\nVerify that you can open a terminal NOT IN VSCODE!\nVerify pyenv, python, poetry, quarto and code from a terminal\nDisable managed app execution aliases\nRemove old versions of python using Add/Remove programs\nPYENV: Install pyenv\nInstall python 3.11.6 using pyenv\nInstall poetry (DO NOT USE PIP)\nVSCODE: install python extension\nVSCODE: install quarto extension\nVSCODE: install mysql extensions"
+  },
+  {
+    "objectID": "index.html#details",
+    "href": "index.html#details",
+    "title": "Welcome",
+    "section": "Details",
+    "text": "Details\n\nCleaning\nThis process requires removal of previously installed versions of python, conda or others. It also requires disabling of Windows convienences that get in the way of python.\n\nDisable managed app execution aliases\nRemove old versions of python\n\n\n\nInstall Pyenv\n\nInstall software\nLink to install instructions here\n# open an administrator Window\n\nSet-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine;\nInvoke-WebRequest -UseBasicParsing -Uri \"https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/install-pyenv-win.ps1\" -OutFile \"./install-pyenv-win.ps1\"; &\"./install-pyenv-win.ps1\";\n\n\n\nSet up environment\nLink to environment instructions"
+  },
+  {
+    "objectID": "index.html#using-a-terminal",
+    "href": "index.html#using-a-terminal",
+    "title": "Welcome",
+    "section": "Using a terminal",
+    "text": "Using a terminal\nMany of the problems that I’m seeing originate in VS code!"
   }
 ]

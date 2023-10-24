@@ -105,8 +105,13 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#cleaning" id="toc-cleaning" class="nav-link active" data-scroll-target="#cleaning">Cleaning</a></li>
+  <li><a href="#using-a-terminal" id="toc-using-a-terminal" class="nav-link active" data-scroll-target="#using-a-terminal">Using a terminal</a></li>
+  <li><a href="#checklist" id="toc-checklist" class="nav-link" data-scroll-target="#checklist">Checklist</a></li>
+  <li><a href="#details" id="toc-details" class="nav-link" data-scroll-target="#details">Details</a>
+  <ul class="collapse">
+  <li><a href="#cleaning" id="toc-cleaning" class="nav-link" data-scroll-target="#cleaning">Cleaning</a></li>
   <li><a href="#install-pyenv" id="toc-install-pyenv" class="nav-link" data-scroll-target="#install-pyenv">Install Pyenv</a></li>
+  </ul></li>
   <li><a href="#install-poetry" id="toc-install-poetry" class="nav-link" data-scroll-target="#install-poetry">Install Poetry</a></li>
   <li><a href="#update-powershell-profile" id="toc-update-powershell-profile" class="nav-link" data-scroll-target="#update-powershell-profile">Update Powershell profile</a></li>
   <li><a href="#vs-code-setup" id="toc-vs-code-setup" class="nav-link" data-scroll-target="#vs-code-setup">VS Code setup</a></li>
@@ -135,17 +140,52 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 <p>Getting your machine ready for software development can sometime be challenging, especially if over time you’ve accumulated lots of software for individual classes.</p>
-<p>This site offers a process for preparing your computer for python developing using VS code and Quarto. Those on Mac and Linux have an easier time. Those on Windows have a tougher time because of the multitude of shells (e.g., CMD, powershell-5 or powershell-core).</p>
-<section id="cleaning" class="level2">
-<h2 class="anchored" data-anchor-id="cleaning">Cleaning</h2>
+<p>This site offers a process for preparing your computer for python development using VS code and Quarto. Those on Mac (zsh shell) and Linux (bash shell) have an easier time. Those on Windows have a tougher time because of the multitude of shells (e.g., CMD, powershell-5 or powershell-core).</p>
+<section id="using-a-terminal" class="level2">
+<h2 class="anchored" data-anchor-id="using-a-terminal">Using a terminal</h2>
+<p>Many of the problems that I’m seeing originate in VS code!</p>
+</section>
+<section id="checklist" class="level2">
+<h2 class="anchored" data-anchor-id="checklist">Checklist</h2>
+<ul class="task-list">
+<li><input type="checkbox">Verify that you can open a terminal NOT IN VSCODE!</li>
+<li><input type="checkbox">Verify pyenv, python, poetry, quarto and code from a terminal</li>
+<li><input type="checkbox">Disable managed app execution aliases</li>
+<li><input type="checkbox">Remove old versions of python using Add/Remove programs</li>
+<li><input type="checkbox">PYENV: Install pyenv</li>
+<li><input type="checkbox">Install python 3.11.6 using pyenv</li>
+<li><input type="checkbox">Install poetry (DO NOT USE PIP)</li>
+<li><input type="checkbox">VSCODE: install python extension</li>
+<li><input type="checkbox">VSCODE: install quarto extension</li>
+<li><input type="checkbox">VSCODE: install mysql extensions</li>
+</ul>
+</section>
+<section id="details" class="level2">
+<h2 class="anchored" data-anchor-id="details">Details</h2>
+<section id="cleaning" class="level3">
+<h3 class="anchored" data-anchor-id="cleaning">Cleaning</h3>
 <p>This process requires removal of previously installed versions of python, conda or others. It also requires disabling of Windows convienences that get in the way of python.</p>
 <ul class="task-list">
 <li><input type="checkbox">Disable managed app execution aliases</li>
 <li><input type="checkbox">Remove old versions of python</li>
 </ul>
 </section>
-<section id="install-pyenv" class="level2">
-<h2 class="anchored" data-anchor-id="install-pyenv">Install Pyenv</h2>
+<section id="install-pyenv" class="level3">
+<h3 class="anchored" data-anchor-id="install-pyenv">Install Pyenv</h3>
+<section id="install-software" class="level4">
+<h4 class="anchored" data-anchor-id="install-software">Install software</h4>
+<p><a href="https://github.com/pyenv-win/pyenv-win/blob/master/docs/installation.md#powershell">Link to install instructions here</a></p>
+<pre class="{powershell}"><code># open an administrator Window
+
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine;
+Invoke-WebRequest -UseBasicParsing -Uri "https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/install-pyenv-win.ps1" -OutFile "./install-pyenv-win.ps1"; &amp;"./install-pyenv-win.ps1";
+</code></pre>
+</section>
+<section id="set-up-environment" class="level4">
+<h4 class="anchored" data-anchor-id="set-up-environment">Set up environment</h4>
+<p><a href="https://github.com/pyenv-win/pyenv-win/blob/master/docs/installation.md#add-system-settings">Link to environment instructions</a></p>
+</section>
+</section>
 </section>
 <section id="install-poetry" class="level2">
 <h2 class="anchored" data-anchor-id="install-poetry">Install Poetry</h2>
@@ -153,13 +193,17 @@ ul.task-list li input[type="checkbox"] {
 <pre class="{powershell}"><code>(Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | python -</code></pre>
 <p>Then add this version of poetry to your path</p>
 <ul class="task-list">
-<li><p><input type="checkbox">control panel | User Accounts | Change my environment variables</p>
+<li><p><input type="checkbox">Control Panel | small icons | User Accounts | Change my environment variables</p>
 <pre><code>  %APPDATA%\Python\Scripts</code></pre></li>
 </ul>
 </section>
 <section id="update-powershell-profile" class="level2">
 <h2 class="anchored" data-anchor-id="update-powershell-profile">Update Powershell profile</h2>
 <pre class="{powershell}"><code>
+code $profile
+then add:
+
+
 $env:DENO_NO_UPDATE_CHECK=1               # to warning about deno upgrades
 $env:DENO_TLS_CA_STORE="system"           # to stop the BAD CERTIFICATE deno warning
 $env:PYDEVD_DISABLE_FILE_VALIDATION=1     # for Python 3.11 above, to disable warning message RE: debugging
@@ -176,8 +220,8 @@ if ($var -ne $null) {
 <section id="vs-code-setup" class="level2">
 <h2 class="anchored" data-anchor-id="vs-code-setup">VS Code setup</h2>
 <ul class="task-list">
-<li><input type="checkbox">Set vscode to use Powershell</li>
-<li><input type="checkbox">Set vscode to show current venv</li>
+<li><input type="checkbox">Set vscode to use powershell</li>
+<li><input type="checkbox">Set vscode to show current virtual environment</li>
 </ul>
 </section>
 <section id="references" class="level2">

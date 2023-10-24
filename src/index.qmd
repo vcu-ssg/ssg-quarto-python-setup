@@ -4,18 +4,52 @@ title: "Welcome"
 
 Getting your machine ready for software development can sometime be challenging, especially if over time you've accumulated lots of software for individual classes.
 
-This site offers a process for preparing your computer for python developing using VS code and Quarto.  Those on Mac and Linux have an easier time.  Those on Windows have a tougher time because of the multitude of shells (e.g., CMD, powershell-5 or powershell-core).
+This site offers a process for preparing your computer for python development using VS code and Quarto.  Those on Mac (zsh shell) and Linux (bash shell) have an easier time.  Those on Windows have a tougher time because of the multitude of shells (e.g., CMD, powershell-5 or powershell-core).
 
-## Cleaning
+## Using a terminal
+
+Many of the problems that I'm seeing originate in VS code!
+
+
+## Checklist
+
+- [ ] Verify that you can open a terminal NOT IN VSCODE!
+- [ ] Verify pyenv, python, poetry, quarto and code from a terminal
+- [ ] Disable managed app execution aliases
+- [ ] Remove old versions of python using Add/Remove programs
+- [ ] PYENV: Install pyenv
+- [ ] Install python 3.11.6 using pyenv
+- [ ] Install poetry (DO NOT USE PIP)
+- [ ] VSCODE: install python extension 
+- [ ] VSCODE: install quarto extension
+- [ ] VSCODE: install mysql extensions 
+
+
+## Details
+
+### Cleaning
 
 This process requires removal of previously installed versions of python, conda or others. It also requires disabling of Windows convienences that get in the way of python.
 
 - [ ] Disable managed app execution aliases
 - [ ] Remove old versions of python
 
-## Install Pyenv
+### Install Pyenv
 
-(add powershell scripts here)
+#### Install software
+[Link to install instructions here](https://github.com/pyenv-win/pyenv-win/blob/master/docs/installation.md#powershell)
+
+```{powershell}
+# open an administrator Window
+
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine;
+Invoke-WebRequest -UseBasicParsing -Uri "https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/install-pyenv-win.ps1" -OutFile "./install-pyenv-win.ps1"; &"./install-pyenv-win.ps1";
+
+```
+
+#### Set up environment
+
+[Link to environment instructions](https://github.com/pyenv-win/pyenv-win/blob/master/docs/installation.md#add-system-settings)
 
 ## Install Poetry
 
@@ -26,7 +60,7 @@ OUTSIDE of pyenv.  Do not use pyenv, rather use recommand poetry install
 ```
 Then add this version of poetry to your path
 
-- [ ] control panel | User Accounts | Change my environment variables
+- [ ] Control Panel | small icons | User Accounts | Change my environment variables
 
         %APPDATA%\Python\Scripts
 
@@ -56,8 +90,12 @@ if ($var -ne $null) {
 
 ## VS Code setup
 
-- [ ] Set vscode to use Powershell
-- [ ] Set vscode to show current venv
+- [ ] Set vscode to use powershell
+- [ ] Set vscode to show current virtual environment
+
+
+
+
 
 
 ## References
