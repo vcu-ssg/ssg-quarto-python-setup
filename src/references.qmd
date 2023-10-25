@@ -1,0 +1,11 @@
+---
+title: References
+---
+
+
+## References
+
+* [Learning about VS Code virtual environments](https://code.visualstudio.com/docs/python/environments)
+* [Unattended install of chocolatey](https://www.reddit.com/r/chocolatey/comments/kvyav2/using_unattend_xml_to_install_chocolatey_at_first/)
+
+

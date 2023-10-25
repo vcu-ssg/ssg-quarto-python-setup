@@ -8,18 +8,20 @@ website:
         left:
             - href: index.qmd
               text: Home
+            - href: goal.qmd
+              text: Our goal
             - href: terminals.qmd
               text: Terminals
             - href: software.qmd
               text: Software
             - href: pyenv.qmd
-              text: pyenv
+              text: pyenv and python
+            - href: quarto.qmd
+              text: Quarto
             - href: poetry.qmd
               text: poetry
             - href: vscode.qmd
               text: vscode
-            - href: quarto.qmd
-              text: Quarto
             - href: finalsteps.qmd
               text: Final Steps
 

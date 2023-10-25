@@ -26,6 +26,7 @@ Unattended install of tools
 ```powershell
 choco install quarto -y
 choco install git.install -y
+choco install gh -y
 choco install visualstudiocode -y
 choco install make -y
 choco install powershell-core -y

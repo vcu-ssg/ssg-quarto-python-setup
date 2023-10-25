@@ -86,6 +86,10 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="./goal.html" rel="" target="">
+ <span class="menu-text">Our goal</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="./terminals.html" rel="" target="">
  <span class="menu-text">Terminals</span></a>
   </li>  
@@ -95,7 +99,11 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./pyenv.html" rel="" target="">
- <span class="menu-text">pyenv</span></a>
+ <span class="menu-text">pyenv and python</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./quarto.html" rel="" target="">
+ <span class="menu-text">Quarto</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./poetry.html" rel="" target="">
@@ -104,10 +112,6 @@ ul.task-list li input[type="checkbox"] {
   <li class="nav-item">
     <a class="nav-link" href="./vscode.html" rel="" target="">
  <span class="menu-text">vscode</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./quarto.html" rel="" target="">
- <span class="menu-text">Quarto</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./finalsteps.html" rel="" target="">
@@ -129,15 +133,11 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#high-level-tasks" id="toc-high-level-tasks" class="nav-link active" data-scroll-target="#high-level-tasks">High level tasks</a></li>
-  <li><a href="#os-specific-customizations" id="toc-os-specific-customizations" class="nav-link" data-scroll-target="#os-specific-customizations">OS-specific customizations</a></li>
+  <li><a href="#about-this-site" id="toc-about-this-site" class="nav-link active" data-scroll-target="#about-this-site">About this site</a></li>
+  <li><a href="#glossary-of-terms" id="toc-glossary-of-terms" class="nav-link" data-scroll-target="#glossary-of-terms">Glossary of terms</a></li>
   <li><a href="#checklist" id="toc-checklist" class="nav-link" data-scroll-target="#checklist">Checklist</a></li>
-  <li><a href="#trouble-shooting" id="toc-trouble-shooting" class="nav-link" data-scroll-target="#trouble-shooting">Trouble-shooting</a></li>
-  <li><a href="#details" id="toc-details" class="nav-link" data-scroll-target="#details">Details</a>
-  <ul class="collapse">
-  <li><a href="#cleaning" id="toc-cleaning" class="nav-link" data-scroll-target="#cleaning">Cleaning</a></li>
-  </ul></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  <li><a href="#troubleshooting" id="toc-troubleshooting" class="nav-link" data-scroll-target="#troubleshooting">Troubleshooting</a></li>
+  <li><a href="#what-do-i-do-now" id="toc-what-do-i-do-now" class="nav-link" data-scroll-target="#what-do-i-do-now">What do I do now?</a></li>
   </ul>
 </nav>
     </div>
@@ -161,99 +161,66 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>Getting your machine ready for software development can sometime be challenging, especially if over time you’ve accumulated lots of software for individual classes.</p>
-<p>This site offers a process for preparing your computer for python development using VS code and Quarto. Those on Mac (zsh shell) and Linux (bash shell) have an easier time. Those on Windows have a tougher time because of the multitude of shells (e.g., CMD, powershell-5 or powershell-core).</p>
-<p>VSC - visual studio code.</p>
-<p>terminal - A command line windows NOT inside VSC. On windows we’ll use a terminal window with powershell. On mac you’ll use terminal window with ZSH. On linux you’ll use a terminal windows with bash.</p>
-<p>GUI - graphic user interface, often directly associated with the underlying operating system.</p>
-<section id="high-level-tasks" class="level2">
-<h2 class="anchored" data-anchor-id="high-level-tasks">High level tasks</h2>
-<ul class="task-list">
-<li><input type="checkbox">Make any OS-specific customizations</li>
-<li><input type="checkbox">Clean up older versions of python</li>
-<li><input type="checkbox">Install and test quarto</li>
-<li><input type="checkbox">Install and test pyenv and python</li>
-<li><input type="checkbox">Install jupyter, matplotlib and plotly for python and quarto</li>
-</ul>
+<p><strong><em><a href="./goal.html">Our goal</a> is pyenv, python, poetry, vscode and quarto working seamlessly with python virtual environments from a command line.</em></strong></p>
+<p>Getting your machine ready for software development can sometime be challenging, especially if over time you’ve accumulated lots of software on your computer.</p>
+<p>This site offers a process for preparing your computer for python development using VS code and Quarto from the command line. Those on Mac (zsh shell) and Linux (bash shell) have an easier time. Those on Windows have a tougher time because of the multitude of shells (e.g., CMD, powershell-5 or powershell-core).</p>
+<section id="about-this-site" class="level2">
+<h2 class="anchored" data-anchor-id="about-this-site">About this site</h2>
+<p>Each section on the site offers guidance on individual installation and configuration steps. The <a href="./finalsteps.html">final steps</a> section offers guidance on getting them all work together.</p>
 </section>
-<section id="os-specific-customizations" class="level2">
-<h2 class="anchored" data-anchor-id="os-specific-customizations">OS-specific customizations</h2>
-<div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Pick your OS -&gt;</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Mac</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Linux</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-4" role="tab" aria-controls="tabset-1-4" aria-selected="false">Windows</a></li></ul>
-<div class="tab-content">
-<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<p>Select from one of the tabs above to see if your OS requires any unique fixes.</p>
-</div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<p>In NASCAR you’re called the <a href="https://www.liveabout.com/lucky-dog-rule-explained-2470755">lucky dog</a></p>
-<p>I’m not aware of any Mac specific fixes that are required.</p>
-</div>
-<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
-<p>I’m not aware of any Linux-specific pre-work required to get all this stuff running.</p>
-</div>
-<div id="tabset-1-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-4-tab">
-<p>Sorry - you’ve got some work to do!</p>
-<p>Windows offers a number of settings that makes it <em>easier</em> to download software from the Micrsoft Store. These <em>features</em> actually get in the way of user installed tools.</p>
-<ul class="task-list">
-<li><input type="checkbox">Disable python-related execution aliases</li>
-</ul>
-<section id="open-the-execution-alias-screen" class="level3">
-<h3 class="anchored" data-anchor-id="open-the-execution-alias-screen">Open the execution alias screen</h3>
-<ol type="1">
-<li><p>Press the <em>windows</em> key on the bottom left of your keyboard to bring up the menu shown below.</p></li>
-<li><p>In the search bar enter <em>execution</em> and then select the option as show in the figure below.</p></li>
-</ol>
-<p><img src="assets/getting-to-execution-aliases.png" class="img-fluid"></p>
-</section>
-<section id="scan-the-list" class="level3">
-<h3 class="anchored" data-anchor-id="scan-the-list">Scan the list</h3>
-<p>Your list may vary depending on you have installed. Scan the list and disable stuff that looks related to python.</p>
-<p><img src="assets/manage-execution-aliases.png" class="img-fluid"></p>
-<ul class="task-list">
-<li><input type="checkbox">Your done!</li>
-</ul>
-</section>
-</div>
-</div>
-</div>
+<section id="glossary-of-terms" class="level2">
+<h2 class="anchored" data-anchor-id="glossary-of-terms">Glossary of terms</h2>
+<p>To eliminate confusion I’ll be using the following terms on this site:</p>
+<dl>
+<dt>VSC</dt>
+<dd>
+visual studio code. An awesome code editor and more. See IDE below.
+</dd>
+<dt>terminal</dt>
+<dd>
+A command line windows NOT inside VSC. On windows we’ll use a terminal window with powershell. On mac you’ll use terminal window with ZSH. On linux you’ll use a terminal windows with bash.
+</dd>
+<dt>GUI</dt>
+<dd>
+a graphic user interface, often directly associated with the underlying operating system.
+</dd>
+<dt>IDE</dt>
+<dd>
+an integrated development environment. While very handy when learning to code, they quickly become a crutch for software engineers and coders. PyCharm is one example of an IDE.
+</dd>
+</dl>
+<p>In closing, VSC is NOT an IDE although many people use it like an IDE. VSC includes many features of an IDE and is very extensible. However, VSC can also be used as a regular code editor, like VIM, EMACS or others. Learn to use VSC from the command line!</p>
 </section>
 <section id="checklist" class="level2">
 <h2 class="anchored" data-anchor-id="checklist">Checklist</h2>
+<p>If your system is not working or if you’re starting from scratch, here is a general checklist:</p>
 <ul class="task-list">
-<li><input type="checkbox">Verify that you can open a terminal NOT IN VSC!</li>
-<li><input type="checkbox">Verify pyenv, python, poetry, quarto and code from a terminal</li>
-<li><input type="checkbox">Disable managed app execution aliases</li>
-<li><input type="checkbox">Remove old versions of python using Add/Remove programs</li>
-<li><input type="checkbox">PYENV: Install pyenv</li>
-<li><input type="checkbox">Install python 3.11.6 using pyenv</li>
-<li><input type="checkbox">Install poetry (DO NOT USE PIP)</li>
-<li><input type="checkbox">VSC: install python extension</li>
-<li><input type="checkbox">VSC: install quarto extension</li>
-<li><input type="checkbox">VSC: install mysql extensions</li>
+<li><input type="checkbox">WINDOWS: disable python-related <a href="./prework.html">app execution aliases</a>.</li>
+<li><input type="checkbox">Verify that you can <a href="./terminals.html">open a terminal</a> NOT IN VSC.</li>
+<li><input type="checkbox">Verify <a href="./pyenv.html">pyenv and python</a>, <a href="./quarto.html">quarto</a>, <a href="./poetry.html">poetry</a> and <a href="./vscode.html">VSC</a> from a terminal.</li>
+<li><input type="checkbox">Install and test missing pyenv, python, poetry, quarto and VSC.</li>
+<li><input type="checkbox">Verify environment variables are properly set using the $PROFILE (windows), .zschrc (mac), .bashrc (linux) files.</li>
 </ul>
+<p>If the tools are <em>completely</em> installed in the correct order, everything should work out of the box in mac and linux. The PC will require a few more tweaks. (See <a href="./finalsteps.html">final steps</a>)</p>
 </section>
-<section id="trouble-shooting" class="level2">
-<h2 class="anchored" data-anchor-id="trouble-shooting">Trouble-shooting</h2>
-<p>Many of the problems that I’ve seen result from not completing the install. For most software engineering tools, simply installing the software is only the first part.</p>
-<p>Many software tools require second or third steps that make the use of the installed software easier from the command line.</p>
-</section>
-<section id="details" class="level2">
-<h2 class="anchored" data-anchor-id="details">Details</h2>
-<section id="cleaning" class="level3">
-<h3 class="anchored" data-anchor-id="cleaning">Cleaning</h3>
-<p>This process requires removal of previously installed versions of python, conda or others. It also requires disabling of Windows convienences that get in the way of python.</p>
-<ul class="task-list">
-<li><input type="checkbox">Disable managed app execution aliases</li>
-<li><input type="checkbox">Remove old versions of python</li>
-</ul>
-</section>
-</section>
-<section id="references" class="level2">
-<h2 class="anchored" data-anchor-id="references">References</h2>
+<section id="troubleshooting" class="level2">
+<h2 class="anchored" data-anchor-id="troubleshooting">Troubleshooting</h2>
+<p>For the most part everyone has their tools already installed and the challenge is getting them to all work together. Here are some tips:</p>
 <ul>
-<li><a href="https://code.visualstudio.com/docs/python/environments">Learning about VS Code virtual environments</a></li>
-<li><a href="https://www.reddit.com/r/chocolatey/comments/kvyav2/using_unattend_xml_to_install_chocolatey_at_first/">Unattended install of chocolatey</a></li>
+<li>Be patient and methodical. Debugging can be frustrating. YOU GOT THIS!</li>
+<li>Get everything running outside of VSC before you try running inside VSC. (See <a href="./terminals.html">terminal</a>)</li>
+<li>Verify that you did ALL the required install steps. I’ve seen people not read the instructions completely and are left with half-working software. This is VERY hard to debug!</li>
+<li>Verify that the individual tools are working by themselves.</li>
+<li>Use <em>quarto check</em> to see how things are working together.</li>
+<li>Once everything runs from a terminal then jump inside VSC to get it all running there.</li>
+<li>If you still have trouble, consider uninstalling/remove the tools and starting over.</li>
 </ul>
+<p>Many of the problems that I’ve seen result from not completing the install. For most software engineering tools, simply installing the software is only the first part.</p>
+<p>Many software tools require second or third steps that make the use of the installed software easier from the command line. RTFM</p>
+</section>
+<section id="what-do-i-do-now" class="level2">
+<h2 class="anchored" data-anchor-id="what-do-i-do-now">What do I do now?</h2>
+<p>I’m here because my system isn’t working. How do I get started? What do I do now? <em>Start with the Checklist!</em></p>
 
 
 </section>

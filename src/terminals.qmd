@@ -11,20 +11,24 @@ This will help as you begin to create dev-ops actions and build docker container
 
 ::: {.panel-tabset}
 
-## Pick your OS ->
-
-Select your OS from the tabs above.
-
-## Windows
-
 ### An example shell
+
+Here is an example shell.  On any machine these can be opened using keystrokes only.  Learn how!
 
 ![](assets/powershell-window.png)
 
 
 ### Getting to your shell without a mouse
 
-Press the *windows* key and starting typing the keyword *powershell* into the search bar. You only
+## Pick your OS ->
+
+Select your OS from the tabs above.
+
+## Windows
+
+Press the *windows* key on the lower left of your keyboard.
+
+*Without touching the mouse* start typing the keyword *powershell* into the search bar. You only
 need to enter the first few letters, then hit *enter*.  The menu will learn from your keystrokes
 and eventually it will be the first option that shows up.
 
@@ -32,22 +36,19 @@ and eventually it will be the first option that shows up.
 
 ## Mac
 
-### An example shell
+Press %command% and [space-bar] at the same time.  A mini search bar will appear on your screen.
 
-(add stuff here)
+*Without touching the mouse* starting typing the keyword *terminal* into the search bar. You only
+need to enter the first few letters, then hit *enter*.
 
-### Getting to your shell without a mouse
-
-(add stuff here)
 
 ## Linux
 
-### An example shell
-
-(add stuff here)
-
 ### Getting to your shell without a mouse
 
-(add stuff here)
+I'm sure it can, but it depends on your flavor of linux and the GUI you installed.
+
+If you're using Linux, I'm pretty sure that you're good to go!
 
 :::
+

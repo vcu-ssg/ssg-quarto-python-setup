@@ -1,0 +1,10 @@
+---
+title: Goal
+---
+
+***Our goal is pyenv, python, poetry, vscode and quarto working seamlessly with python virtual environments from a command line.***
+
+The video below offers a glimpse of what a typical homework assignment should look like.
+
+
+
