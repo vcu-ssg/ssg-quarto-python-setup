@@ -151,34 +151,6 @@
     "href": "terminals.html",
     "title": "Using a terminal",
     "section": "",
-    "text": "Many of the problems that I see originate in VSC! The best way to make sure that everything is working is start with a command line terminal - a separate window OUTSIDE of VSC. Then we’ll get VSC working.\nThis will help as you begin to create dev-ops actions and build docker containers. Containers don’t have GUI!"
-  },
-  {
-    "objectID": "terminals.html#pick-your-os--",
-    "href": "terminals.html#pick-your-os--",
-    "title": "Using a terminal",
-    "section": "Pick your OS ->",
-    "text": "Pick your OS -&gt;\nSelect your OS from the tabs above."
-  },
-  {
-    "objectID": "terminals.html#windows",
-    "href": "terminals.html#windows",
-    "title": "Using a terminal",
-    "section": "Windows",
-    "text": "Windows\nPress the windows key on the lower left of your keyboard.\nWithout touching the mouse start typing the keyword powershell into the search bar. You only need to enter the first few letters, then hit enter. The menu will learn from your keystrokes and eventually it will be the first option that shows up."
-  },
-  {
-    "objectID": "terminals.html#mac",
-    "href": "terminals.html#mac",
-    "title": "Using a terminal",
-    "section": "Mac",
-    "text": "Mac\nPress %command% and [space-bar] at the same time. A mini search bar will appear on your screen.\nWithout touching the mouse starting typing the keyword terminal into the search bar. You only need to enter the first few letters, then hit enter."
-  },
-  {
-    "objectID": "terminals.html#linux",
-    "href": "terminals.html#linux",
-    "title": "Using a terminal",
-    "section": "Linux",
-    "text": "Linux"
+    "text": "Many of the problems that I see originate in VSC! The best way to make sure that everything is working is start with a command line terminal - a separate window OUTSIDE of VSC. Then we’ll get VSC working.\n\nLearn to work from a shell\nLearn to work without a mouse\n\nThis will help as you begin to create dev-ops actions and build docker containers. Containers don’t have GUI!\n\nAn example shell\nHere is an example shell. On any machine these can be opened using keystrokes only. Learn how!\n\n\n\nGetting to your shell without a mouse\nHere is some tips for opening a terminal without having to take your fingers off your keyboard.\n\nPick your OS -&gt;WindowsMacLinux\n\n\nSelect your OS from the tabs above.\n\n\nPress the windows key on the lower left of your keyboard.\nWithout touching the mouse start typing the keyword powershell into the search bar. You only need to enter the first few letters, then hit enter. The menu will learn from your keystrokes and eventually it will be the first option that shows up.\n\n\n\nPress %command% and [space-bar] at the same time. A mini search bar will appear on your screen.\nWithout touching the mouse starting typing the keyword terminal into the search bar. You only need to enter the first few letters, then hit enter.\n\n\n\nGetting to your shell without a mouse\nI’m sure it can, but it depends on your flavor of linux and the GUI you installed.\nIf you’re using Linux, I’m pretty sure that you’re good to go!"
   }
 ]

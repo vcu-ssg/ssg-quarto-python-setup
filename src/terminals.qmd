@@ -9,7 +9,6 @@ Many of the problems that I see originate in VSC!  The best way to make sure tha
 
 This will help as you begin to create dev-ops actions and build docker containers.  Containers don't have GUI!
 
-::: {.panel-tabset}
 
 ### An example shell
 
@@ -19,6 +18,11 @@ Here is an example shell.  On any machine these can be opened using keystrokes o
 
 
 ### Getting to your shell without a mouse
+
+Here is some tips for opening a terminal without having to take your fingers off your keyboard.
+
+
+::: {.panel-tabset}
 
 ## Pick your OS ->
 
