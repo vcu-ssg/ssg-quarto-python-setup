@@ -2,6 +2,9 @@
 title: Setting up VS code
 ---
 
+Once your software is installed and working from the command line, you
+can now push on to get VSC working well with your terminal environment.
+
 VSC offers a bunch of command line options.  Below are commands that you
 can paste into your shell and watch what happens.
 

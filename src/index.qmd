@@ -11,6 +11,8 @@ Getting your machine ready for software development can sometime be challenging,
 
 This site offers a process for preparing your computer for python development using VS code and Quarto from the command line.  Those on Mac (zsh shell) and Linux (bash shell) have an easier time.  Those on Windows have a tougher time because of the multitude of shells (e.g., CMD, powershell-5 or powershell-core).
 
+TLDR: Visit [troubleshooting](#troubleshooting) or [checklist](#checklist) below.
+
 ## About this site
 
 Each section on the site offers guidance on individual installation and configuration steps.  The [final steps](finalsteps.qmd) section offers guidance on getting them all work together.
@@ -34,18 +36,6 @@ IDE
 In closing, VSC is NOT an IDE although many people use it like an IDE.  VSC includes many features of an IDE and is very extensible.
 However, VSC can also be used as a regular code editor, like VIM, EMACS or others.  Learn to use VSC from the command line!
 
-## Checklist
-
-If your system is not working or if you're starting from scratch, here is a general checklist:
-
-- [ ] WINDOWS: disable python-related [app execution aliases](prework.qmd).
-- [ ] Verify that you can [open a terminal](terminals.qmd) NOT IN VSC.
-- [ ] Verify [pyenv and python](pyenv.qmd), [quarto](quarto.qmd), [poetry](poetry.qmd) and [VSC](vscode.qmd) from a terminal.
-- [ ] Install and test missing pyenv, python, poetry, quarto and VSC.
-- [ ] Verify environment variables are properly set using the $PROFILE (windows), .zschrc (mac), .bashrc (linux) files.
-
-If the tools are *completely* installed in the correct order, everything should work out of the box in mac and linux.  The PC will require a few more tweaks.  (See [final steps](finalsteps.qmd))
-
 ## Troubleshooting
 
 For the most part everyone has their tools already installed and the challenge is getting them to all work together.  Here are some tips:
@@ -58,11 +48,22 @@ For the most part everyone has their tools already installed and the challenge i
 * Once everything runs from a terminal then jump inside VSC to get it all running there.
 * If you still have trouble, consider uninstalling/remove the tools and starting over.
 
-Many of the problems that I've seen result from not completing the install.  For most software
-engineering tools, simply installing the software is only the first part.
+Many of the problems that I've seen result from not completing the install.  For most software engineering tools, simply installing the software is only the first part.
 
-Many software tools require second or third steps that make the use of the installed software easier
-from the command line.  RTFM
+Many software tools require second or third steps that make the use of the installed software easier from the command line.  RTFM
+
+## Checklist
+
+If your system is not working or if you're starting from scratch, here is a general checklist:
+
+- [ ] WINDOWS: disable python-related [app execution aliases](prework.qmd).
+- [ ] Verify that you can [open a terminal](terminals.qmd) NOT IN VSC.
+- [ ] Verify [pyenv and python](pyenv.qmd), [quarto](quarto.qmd), [poetry](poetry.qmd) and [VSC](vscode.qmd) from a terminal.
+- [ ] Install and test missing pyenv, python, poetry, quarto and VSC.
+- [ ] Verify environment variables are properly set using the $PROFILE (windows), .zschrc (mac), .bashrc (linux) files.
+
+If the tools are *completely* installed in the correct order, everything should work out of the box in mac and linux.  The PC will require a few more tweaks.  (See [final steps](finalsteps.qmd))
+
 
 ## What do I do now?
 

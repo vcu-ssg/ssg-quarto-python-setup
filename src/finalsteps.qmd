@@ -2,12 +2,41 @@
 title: Final steps
 ---
 
-Ok, you've got everything installed and tests separately, but things still are working.
+Ok, you've got everything installed.
 
-This is the trickets part, but the most important from a quality-of-life perspective.
+Now comes the trickest part, but the most important from a quality-of-life perspective.
 
+## Testing your installation
 
-## Update Environment variables
+You should be able to run these commands from a terminal on any OS.
+
+```powershell
+pyenv --version
+pyenv global 3.11.6
+python --version
+poetry --version
+gh --version
+git --version
+code --version
+quarto check
+```
+
+In the final *quarto check*, verify that jupyter runs and that the python version in quarto matches the python you installed with pyenv.
+
+## Coordinating all the tools
+
+To make everyting work properly, our desire is for:
+
+* *poetry* to shell into the correct virtual environment, and
+* *quarto* to recognize correct version of *python* for the virtual environments created by *poetry*.
+
+We do this by storing the correct version of python in the *environment* of the shell.  Each shell (e.g., powershell, zsh and bash) is slightly
+different but they work about the same.
+
+Each time a terminal window opens the shell executes commands found in a special "run command" file.  This approach permits the shell to dynamically
+adapt to the state of the computer at the time a shell opens.
+
+To get all the programs to smoothly work together we need to add (or verify) that a few commands exist in these run command (or rc) files.
 
 ::: {.panel-tabset}
 
@@ -17,32 +46,114 @@ Select your OS from one of the tabs.
 
 ## Mac
 
+A mac uses the *zsh* shell.  Configuration commands are stored in the *.zshrc* file stored in the users home (~) directory.
+
 (add stuff here)
 
 ## Linux
 
-(add stuff here)
+Your linux machine most probably uses the *bash* shell.  Configuration commands are stored in the *.bashrc* file stored in the users home (~) directory.
 
 ## Windows
 
+Windows uses several different shells:  *CMD*, *powershell* and *powershell-core*.  Our preferred shell for this activity is *powershell*.
+
+*Powershell* stores it's run commands in the file: *`$ENV:USERPROFILE\Documents\PowerShell\Microsoft.PowerShell_profile.ps1`*.  I know, kill me.  BUT, powershell gives the abbreviation *$PROFILE* to permit easier access.
+
+On some machines, the $PROFILE folder may not yet, so we'll want to create the folder before we edit the file.
+
+Open a powershell terminal and paste the following command
+
 ```powershell
+# Read the folder path from $PROFILE variable
+$folderPath = [System.IO.Path]::GetDirectoryName($PROFILE)
 
+# Check if the folder exists and do your thing
+if (-not (Test-Path -Path $folderPath -PathType Container)) {
+    New-Item -Path $folderPath -ItemType Directory
+    Write-Host "Folder created: $folderPath"
+} else {
+    Write-Host "Folder already exists: $folderPath"
+}
+```
+
+Now, let's edit (or create) the $PROFILE 
+
+```powershell
 code $profile
-then add:
+```
 
+and look for the following commands.  If they don't exist, paste them to the bottom of the file.  If they exists, make sure
+that those in the $PROFILE match those below.
+
+```powershell
+# These settings disable annoying quarto messages
 $env:DENO_NO_UPDATE_CHECK=1               # to warning about deno upgrades
 $env:DENO_TLS_CA_STORE="system"           # to stop the BAD CERTIFICATE deno warning
 $env:PYDEVD_DISABLE_FILE_VALIDATION=1     # for Python 3.11 above, to disable warning message RE: debugging
-$env:VIRTUAL_ENV_DISABLE_PROMPT=0         # disable venv prompt change
+$env:VIRTUAL_ENV_DISABLE_PROMPT=0         # set to 1 to disable venv prompt change
 
-$env:QUARTO_PYTHON=$(pyenv which python)  # to work with pyenv
+# This is the code that syncs everything up
+$env:QUARTO_PYTHON=$(pyenv which python)  # to work with pyenv global or local python
 $var = $(poetry env info -e 2> $null)
 if ($var -ne $null) {
-  Write-Output "Setting QUARTO_PYTHON for detected Poetry VENV"
-  $env:QUARTO_PYTHON=$var                 # to work with venv in pyenv
+  Write-Output "QUARTO_PYTHON set to Poetry VENV"
+  $env:QUARTO_PYTHON=$var                 # override with venv python as needed
+} else {
+  Write-Output "QUARTO_PYTHON set to $(pyenv version)"
 }
 
 ```
 
+Save the profile, close your shell and reopen your shell.  At the open you should see the appropriate message.
 
 :::
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>

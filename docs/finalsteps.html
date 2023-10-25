@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Getting Started with Quarto and Python - Final steps</title>
+<title>A Terminal Coding Experience - Final steps</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -106,7 +106,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Getting Started with Quarto and Python</span>
+    <span class="navbar-title">A Terminal Coding Experience</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -120,10 +120,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./goal.html" rel="" target="">
- <span class="menu-text">Our goal</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link" href="./terminals.html" rel="" target="">
  <span class="menu-text">Terminals</span></a>
   </li>  
@@ -132,24 +128,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Software</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./pyenv.html" rel="" target="">
- <span class="menu-text">pyenv and python</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./quarto.html" rel="" target="">
- <span class="menu-text">Quarto</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./poetry.html" rel="" target="">
- <span class="menu-text">poetry</span></a>
+    <a class="nav-link active" href="./finalsteps.html" rel="" target="" aria-current="page">
+ <span class="menu-text">Final Steps</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./vscode.html" rel="" target="">
  <span class="menu-text">vscode</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link active" href="./finalsteps.html" rel="" target="" aria-current="page">
- <span class="menu-text">Final Steps</span></a>
   </li>  
 </ul>
             <div class="quarto-navbar-tools ms-auto">
@@ -167,7 +151,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#update-environment-variables" id="toc-update-environment-variables" class="nav-link active" data-scroll-target="#update-environment-variables">Update Environment variables</a></li>
+  <li><a href="#testing-your-installation" id="toc-testing-your-installation" class="nav-link active" data-scroll-target="#testing-your-installation">Testing your installation</a></li>
+  <li><a href="#coordinating-all-the-tools" id="toc-coordinating-all-the-tools" class="nav-link" data-scroll-target="#coordinating-all-the-tools">Coordinating all the tools</a></li>
   </ul>
 </nav>
     </div>
@@ -191,10 +176,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<p>Ok, you’ve got everything installed and tests separately, but things still are working.</p>
-<p>This is the trickets part, but the most important from a quality-of-life perspective.</p>
-<section id="update-environment-variables" class="level2">
-<h2 class="anchored" data-anchor-id="update-environment-variables">Update Environment variables</h2>
+<p>Ok, you’ve got everything installed.</p>
+<p>Now comes the trickest part, but the most important from a quality-of-life perspective.</p>
+<section id="testing-your-installation" class="level2">
+<h2 class="anchored" data-anchor-id="testing-your-installation">Testing your installation</h2>
+<p>You should be able to run these commands from a terminal on any OS.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>pyenv <span class="op">--</span>version</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>pyenv global 3<span class="op">.</span><span class="fu">11</span><span class="op">.</span><span class="fu">6</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>python <span class="op">--</span>version</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>poetry <span class="op">--</span>version</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>gh <span class="op">--</span>version</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>git <span class="op">--</span>version</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>code <span class="op">--</span>version</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>quarto check</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>In the final <em>quarto check</em>, verify that jupyter runs and that the python version in quarto matches the python you installed with pyenv.</p>
+</section>
+<section id="coordinating-all-the-tools" class="level2">
+<h2 class="anchored" data-anchor-id="coordinating-all-the-tools">Coordinating all the tools</h2>
+<p>To make everyting work properly, our desire is for:</p>
+<ul>
+<li><em>poetry</em> to shell into the correct virtual environment, and</li>
+<li><em>quarto</em> to recognize correct version of <em>python</em> for the virtual environments created by <em>poetry</em>.</li>
+</ul>
+<p>We do this by storing the correct version of python in the <em>environment</em> of the shell. Each shell (e.g., powershell, zsh and bash) is slightly different but they work about the same.</p>
+<p>Each time a terminal window opens the shell executes commands found in a special “run command” file. This approach permits the shell to dynamically adapt to the state of the computer at the time a shell opens.</p>
+<p>To get all the programs to smoothly work together we need to add (or verify) that a few commands exist in these run command (or rc) files.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Pick your OS -&gt;</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Mac</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Linux</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-4" role="tab" aria-controls="tabset-1-4" aria-selected="false">Windows</a></li></ul>
 <div class="tab-content">
@@ -202,30 +208,193 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Select your OS from one of the tabs.</p>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p>A mac uses the <em>zsh</em> shell. Configuration commands are stored in the <em>.zshrc</em> file stored in the users home (~) directory.</p>
 <p>(add stuff here)</p>
 </div>
 <div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
-<p>(add stuff here)</p>
+<p>Your linux machine most probably uses the <em>bash</em> shell. Configuration commands are stored in the <em>.bashrc</em> file stored in the users home (~) directory.</p>
 </div>
 <div id="tabset-1-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-4-tab">
-<div class="sourceCode" id="cb1"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>code <span class="va">$profile</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>then add<span class="op">:</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="va">$env</span><span class="op">:</span>DENO_NO_UPDATE_CHECK<span class="op">=</span>1               <span class="co"># to warning about deno upgrades</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="va">$env</span><span class="op">:</span>DENO_TLS_CA_STORE<span class="op">=</span><span class="st">"system"</span>           <span class="co"># to stop the BAD CERTIFICATE deno warning</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="va">$env</span><span class="op">:</span>PYDEVD_DISABLE_FILE_VALIDATION<span class="op">=</span>1     <span class="co"># for Python 3.11 above, to disable warning message RE: debugging</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="va">$env</span><span class="op">:</span>VIRTUAL_ENV_DISABLE_PROMPT<span class="op">=</span>0         <span class="co"># disable venv prompt change</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="va">$env</span><span class="op">:</span>QUARTO_PYTHON<span class="op">=</span>$<span class="op">(</span>pyenv which python<span class="op">)</span>  <span class="co"># to work with pyenv</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="va">$var</span> <span class="op">=</span> $<span class="op">(</span>poetry env info <span class="op">-</span>e 2<span class="op">&gt;</span> <span class="va">$null</span><span class="op">)</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="kw">if</span> <span class="op">(</span><span class="va">$var</span> <span class="op">-</span>ne <span class="va">$null</span><span class="op">)</span> <span class="op">{</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">Write-Output</span> <span class="st">"Setting QUARTO_PYTHON for detected Poetry VENV"</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>  <span class="va">$env</span><span class="op">:</span>QUARTO_PYTHON<span class="op">=</span><span class="va">$var</span>                 <span class="co"># to work with venv in pyenv</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Windows uses several different shells: <em>CMD</em>, <em>powershell</em> and <em>powershell-core</em>. Our preferred shell for this activity is <em>powershell</em>.</p>
+<p><em>Powershell</em> stores it’s run commands in the file: <em><code>$ENV:USERPROFILE\Documents\PowerShell\Microsoft.PowerShell_profile.ps1</code></em>. I know, kill me. BUT, powershell gives the abbreviation <em>$PROFILE</em> to permit easier access.</p>
+<p>On some machines, the $PROFILE folder may not yet, so we’ll want to create the folder before we edit the file.</p>
+<p>Open a powershell terminal and paste the following command</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Read the folder path from $PROFILE variable</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="va">$folderPath</span> <span class="op">=</span> <span class="op">[</span>System<span class="op">.</span><span class="fu">IO</span><span class="op">.</span><span class="fu">Path</span><span class="op">]::</span>GetDirectoryName<span class="op">(</span><span class="va">$PROFILE</span><span class="op">)</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Check if the folder exists and do your thing</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="kw">if</span> <span class="op">(-</span>not <span class="op">(</span><span class="fu">Test-Path</span> <span class="op">-</span>Path <span class="va">$folderPath</span> <span class="op">-</span>PathType Container<span class="op">))</span> <span class="op">{</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">New-Item</span> <span class="op">-</span>Path <span class="va">$folderPath</span> <span class="op">-</span>ItemType Directory</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">Write-Host</span> <span class="st">"Folder created: $folderPath"</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="op">}</span> <span class="kw">else</span> <span class="op">{</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">Write-Host</span> <span class="st">"Folder already exists: $folderPath"</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Now, let’s edit (or create) the $PROFILE</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>code <span class="va">$profile</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>and look for the following commands. If they don’t exist, paste them to the bottom of the file. If they exists, make sure that those in the $PROFILE match those below.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># These settings disable annoying quarto messages</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="va">$env</span><span class="op">:</span>DENO_NO_UPDATE_CHECK<span class="op">=</span>1               <span class="co"># to warning about deno upgrades</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="va">$env</span><span class="op">:</span>DENO_TLS_CA_STORE<span class="op">=</span><span class="st">"system"</span>           <span class="co"># to stop the BAD CERTIFICATE deno warning</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="va">$env</span><span class="op">:</span>PYDEVD_DISABLE_FILE_VALIDATION<span class="op">=</span>1     <span class="co"># for Python 3.11 above, to disable warning message RE: debugging</span></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="va">$env</span><span class="op">:</span>VIRTUAL_ENV_DISABLE_PROMPT<span class="op">=</span>0         <span class="co"># set to 1 to disable venv prompt change</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co"># This is the code that syncs everything up</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="va">$env</span><span class="op">:</span>QUARTO_PYTHON<span class="op">=</span>$<span class="op">(</span>pyenv which python<span class="op">)</span>  <span class="co"># to work with pyenv global or local python</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="va">$var</span> <span class="op">=</span> $<span class="op">(</span>poetry env info <span class="op">-</span>e 2<span class="op">&gt;</span> <span class="va">$null</span><span class="op">)</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="kw">if</span> <span class="op">(</span><span class="va">$var</span> <span class="op">-</span>ne <span class="va">$null</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">Write-Output</span> <span class="st">"QUARTO_PYTHON set to Poetry VENV"</span></span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="va">$env</span><span class="op">:</span>QUARTO_PYTHON<span class="op">=</span><span class="va">$var</span>                 <span class="co"># override with venv python as needed</span></span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="op">}</span> <span class="kw">else</span> <span class="op">{</span></span>
+<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">Write-Output</span> <span class="st">"QUARTO_PYTHON set to $(pyenv version)"</span></span>
+<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Save the profile, close your shell and reopen your shell. At the open you should see the appropriate message.</p>
 </div>
 </div>
 </div>
+<p>
+&nbsp;
+</p>
+<p>
+&nbsp;
+</p>
+<p>
+&nbsp;
+</p>
+<p>
+&nbsp;
+</p>
+<p>
+&nbsp;
+</p>
+<p>
+&nbsp;
+</p>
+<p>
+&nbsp;
+</p>
+<p>
+&nbsp;
+</p>
+<p>
+&nbsp;
+</p>
+<p>
+&nbsp;
+</p>
+<p>
+&nbsp;
+</p>
+<p>
+&nbsp;
+</p>
+<p>
+&nbsp;
+</p>
+<p>
+&nbsp;
+</p>
+<p>
+&nbsp;
+</p>
+<p>
+&nbsp;
+</p>
+<p>
+&nbsp;
+</p>
+<p>
+&nbsp;
+</p>
+<p>
+&nbsp;
+</p>
+<p>
+&nbsp;
+</p>
+<p>
+&nbsp;
+</p>
+<p>
+&nbsp;
+</p>
+<p>
+&nbsp;
+</p>
+<p>
+&nbsp;
+</p>
+<p>
+&nbsp;
+</p>
+<p>
+&nbsp;
+</p>
+<p>
+&nbsp;
+</p>
+<p>
+&nbsp;
+</p>
+<p>
+&nbsp;
+</p>
+<p>
+&nbsp;
+</p>
+<p>
+&nbsp;
+</p>
+<p>
+&nbsp;
+</p>
+<p>
+&nbsp;
+</p>
+<p>
+&nbsp;
+</p>
+<p>
+&nbsp;
+</p>
+<p>
+&nbsp;
+</p>
+<p>
+&nbsp;
+</p>
+<p>
+&nbsp;
+</p>
+<p>
+&nbsp;
+</p>
+<p>
+&nbsp;
+</p>
+<p>
+&nbsp;
+</p>
+<p>
+&nbsp;
+</p>
+<p>
+&nbsp;
+</p>
+<p>
+&nbsp;
+</p>
+<p>
+&nbsp;
+</p>
+<p>
+&nbsp;
+</p>
+<p>
+&nbsp;
+</p>
+<p>
+&nbsp;
+</p>
 
 
 </section>

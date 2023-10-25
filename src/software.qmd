@@ -2,7 +2,38 @@
 title: Installing Software
 ---
 
-Operating systems offer tools for installing software OUTSIDE the GUI.
+If you want to replicate the beautiful experience of [our goal](goal.qmd), you'll want to install the following tools:
+
+* [pyenv and python](https://github.com/pyenv-win/pyenv-win#installation)
+* [poetry](https://python-poetry.org/docs/#installation)
+* [quarto](https://quarto.org/docs/get-started/)
+* [gh - GITHUB CLI](https://cli.github.com/)
+* [git](https://github.com/git-guides/install-git)
+* [visual student code](https://code.visualstudio.com/download)
+
+Once the tools are installed and working, you'll want to:
+
+* visit the [final steps](finalsteps.qmd) page to sync them all together, then
+* visit the [VSC page](vscode.qmd) to set up visual studio code properly.
+
+You can install these tools manually by visiting the links provided above. 
+
+&nbsp;&nbsp;**OR**
+
+You can install the tools from a terminal [RECOMMENDED!]
+
+## Wait - I already have them installed!
+
+That's OK.  Jump to [testing your installation](#testing-your-installation) to verify that they're all running, and then visit the [final steps](finalsteps.qmd) page.
+
+## Installing packages from a terminal
+
+*Quarto*, *gh*, *git* and *VSC* can all be installed directly from a terminal without a bunch of mouse clicks.  *Pyenv*, *python* and *poetry* require more hand-holding.
+
+First, let's install big packages and then pick up the others later.
+
+All operating systems offer tools for installing software OUTSIDE the GUI from a terminal.  
+This is how docker containers and virtual machines are created.
 
 * *apt*, *yum*, *dmf* and other tools are used on linux,
 * *homebrew* is used on mac, but can also run on linux, and
@@ -16,28 +47,232 @@ Select your OS from the tabs shown.
 
 ## Windows
 
+Install *chocolatey*
+
 ```powershell
 Powershell -command Invoke-WebRequest -Uri "https://chocolatey.org/install.ps1" -OutFile $env:temp\install.ps1
 powershell -executionpolicy unrestricted -command Unblock-File $env:temp\install.ps1; powershell -command $env:temp\install.ps1
 ```
 
-Unattended install of tools
+Install software using *chocolatey*
 
 ```powershell
 choco install quarto -y
 choco install git.install -y
 choco install gh -y
 choco install visualstudiocode -y
-choco install make -y
-choco install powershell-core -y
+```
+
+Test your install so far.  Close your terminal and reopen a new terminal:
+
+```powershell
+quarto --version
+git --version
+gh --version
+code --version
 ```
 
 ## Mac
 
-(needs work!)
+Software on a mac is installed automatically using *Homebrew.*
+
+Install *homebrew*
+
+```powershell
+#
+```
+
+Install software using *homebrew*
+
+```powershell
+#
+```
+
+Test your install so far
+
+```powershell
+#
+```
+
 
 ## Linux
 
-(needs work!)
+Software on Ubuntu linux is installed using *apt*. It comes installed on Ubuntu so we can jump directly to the software install
+
+Install software using *apt*
+
+```powershell
+#
+```
+
+Test your install so far
+
+```powershell
+#
+```
+
 
 :::
+
+## Installing pyenv and poetry
+
+::: {.panel-tabset}
+
+## Select your OS ->
+
+Select your OS from the tabs above.
+
+## Windows
+
+### Install pyenv
+
+**Paste the following command into a terminal:**
+
+```powershell
+Invoke-WebRequest -UseBasicParsing -Uri "https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/install-pyenv-win.ps1" -OutFile "./install-pyenv-win.ps1"; &"./install-pyenv-win.ps1"
+```
+
+**If you get errors, then you'll need to take a different approach.**
+
+Close your terminal and reopen it with *Run as Administrator*, then paste the following commands:
+
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine
+Invoke-WebRequest -UseBasicParsing -Uri "https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/install-pyenv-win.ps1" -OutFile "./install-pyenv-win.ps1"; &"./install-pyenv-win.ps1"
+```
+
+**Close the admin terminal and reopen a regular terminal, and paste these commands:**
+
+Set PYENV, PYENV_ROOT and PYENV_HOME User environment variables.
+```powershell
+[System.Environment]::SetEnvironmentVariable('PYENV',$env:USERPROFILE + "\.pyenv\pyenv-win\","User")
+[System.Environment]::SetEnvironmentVariable('PYENV_ROOT',$env:USERPROFILE + "\.pyenv\pyenv-win\","User")
+[System.Environment]::SetEnvironmentVariable('PYENV_HOME',$env:USERPROFILE + "\.pyenv\pyenv-win\","User")
+```
+
+**Update the user PATH**
+
+```powershell
+[System.Environment]::SetEnvironmentVariable('path', $env:USERPROFILE + "\.pyenv\pyenv-win\bin;" + $env:USERPROFILE + "\.pyenv\pyenv-win\shims;" + [System.Environment]::GetEnvironmentVariable('path', "User"),"User")
+```
+
+**Test your install.  Close the window and reopen a regular terminal:**
+
+```powershell
+pyenv --version
+pyenv update
+pyenv install 3.11.6
+pyenv global 3.11.6
+python --version
+```
+
+### Install poetry
+
+**Verify that you have pyenv and python running before you install poetry.**
+
+```powershell
+(Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | python -
+```
+
+**Then, add poetry to your User PATH.**
+
+```powershell
+[System.Environment]::SetEnvironmentVariable('path', "%APPDATA%\Python\Scripts;" + [System.Environment]::GetEnvironmentVariable('path', "User"),"User")
+```
+
+**Test your install.  Close the window and reopen a regular terminal**
+
+```powershell
+poetry --version
+```
+
+**Finish the Quarto install**
+
+Quarto was installed above, but still needs to be properly connected to python.
+
+This code is for testing.  However, it won't stick.  You need to visit [final steps](finalsteps.qmd) to create a more permanent fix.
+
+```powershell
+$ENV:QUARTO_PYTHON=$(pyenv which python)
+pip install jupyter matplotlib plotly
+quarto check
+```
+
+## Mac
+
+```powershell
+#
+```
+
+## Linux
+
+```powershell
+#
+```
+
+:::
+
+## Testing your installation
+
+At this point your should be able to run these commands from ANY OS:
+
+```powershell
+pyenv --version
+pyenv global 3.11.6
+python --version
+poetry --version
+gh --version
+git --version
+code --version
+quarto check
+```
+
+Verify that the python version displayed by *quarto check* matches the python version you installed (3.11.6)
+
+Now you can jump ahead to [final steps](finalsteps.qmd) to close the deal!
+
+## Troubleshooting
+
+If you're having trouble with one or more of the tools, try reinstalling and verify that you're performing
+ALL the steps described in the installation.
+
+If nothing is working, you can try uninstalling the tools and starting over.
+
+If these tools aren't working, then you'll not be able to replicate the [beautiful experience of our goal](goal.qmd).
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
