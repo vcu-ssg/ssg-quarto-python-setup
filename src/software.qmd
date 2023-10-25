@@ -26,6 +26,12 @@ You can install the tools from a terminal [RECOMMENDED!]
 
 That's OK.  Jump to [testing your installation](#testing-your-installation) to verify that they're all running, and then visit the [final steps](finalsteps.qmd) page.
 
+## CAUTION WITH POETRY
+
+*Poetry* can be installed using *pip install poetry*.  THIS IS NOT RECOMMENDED! Installing poetry this way will screw up the *poetry shell* command.  Don't do it!
+
+I recommand that you following the instructions listed above and install poetry without using PIP.  Your life will be MUCH easier!
+
 ## Installing packages from a terminal
 
 *Quarto*, *gh*, *git* and *VSC* can all be installed directly from a terminal without a bunch of mouse clicks.  *Pyenv*, *python* and *poetry* require more hand-holding.
@@ -168,7 +174,21 @@ python --version
 
 ### Install poetry
 
+Poetry should be installed using these instructions ... NOT using *pip install poetry*.  Before installing this, 
+run the command below to ensure that poetry is cleaned out of your python.
+
+```powershell
+pip uninstall poetry
+```
+
 **Verify that you have pyenv and python running before you install poetry.**
+
+```powershell
+pyenv --version
+python --version
+```
+
+** Now install Poetry **
 
 ```powershell
 (Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | python -
