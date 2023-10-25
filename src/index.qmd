@@ -1,29 +1,97 @@
 ---
 title: "Welcome"
+format:
+  html:
+    code-copy: true
 ---
 
 Getting your machine ready for software development can sometime be challenging, especially if over time you've accumulated lots of software for individual classes.
 
 This site offers a process for preparing your computer for python development using VS code and Quarto.  Those on Mac (zsh shell) and Linux (bash shell) have an easier time.  Those on Windows have a tougher time because of the multitude of shells (e.g., CMD, powershell-5 or powershell-core).
 
-## Using a terminal
+VSC - visual studio code.
 
-Many of the problems that I'm seeing originate in VS code!
+terminal - A command line windows NOT inside VSC.  On windows we'll use a terminal window with powershell.  On mac you'll use terminal window with ZSH.  On linux you'll use a terminal windows with bash.
 
+GUI - graphic user interface, often directly associated with the underlying operating system.
+
+## High level tasks
+
+- [ ] Make any OS-specific customizations
+- [ ] Clean up older versions of python
+- [ ] Install and test quarto
+- [ ] Install and test pyenv and python
+- [ ] Install jupyter, matplotlib and plotly for python and quarto
+
+## OS-specific customizations
+
+::: {.panel-tabset}
+
+## Pick your OS ->
+
+Select from one of the tabs above to see if your OS requires any
+unique fixes.
+
+## Mac
+
+In NASCAR you're called the [lucky dog](https://www.liveabout.com/lucky-dog-rule-explained-2470755)
+
+I'm not aware of any Mac specific fixes that are required.
+
+## Linux
+
+I'm not aware of any Linux-specific pre-work required to get all this stuff running.
+
+
+## Windows
+
+Sorry - you've got some work to do!
+
+Windows offers a number of settings that makes it *easier* to download software
+from the Micrsoft Store.  These *features* actually get in the way of user installed
+tools.
+
+- [ ] Disable python-related execution aliases
+
+### Open the execution alias screen
+
+1. Press the *windows* key on the bottom left of your keyboard to bring up the menu shown below.
+
+1. In the search bar enter *execution* and then select the option as show in the figure below.
+
+![](assets/getting-to-execution-aliases.png)
+
+### Scan the list
+
+Your list may vary depending on you have installed. Scan the list and disable stuff that looks related to python.
+
+![](assets/manage-execution-aliases.png)
+
+
+- [ ] Your done!
+
+:::
 
 ## Checklist
 
-- [ ] Verify that you can open a terminal NOT IN VSCODE!
+- [ ] Verify that you can open a terminal NOT IN VSC!
 - [ ] Verify pyenv, python, poetry, quarto and code from a terminal
 - [ ] Disable managed app execution aliases
 - [ ] Remove old versions of python using Add/Remove programs
 - [ ] PYENV: Install pyenv
 - [ ] Install python 3.11.6 using pyenv
 - [ ] Install poetry (DO NOT USE PIP)
-- [ ] VSCODE: install python extension 
-- [ ] VSCODE: install quarto extension
-- [ ] VSCODE: install mysql extensions 
+- [ ] VSC: install python extension 
+- [ ] VSC: install quarto extension
+- [ ] VSC: install mysql extensions 
 
+## Trouble-shooting
+
+Many of the problems that I've seen result from not completing the install.  For most software
+engineering tools, simply installing the software is only the first part.
+
+Many software tools require second or third steps that make the use of the installed software easier
+from the command line.
 
 ## Details
 
@@ -34,70 +102,10 @@ This process requires removal of previously installed versions of python, conda 
 - [ ] Disable managed app execution aliases
 - [ ] Remove old versions of python
 
-### Install Pyenv
-
-#### Install software
-[Link to install instructions here](https://github.com/pyenv-win/pyenv-win/blob/master/docs/installation.md#powershell)
-
-```{powershell}
-# open an administrator Window
-
-Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine;
-Invoke-WebRequest -UseBasicParsing -Uri "https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/install-pyenv-win.ps1" -OutFile "./install-pyenv-win.ps1"; &"./install-pyenv-win.ps1";
-
-```
-
-#### Set up environment
-
-[Link to environment instructions](https://github.com/pyenv-win/pyenv-win/blob/master/docs/installation.md#add-system-settings)
-
-## Install Poetry
-
-OUTSIDE of pyenv.  Do not use pyenv, rather use recommand poetry install
-
-```{powershell}
-(Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | python -
-```
-Then add this version of poetry to your path
-
-- [ ] Control Panel | small icons | User Accounts | Change my environment variables
-
-        %APPDATA%\Python\Scripts
-
-## Update Powershell profile
-
-
-
-```{powershell}
-
-code $profile
-then add:
-
-
-$env:DENO_NO_UPDATE_CHECK=1               # to warning about deno upgrades
-$env:DENO_TLS_CA_STORE="system"           # to stop the BAD CERTIFICATE deno warning
-$env:PYDEVD_DISABLE_FILE_VALIDATION=1     # for Python 3.11 above, to disable warning message RE: debugging
-$env:VIRTUAL_ENV_DISABLE_PROMPT=0         # disable venv prompt change
-
-$env:QUARTO_PYTHON=$(pyenv which python)  # to work with pyenv
-$var = $(poetry env info -e 2> $null)
-if ($var -ne $null) {
-  Write-Output "Setting QUARTO_PYTHON for detected Poetry VENV"
-  $env:QUARTO_PYTHON=$var                 # to work with venv in pyenv
-}
-
-```
-
-## VS Code setup
-
-- [ ] Set vscode to use powershell
-- [ ] Set vscode to show current virtual environment
-
-
-
 
 
 
 ## References
 
 * [Learning about VS Code virtual environments](https://code.visualstudio.com/docs/python/environments)
+* [Unattended install of chocolatey](https://www.reddit.com/r/chocolatey/comments/kvyav2/using_unattend_xml_to_install_chocolatey_at_first/)

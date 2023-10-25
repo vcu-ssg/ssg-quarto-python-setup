@@ -1,17 +1,73 @@
 [
   {
+    "objectID": "vscode.html",
+    "href": "vscode.html",
+    "title": "Setting up VS code",
+    "section": "",
+    "text": "VSC offers a bunch of command line options. Below are commands that you can paste into your shell and watch what happens.\ncode --list-extensions\nThese are the extensions that we need for our work.\ncode --install-extension quarto.quarto\ncode --install-extension ms-python.python\ncode --install-extension ms-python.python\ncode --install-extension ms-toolsai.jupyter\nOnce the extensions are installed, we need to tune the settings to make VSC work for us.\nThe “Setting” menu can be accessed from the bottom left of the screen, or directly by pressing ctrl-, (control-comma) or on Mac (command-comma)\nOnce the little command prompt line opens up, search for the appropriate setting by entering in the keywords provided below. Then make the appropriate change. I believe that it sticks when you leave the cell - I haven’t seen a “save” button.\n\nVSC: settings to use powershell: set to NULL\n\nPaste the keywords below into a VSC setting search.\nterminal integrated default profile windows\n\nVSC: setting to show current virtual environment: set to ALWAYS\n\nPaste the keywords below into a VSC setting search.\npython interpreter info"
+  },
+  {
+    "objectID": "software.html",
+    "href": "software.html",
+    "title": "Installing Software",
+    "section": "",
+    "text": "Operating systems offer tools for installing software OUTSIDE the GUI.\n\napt, yum, dmf and other tools are used on linux,\nhomebrew is used on mac, but can also run on linux, and\nchocolatey and winget are used on windows.\n\n\nPick your OS -&gt;WindowsMacLinux\n\n\nSelect your OS from the tabs shown.\n\n\nPowershell -command Invoke-WebRequest -Uri \"https://chocolatey.org/install.ps1\" -OutFile $env:temp\\install.ps1\npowershell -executionpolicy unrestricted -command Unblock-File $env:temp\\install.ps1; powershell -command $env:temp\\install.ps1\nUnattended install of tools\nchoco install quarto -y\nchoco install git.install -y\nchoco install visualstudiocode -y\nchoco install make -y\nchoco install powershell-core -y\n\n\n(needs work!)\n\n\n(needs work!)"
+  },
+  {
+    "objectID": "pyenv.html",
+    "href": "pyenv.html",
+    "title": "Installing pyenv",
+    "section": "",
+    "text": "pyenv is a manager program for python. It lets you maintain several different versions of python on your computers. This is GREAT if you’re developing more than one program over a longer period of time. Pythons change and you don’t want to have to constantly update older code when things change.\n\nInstall software\nLink to install instructions here\n# open an administrator Window\n\nSet-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine;\nInvoke-WebRequest -UseBasicParsing -Uri \"https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/install-pyenv-win.ps1\" -OutFile \"./install-pyenv-win.ps1\"; &\"./install-pyenv-win.ps1\";"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Welcome",
     "section": "",
-    "text": "Getting your machine ready for software development can sometime be challenging, especially if over time you’ve accumulated lots of software for individual classes.\nThis site offers a process for preparing your computer for python development using VS code and Quarto. Those on Mac (zsh shell) and Linux (bash shell) have an easier time. Those on Windows have a tougher time because of the multitude of shells (e.g., CMD, powershell-5 or powershell-core)."
+    "text": "Getting your machine ready for software development can sometime be challenging, especially if over time you’ve accumulated lots of software for individual classes.\nThis site offers a process for preparing your computer for python development using VS code and Quarto. Those on Mac (zsh shell) and Linux (bash shell) have an easier time. Those on Windows have a tougher time because of the multitude of shells (e.g., CMD, powershell-5 or powershell-core).\nVSC - visual studio code.\nterminal - A command line windows NOT inside VSC. On windows we’ll use a terminal window with powershell. On mac you’ll use terminal window with ZSH. On linux you’ll use a terminal windows with bash.\nGUI - graphic user interface, often directly associated with the underlying operating system."
   },
   {
-    "objectID": "index.html#cleaning",
-    "href": "index.html#cleaning",
+    "objectID": "index.html#high-level-tasks",
+    "href": "index.html#high-level-tasks",
     "title": "Welcome",
-    "section": "Cleaning",
-    "text": "Cleaning\nThis process requires removal of previously installed versions of python, conda or others. It also requires disabling of Windows convienences that get in the way of python.\n\nDisable managed app execution aliases\nRemove old versions of python"
+    "section": "High level tasks",
+    "text": "High level tasks\n\nMake any OS-specific customizations\nClean up older versions of python\nInstall and test quarto\nInstall and test pyenv and python\nInstall jupyter, matplotlib and plotly for python and quarto"
+  },
+  {
+    "objectID": "index.html#os-specific-customizations",
+    "href": "index.html#os-specific-customizations",
+    "title": "Welcome",
+    "section": "OS-specific customizations",
+    "text": "OS-specific customizations\n\nPick your OS -&gt;MacLinuxWindows\n\n\nSelect from one of the tabs above to see if your OS requires any unique fixes.\n\n\nIn NASCAR you’re called the lucky dog\nI’m not aware of any Mac specific fixes that are required.\n\n\nI’m not aware of any Linux-specific pre-work required to get all this stuff running.\n\n\nSorry - you’ve got some work to do!\nWindows offers a number of settings that makes it easier to download software from the Micrsoft Store. These features actually get in the way of user installed tools.\n\nDisable python-related execution aliases\n\n\nOpen the execution alias screen\n\nPress the windows key on the bottom left of your keyboard to bring up the menu shown below.\nIn the search bar enter execution and then select the option as show in the figure below.\n\n\n\n\nScan the list\nYour list may vary depending on you have installed. Scan the list and disable stuff that looks related to python.\n\n\nYour done!"
+  },
+  {
+    "objectID": "index.html#checklist",
+    "href": "index.html#checklist",
+    "title": "Welcome",
+    "section": "Checklist",
+    "text": "Checklist\n\nVerify that you can open a terminal NOT IN VSC!\nVerify pyenv, python, poetry, quarto and code from a terminal\nDisable managed app execution aliases\nRemove old versions of python using Add/Remove programs\nPYENV: Install pyenv\nInstall python 3.11.6 using pyenv\nInstall poetry (DO NOT USE PIP)\nVSC: install python extension\nVSC: install quarto extension\nVSC: install mysql extensions"
+  },
+  {
+    "objectID": "index.html#trouble-shooting",
+    "href": "index.html#trouble-shooting",
+    "title": "Welcome",
+    "section": "Trouble-shooting",
+    "text": "Trouble-shooting\nMany of the problems that I’ve seen result from not completing the install. For most software engineering tools, simply installing the software is only the first part.\nMany software tools require second or third steps that make the use of the installed software easier from the command line."
+  },
+  {
+    "objectID": "index.html#details",
+    "href": "index.html#details",
+    "title": "Welcome",
+    "section": "Details",
+    "text": "Details\n\nCleaning\nThis process requires removal of previously installed versions of python, conda or others. It also requires disabling of Windows convienences that get in the way of python.\n\nDisable managed app execution aliases\nRemove old versions of python"
+  },
+  {
+    "objectID": "index.html#references",
+    "href": "index.html#references",
+    "title": "Welcome",
+    "section": "References",
+    "text": "References\n\nLearning about VS Code virtual environments\nUnattended install of chocolatey"
   },
   {
     "objectID": "about.html",
@@ -21,59 +77,52 @@
     "text": "About this site"
   },
   {
-    "objectID": "index.html#install-pyenv",
-    "href": "index.html#install-pyenv",
-    "title": "Welcome",
-    "section": "Install Pyenv",
-    "text": "Install Pyenv\nLink to install instructions here\n# open an administrator Window\n\nSet-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine;\nInvoke-WebRequest -UseBasicParsing -Uri \"https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/install-pyenv-win.ps1\" -OutFile \"./install-pyenv-win.ps1\"; &\"./install-pyenv-win.ps1\";"
+    "objectID": "finalsteps.html",
+    "href": "finalsteps.html",
+    "title": "Final steps",
+    "section": "",
+    "text": "Ok, you’ve got everything installed and tests separately, but things still are working.\nThis is the trickets part, but the most important from a quality-of-life perspective."
   },
   {
-    "objectID": "index.html#install-poetry",
-    "href": "index.html#install-poetry",
-    "title": "Welcome",
-    "section": "Install Poetry",
-    "text": "Install Poetry\nOUTSIDE of pyenv. Do not use pyenv, rather use recommand poetry install\n(Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | python -\nThen add this version of poetry to your path\n\nControl Panel | small icons | User Accounts | Change my environment variables\n  %APPDATA%\\Python\\Scripts"
+    "objectID": "finalsteps.html#update-environment-variables",
+    "href": "finalsteps.html#update-environment-variables",
+    "title": "Final steps",
+    "section": "Update Environment variables",
+    "text": "Update Environment variables\n\nPick your OS -&gt;MacLinuxWindows\n\n\nSelect from one of the tabs above to see if your OS requires any unique fixes.\n\n\n(add stuff here)\n\n\n(add stuff here)\n\n\n\ncode $profile\nthen add:\n\n\n$env:DENO_NO_UPDATE_CHECK=1               # to warning about deno upgrades\n$env:DENO_TLS_CA_STORE=\"system\"           # to stop the BAD CERTIFICATE deno warning\n$env:PYDEVD_DISABLE_FILE_VALIDATION=1     # for Python 3.11 above, to disable warning message RE: debugging\n$env:VIRTUAL_ENV_DISABLE_PROMPT=0         # disable venv prompt change\n\n$env:QUARTO_PYTHON=$(pyenv which python)  # to work with pyenv\n$var = $(poetry env info -e 2&gt; $null)\nif ($var -ne $null) {\n  Write-Output \"Setting QUARTO_PYTHON for detected Poetry VENV\"\n  $env:QUARTO_PYTHON=$var                 # to work with venv in pyenv\n}"
   },
   {
-    "objectID": "index.html#update-powershell-profile",
-    "href": "index.html#update-powershell-profile",
-    "title": "Welcome",
-    "section": "Update Powershell profile",
-    "text": "Update Powershell profile\n\ncode $profile\nthen add:\n\n\n$env:DENO_NO_UPDATE_CHECK=1               # to warning about deno upgrades\n$env:DENO_TLS_CA_STORE=\"system\"           # to stop the BAD CERTIFICATE deno warning\n$env:PYDEVD_DISABLE_FILE_VALIDATION=1     # for Python 3.11 above, to disable warning message RE: debugging\n$env:VIRTUAL_ENV_DISABLE_PROMPT=0         # disable venv prompt change\n\n$env:QUARTO_PYTHON=$(pyenv which python)  # to work with pyenv\n$var = $(poetry env info -e 2&gt; $null)\nif ($var -ne $null) {\n  Write-Output \"Setting QUARTO_PYTHON for detected Poetry VENV\"\n  $env:QUARTO_PYTHON=$var                 # to work with venv in pyenv\n}"
+    "objectID": "poetry.html",
+    "href": "poetry.html",
+    "title": "Getting started with pyenv",
+    "section": "",
+    "text": "Poetry should be installed outside of your current version python, that is DO NOT USE pip install poetry. Why? If you install using pip then the command poetry shell will most probably fail.\nBelow are links to the instructions on the web.\n\nWindows install of poetry\nMac install of poetry\nLinux install of pietry\n\nI summarize the installs in the tabset below. The instructions below were accurate at the time they were included in this document, but over time things may change. Refer to the links above."
   },
   {
-    "objectID": "index.html#vs-code-setup",
-    "href": "index.html#vs-code-setup",
-    "title": "Welcome",
-    "section": "VS Code setup",
-    "text": "VS Code setup\n\nSet vscode to use powershell\nSet vscode to show current virtual environment"
+    "objectID": "quarto.html",
+    "href": "quarto.html",
+    "title": "Quarto",
+    "section": "",
+    "text": "Quarto is a multi-language, next generation version of R Markdown from Posit, with many new new features and capabilities. Like R Markdown, Quarto uses knitr to execute R code, and is therefore able to render most existing Rmd files without modification.\nVisit this site to install Quarto:\nhttps://quarto.org/docs/get-started/\nHere is a link directly to the VSCODE install page:\nhttps://quarto.org/docs/get-started/hello/vscode.html"
   },
   {
-    "objectID": "index.html#references",
-    "href": "index.html#references",
-    "title": "Welcome",
-    "section": "References",
-    "text": "References\n\nLearning about VS Code virtual environments"
+    "objectID": "quarto.html#safety-tips",
+    "href": "quarto.html#safety-tips",
+    "title": "Quarto",
+    "section": "Safety tips!",
+    "text": "Safety tips!\n\nInstall pyenv/python and VSC first\nInstall the vscode QUARTO extension (see the docs)\nDon’t just stop at installing the software. RTFM\nFINISH THE PAGE - you’ll see that there are several additional steps (like pip install jupyter matplotlib plotly)\n\nYou should be able to replicate the example in their guide."
   },
   {
-    "objectID": "index.html#checklist",
-    "href": "index.html#checklist",
-    "title": "Welcome",
-    "section": "Checklist",
-    "text": "Checklist\n\nVerify that you can open a terminal NOT IN VSCODE!\nVerify pyenv, python, poetry, quarto and code from a terminal\nDisable managed app execution aliases\nRemove old versions of python using Add/Remove programs\nPYENV: Install pyenv\nInstall python 3.11.6 using pyenv\nInstall poetry (DO NOT USE PIP)\nVSCODE: install python extension\nVSCODE: install quarto extension\nVSCODE: install mysql extensions"
+    "objectID": "quarto.html#troublshooting",
+    "href": "quarto.html#troublshooting",
+    "title": "Quarto",
+    "section": "Troublshooting",
+    "text": "Troublshooting\nYou can verify that all was installed correctly (except the VSC stuff) using the quarto check command.\n\nquarto check"
   },
   {
-    "objectID": "index.html#details",
-    "href": "index.html#details",
-    "title": "Welcome",
-    "section": "Details",
-    "text": "Details\n\nCleaning\nThis process requires removal of previously installed versions of python, conda or others. It also requires disabling of Windows convienences that get in the way of python.\n\nDisable managed app execution aliases\nRemove old versions of python\n\n\n\nInstall Pyenv\n\nInstall software\nLink to install instructions here\n# open an administrator Window\n\nSet-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine;\nInvoke-WebRequest -UseBasicParsing -Uri \"https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/install-pyenv-win.ps1\" -OutFile \"./install-pyenv-win.ps1\"; &\"./install-pyenv-win.ps1\";\n\n\n\nSet up environment\nLink to environment instructions"
-  },
-  {
-    "objectID": "index.html#using-a-terminal",
-    "href": "index.html#using-a-terminal",
-    "title": "Welcome",
-    "section": "Using a terminal",
-    "text": "Using a terminal\nMany of the problems that I’m seeing originate in VS code!"
+    "objectID": "terminals.html",
+    "href": "terminals.html",
+    "title": "Using a terminal",
+    "section": "",
+    "text": "Many of the problems that I see originate in VSC! The best way to make sure that everything is working is start with a command line terminal - a separate window OUTSIDE of VSC. Then we’ll get VSC working.\n\nLearn to work from a shell\nLearn to work without a mouse\n\nThis will help as you begin to create dev-ops actions and build docker containers. Containers don’t have GUI!\n\nPick your OS -&gt;WindowsMacLinux\n\n\nSelect your OS from the tabs above.\n\n\n\nAn example shell\n\n\n\nGetting to your shell without a mouse\nPress the windows key and starting typing the keyword powershell into the search bar. You only need to enter the first few letters, then hit enter. The menu will learn from your keystrokes and eventually it will be the first option that shows up.\n\n\n\n\n\nAn example shell\n(add stuff here)\n\n\nGetting to your shell without a mouse\n(add stuff here)\n\n\n\n\nAn example shell\n(add stuff here)\n\n\nGetting to your shell without a mouse\n(add stuff here)"
   }
 ]

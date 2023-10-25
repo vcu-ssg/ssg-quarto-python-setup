@@ -1,0 +1,53 @@
+---
+title: Using a terminal
+---
+
+Many of the problems that I see originate in VSC!  The best way to make sure that everything is working is start with a command line terminal - a separate window OUTSIDE of VSC.  Then we'll get VSC working.
+
+* Learn to work from a shell
+* Learn to work without a mouse
+
+This will help as you begin to create dev-ops actions and build docker containers.  Containers don't have GUI!
+
+::: {.panel-tabset}
+
+## Pick your OS ->
+
+Select your OS from the tabs above.
+
+## Windows
+
+### An example shell
+
+![](assets/powershell-window.png)
+
+
+### Getting to your shell without a mouse
+
+Press the *windows* key and starting typing the keyword *powershell* into the search bar. You only
+need to enter the first few letters, then hit *enter*.  The menu will learn from your keystrokes
+and eventually it will be the first option that shows up.
+
+![](assets/getting-to-powershell.png)
+
+## Mac
+
+### An example shell
+
+(add stuff here)
+
+### Getting to your shell without a mouse
+
+(add stuff here)
+
+## Linux
+
+### An example shell
+
+(add stuff here)
+
+### Getting to your shell without a mouse
+
+(add stuff here)
+
+:::

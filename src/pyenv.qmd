@@ -1,0 +1,20 @@
+---
+title: Installing pyenv
+---
+
+pyenv is a manager program for python.  It lets you maintain several different versions of python
+on your computers.  This is GREAT if you're developing more than one program over a longer period of time.
+Pythons change and you don't want to have to constantly update older code when things change.
+
+
+#### Install software
+[Link to install instructions here](https://github.com/pyenv-win/pyenv-win/blob/master/docs/installation.md#powershell)
+
+```powershell
+# open an administrator Window
+
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine;
+Invoke-WebRequest -UseBasicParsing -Uri "https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/install-pyenv-win.ps1" -OutFile "./install-pyenv-win.ps1"; &"./install-pyenv-win.ps1";
+
+```
+

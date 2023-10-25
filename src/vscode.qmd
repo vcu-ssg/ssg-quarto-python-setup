@@ -1,0 +1,43 @@
+---
+title: Setting up VS code
+---
+
+VSC offers a bunch of command line options.  Below are commands that you
+can paste into your shell and watch what happens.
+
+```powershell
+code --list-extensions
+```
+
+These are the extensions that we need for our work.
+
+```powershell
+code --install-extension quarto.quarto
+code --install-extension ms-python.python
+code --install-extension ms-python.python
+code --install-extension ms-toolsai.jupyter
+```
+
+Once the extensions are installed, we need to tune the settings to
+make VSC work for us.
+
+The "Setting" menu can be accessed from the bottom left of the screen, or directly
+by pressing ctrl-, (control-comma) or on Mac (command-comma)
+
+Once the little command prompt line opens up, search for the appropriate setting by entering in the keywords provided below.  Then make the appropriate change.  I believe that it sticks when you leave the cell - I haven't seen a "save" button.
+
+- [ ] VSC: settings to use powershell: *set to NULL*
+
+Paste the keywords below into a VSC setting search.
+
+```powershell
+terminal integrated default profile windows
+```
+
+- [ ] VSC: setting to show current virtual environment: *set to ALWAYS*
+
+Paste the keywords below into a VSC setting search.
+
+```powershell
+python interpreter info
+```

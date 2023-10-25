@@ -1,0 +1,42 @@
+---
+title: Installing Software
+---
+
+Operating systems offer tools for installing software OUTSIDE the GUI.
+
+* *apt*, *yum*, *dmf* and other tools are used on linux,
+* *homebrew* is used on mac, but can also run on linux, and
+* *chocolatey* and *winget* are used on windows.
+
+::: {.panel-tabset}
+
+## Pick your OS ->
+
+Select your OS from the tabs shown.
+
+## Windows
+
+```powershell
+Powershell -command Invoke-WebRequest -Uri "https://chocolatey.org/install.ps1" -OutFile $env:temp\install.ps1
+powershell -executionpolicy unrestricted -command Unblock-File $env:temp\install.ps1; powershell -command $env:temp\install.ps1
+```
+
+Unattended install of tools
+
+```powershell
+choco install quarto -y
+choco install git.install -y
+choco install visualstudiocode -y
+choco install make -y
+choco install powershell-core -y
+```
+
+## Mac
+
+(needs work!)
+
+## Linux
+
+(needs work!)
+
+:::

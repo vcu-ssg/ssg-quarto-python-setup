@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Getting Started with Quarto and Python - About</title>
+<title>Getting Started with Quarto and Python - Quarto</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -106,7 +140,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">vscode</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./quarto.html" rel="" target="">
+    <a class="nav-link active" href="./quarto.html" rel="" target="" aria-current="page">
  <span class="menu-text">Quarto</span></a>
   </li>  
   <li class="nav-item">
@@ -125,14 +159,21 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#safety-tips" id="toc-safety-tips" class="nav-link active" data-scroll-target="#safety-tips">Safety tips!</a></li>
+  <li><a href="#troublshooting" id="toc-troublshooting" class="nav-link" data-scroll-target="#troublshooting">Troublshooting</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">About</h1>
+<h1 class="title">Quarto</h1>
 </div>
 
 
@@ -147,9 +188,29 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>About this site</p>
+<p>Quarto is a multi-language, next generation version of R Markdown from Posit, with many new new features and capabilities. Like R Markdown, Quarto uses knitr to execute R code, and is therefore able to render most existing Rmd files without modification.</p>
+<p>Visit this site to install Quarto:</p>
+<p><a href="https://quarto.org/docs/get-started/" class="uri">https://quarto.org/docs/get-started/</a></p>
+<p>Here is a link directly to the VSCODE install page:</p>
+<p><a href="https://quarto.org/docs/get-started/hello/vscode.html" class="uri">https://quarto.org/docs/get-started/hello/vscode.html</a></p>
+<section id="safety-tips" class="level2">
+<h2 class="anchored" data-anchor-id="safety-tips">Safety tips!</h2>
+<ul>
+<li><p>Install pyenv/python and VSC first</p></li>
+<li><p>Install the vscode QUARTO extension (see the docs)</p></li>
+<li><p>Don’t just stop at installing the software. RTFM</p></li>
+<li><p>FINISH THE PAGE - you’ll see that there are several additional steps (like <em>pip install jupyter matplotlib plotly</em>)</p></li>
+</ul>
+<p>You should be able to replicate the example in their guide.</p>
+</section>
+<section id="troublshooting" class="level2">
+<h2 class="anchored" data-anchor-id="troublshooting">Troublshooting</h2>
+<p>You can verify that all was installed correctly (except the VSC stuff) using the <em>quarto check</em> command.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>quarto check</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

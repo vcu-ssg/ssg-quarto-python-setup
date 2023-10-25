@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Getting Started with Quarto and Python - About</title>
+<title>Getting Started with Quarto and Python - Final steps</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -110,7 +110,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Quarto</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./finalsteps.html" rel="" target="">
+    <a class="nav-link active" href="./finalsteps.html" rel="" target="" aria-current="page">
  <span class="menu-text">Final Steps</span></a>
   </li>  
 </ul>
@@ -125,14 +125,20 @@ ul.task-list li input[type="checkbox"] {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#update-environment-variables" id="toc-update-environment-variables" class="nav-link active" data-scroll-target="#update-environment-variables">Update Environment variables</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">About</h1>
+<h1 class="title">Final steps</h1>
 </div>
 
 
@@ -147,9 +153,46 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>About this site</p>
+<p>Ok, you’ve got everything installed and tests separately, but things still are working.</p>
+<p>This is the trickets part, but the most important from a quality-of-life perspective.</p>
+<section id="update-environment-variables" class="level2">
+<h2 class="anchored" data-anchor-id="update-environment-variables">Update Environment variables</h2>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Pick your OS -&gt;</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Mac</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Linux</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-4" role="tab" aria-controls="tabset-1-4" aria-selected="false">Windows</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<p>Select from one of the tabs above to see if your OS requires any unique fixes.</p>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p>(add stuff here)</p>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<p>(add stuff here)</p>
+</div>
+<div id="tabset-1-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-4-tab">
+<pre class="{powershell}"><code>
+code $profile
+then add:
 
 
+$env:DENO_NO_UPDATE_CHECK=1               # to warning about deno upgrades
+$env:DENO_TLS_CA_STORE="system"           # to stop the BAD CERTIFICATE deno warning
+$env:PYDEVD_DISABLE_FILE_VALIDATION=1     # for Python 3.11 above, to disable warning message RE: debugging
+$env:VIRTUAL_ENV_DISABLE_PROMPT=0         # disable venv prompt change
+
+$env:QUARTO_PYTHON=$(pyenv which python)  # to work with pyenv
+$var = $(poetry env info -e 2&gt; $null)
+if ($var -ne $null) {
+  Write-Output "Setting QUARTO_PYTHON for detected Poetry VENV"
+  $env:QUARTO_PYTHON=$var                 # to work with venv in pyenv
+}
+</code></pre>
+</div>
+</div>
+</div>
+
+
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

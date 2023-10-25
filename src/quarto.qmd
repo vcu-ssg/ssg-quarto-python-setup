@@ -1,0 +1,36 @@
+---
+title: Quarto
+---
+
+Quarto is a multi-language, next generation version of R Markdown from Posit, with many new new features and capabilities. Like R Markdown, Quarto uses knitr to execute R code, and is therefore able to render most existing Rmd files without modification.
+
+Visit this site to install Quarto:
+
+<https://quarto.org/docs/get-started/>
+
+Here is a link directly to the VSCODE install page:
+
+<https://quarto.org/docs/get-started/hello/vscode.html>
+
+
+## Safety tips!
+
+* Install pyenv/python and VSC first
+
+* Install the vscode QUARTO extension (see the docs)
+
+* Don't just stop at installing the software. RTFM
+
+* FINISH THE PAGE - you'll see that there are several additional steps (like *pip install jupyter matplotlib plotly*)
+
+You should be able to replicate the example in their guide.
+
+## Troublshooting
+
+You can verify that all was installed correctly (except the VSC stuff) using the *quarto check* command.
+
+```powershell
+
+quarto check
+
+```

@@ -1,20 +1,31 @@
 project:
-  type: website
-  output-dir: ../docs
+    type: website
+    output-dir: ../docs
 
 website:
-  title: "Getting Started with Quarto and Python"
-  navbar:
-    left:
-      - href: index.qmd
-        text: Home
-      - about.qmd
+    title: "Getting Started with Quarto and Python"
+    navbar:
+        left:
+            - href: index.qmd
+              text: Home
+            - href: terminals.qmd
+              text: Terminals
+            - href: software.qmd
+              text: Software
+            - href: pyenv.qmd
+              text: pyenv
+            - href: poetry.qmd
+              text: poetry
+            - href: vscode.qmd
+              text: vscode
+            - href: quarto.qmd
+              text: Quarto
+            - href: finalsteps.qmd
+              text: Final Steps
 
 format:
-  html:
-    theme: cosmo
-    css: styles.css
-    toc: true
-
-
-
+    html:
+        theme: cosmo
+        css: styles.css
+        toc: true
+        code-copy: true

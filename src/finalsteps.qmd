@@ -1,0 +1,50 @@
+---
+title: Final steps
+---
+
+Ok, you've got everything installed and tests separately, but things still are working.
+
+This is the trickets part, but the most important from a quality-of-life perspective.
+
+
+## Update Environment variables
+
+::: {.panel-tabset}
+
+## Pick your OS ->
+
+Select from one of the tabs above to see if your OS requires any
+unique fixes.
+
+## Mac
+
+(add stuff here)
+
+## Linux
+
+(add stuff here)
+
+## Windows
+
+```{powershell}
+
+code $profile
+then add:
+
+
+$env:DENO_NO_UPDATE_CHECK=1               # to warning about deno upgrades
+$env:DENO_TLS_CA_STORE="system"           # to stop the BAD CERTIFICATE deno warning
+$env:PYDEVD_DISABLE_FILE_VALIDATION=1     # for Python 3.11 above, to disable warning message RE: debugging
+$env:VIRTUAL_ENV_DISABLE_PROMPT=0         # disable venv prompt change
+
+$env:QUARTO_PYTHON=$(pyenv which python)  # to work with pyenv
+$var = $(poetry env info -e 2> $null)
+if ($var -ne $null) {
+  Write-Output "Setting QUARTO_PYTHON for detected Poetry VENV"
+  $env:QUARTO_PYTHON=$var                 # to work with venv in pyenv
+}
+
+```
+
+
+:::

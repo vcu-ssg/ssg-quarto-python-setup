@@ -1,0 +1,36 @@
+---
+title: Getting started with pyenv
+---
+
+Poetry should be installed outside of your current version python, that is DO NOT USE *pip install poetry*.
+Why? If you install using *pip* then the command *poetry shell* will most probably fail.
+
+Below are links to the instructions on the web.
+
+1. Windows install of poetry
+1. Mac install of poetry
+1. Linux install of pietry
+
+I summarize the installs in the tabset below.  The instructions below were accurate at the
+time they were included in this document, but over time things may change.  Refer to the links
+above.
+
+::: {.panel-tabset}
+
+```powershell
+
+(Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | python -
+
+```
+Then add this version of poetry to your path
+
+- [ ] Control Panel | small icons | User Accounts | Change my environment variables
+
+```powershell
+
+%APPDATA%\Python\Scripts
+
+```
+
+
+:::
