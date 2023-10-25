@@ -53,30 +53,41 @@ Select your OS from the tabs shown.
 
 ## Windows
 
-Install *chocolatey*
+**Install *chocolatey**
+
+Open a terminal using the "Run as administrator" option.
 
 ```powershell
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine
 Powershell -command Invoke-WebRequest -Uri "https://chocolatey.org/install.ps1" -OutFile $env:temp\install.ps1
 powershell -executionpolicy unrestricted -command Unblock-File $env:temp\install.ps1; powershell -command $env:temp\install.ps1
-```
 
-Install software using *chocolatey*
+```
+Close the terminal and reopen again as "Run as administrator"
+
+**Install software using *chocolatey***
 
 ```powershell
 choco install quarto -y
 choco install git.install -y
 choco install gh -y
 choco install visualstudiocode -y
+
 ```
 
-Test your install so far.  Close your terminal and reopen a new terminal:
+**Test your install so far.**
+
+Close your terminal and reopen a new regular terminal:
 
 ```powershell
 quarto --version
 git --version
 gh --version
 code --version
+
 ```
+
+You're done installing the major block of tools.
 
 ## Mac
 
@@ -136,6 +147,7 @@ Select your OS from the tabs above.
 
 ```powershell
 Invoke-WebRequest -UseBasicParsing -Uri "https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/install-pyenv-win.ps1" -OutFile "./install-pyenv-win.ps1"; &"./install-pyenv-win.ps1"
+
 ```
 
 **If you get errors, then you'll need to take a different approach.**
@@ -145,6 +157,7 @@ Close your terminal and reopen it with *Run as Administrator*, then paste the fo
 ```powershell
 Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine
 Invoke-WebRequest -UseBasicParsing -Uri "https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/install-pyenv-win.ps1" -OutFile "./install-pyenv-win.ps1"; &"./install-pyenv-win.ps1"
+
 ```
 
 **Close the admin terminal and reopen a regular terminal, and paste these commands:**
@@ -154,12 +167,14 @@ Set PYENV, PYENV_ROOT and PYENV_HOME User environment variables.
 [System.Environment]::SetEnvironmentVariable('PYENV',$env:USERPROFILE + "\.pyenv\pyenv-win\","User")
 [System.Environment]::SetEnvironmentVariable('PYENV_ROOT',$env:USERPROFILE + "\.pyenv\pyenv-win\","User")
 [System.Environment]::SetEnvironmentVariable('PYENV_HOME',$env:USERPROFILE + "\.pyenv\pyenv-win\","User")
+
 ```
 
 **Update the user PATH**
 
 ```powershell
 [System.Environment]::SetEnvironmentVariable('path', $env:USERPROFILE + "\.pyenv\pyenv-win\bin;" + $env:USERPROFILE + "\.pyenv\pyenv-win\shims;" + [System.Environment]::GetEnvironmentVariable('path', "User"),"User")
+
 ```
 
 **Test your install.  Close the window and reopen a regular terminal:**
@@ -170,6 +185,7 @@ pyenv update
 pyenv install 3.11.6
 pyenv global 3.11.6
 python --version
+
 ```
 
 ### Install poetry
@@ -179,6 +195,7 @@ run the command below to ensure that poetry is cleaned out of your python.
 
 ```powershell
 pip uninstall poetry
+
 ```
 
 **Verify that you have pyenv and python running before you install poetry.**
@@ -186,24 +203,28 @@ pip uninstall poetry
 ```powershell
 pyenv --version
 python --version
+
 ```
 
 ** Now install Poetry **
 
 ```powershell
 (Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | python -
+
 ```
 
 **Then, add poetry to your User PATH.**
 
 ```powershell
 [System.Environment]::SetEnvironmentVariable('path', "%APPDATA%\Python\Scripts;" + [System.Environment]::GetEnvironmentVariable('path', "User"),"User")
+
 ```
 
 **Test your install.  Close the window and reopen a regular terminal**
 
 ```powershell
 poetry --version
+
 ```
 
 **Finish the Quarto install**

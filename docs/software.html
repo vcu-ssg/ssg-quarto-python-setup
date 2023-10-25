@@ -224,19 +224,24 @@ This is how docker containers and virtual machines are created.</p>
 <p>Select your OS from the tabs shown.</p>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<p>Install <em>chocolatey</em></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>Powershell <span class="op">-</span>command <span class="fu">Invoke-WebRequest</span> <span class="op">-</span>Uri <span class="st">"https://chocolatey.org/install.ps1"</span> <span class="op">-</span>OutFile <span class="va">$env</span><span class="op">:</span>temp\install<span class="op">.</span><span class="fu">ps1</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>powershell <span class="op">-</span>executionpolicy unrestricted <span class="op">-</span>command <span class="fu">Unblock-File</span> <span class="va">$env</span><span class="op">:</span>temp\install<span class="op">.</span><span class="fu">ps1</span><span class="op">;</span> powershell <span class="op">-</span>command <span class="va">$env</span><span class="op">:</span>temp\install<span class="op">.</span><span class="fu">ps1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Install software using <em>chocolatey</em></p>
+<p>**Install *chocolatey**</p>
+<p>Open a terminal using the “Run as administrator” option.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Set-ExecutionPolicy</span> <span class="op">-</span>ExecutionPolicy RemoteSigned <span class="op">-</span>Scope LocalMachine</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>Powershell <span class="op">-</span>command <span class="fu">Invoke-WebRequest</span> <span class="op">-</span>Uri <span class="st">"https://chocolatey.org/install.ps1"</span> <span class="op">-</span>OutFile <span class="va">$env</span><span class="op">:</span>temp\install<span class="op">.</span><span class="fu">ps1</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>powershell <span class="op">-</span>executionpolicy unrestricted <span class="op">-</span>command <span class="fu">Unblock-File</span> <span class="va">$env</span><span class="op">:</span>temp\install<span class="op">.</span><span class="fu">ps1</span><span class="op">;</span> powershell <span class="op">-</span>command <span class="va">$env</span><span class="op">:</span>temp\install<span class="op">.</span><span class="fu">ps1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Close the terminal and reopen again as “Run as administrator”</p>
+<p><strong>Install software using <em>chocolatey</em></strong></p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>choco install quarto <span class="op">-</span>y</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>choco install git<span class="op">.</span><span class="fu">install</span> <span class="op">-</span>y</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>choco install gh <span class="op">-</span>y</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>choco install visualstudiocode <span class="op">-</span>y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Test your install so far. Close your terminal and reopen a new terminal:</p>
+<p><strong>Test your install so far.</strong></p>
+<p>Close your terminal and reopen a new regular terminal:</p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>quarto <span class="op">--</span>version</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>git <span class="op">--</span>version</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>gh <span class="op">--</span>version</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>code <span class="op">--</span>version</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>You’re done installing the major block of tools.</p>
 </div>
 <div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
 <p>Software on a mac is installed automatically using <em>Homebrew.</em></p>
