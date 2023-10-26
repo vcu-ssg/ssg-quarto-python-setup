@@ -10,6 +10,8 @@ website:
               text: Home
             - href: terminals.qmd
               text: Terminals
+            - href: prework.qmd
+              text: Pre-work
             - href: software.qmd
               text: Software
             - href: finalsteps.qmd

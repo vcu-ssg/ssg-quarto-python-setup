@@ -90,6 +90,10 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Terminals</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="./prework.html" rel="" target="">
+ <span class="menu-text">Pre-work</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="./software.html" rel="" target="">
  <span class="menu-text">Software</span></a>
   </li>  
@@ -117,7 +121,8 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#about-this-site" id="toc-about-this-site" class="nav-link active" data-scroll-target="#about-this-site">About this site</a></li>
+  <li><a href="#how-do-you-know-your-tools-are-working-together" id="toc-how-do-you-know-your-tools-are-working-together" class="nav-link active" data-scroll-target="#how-do-you-know-your-tools-are-working-together">How do you know your tools are working together?</a></li>
+  <li><a href="#about-this-site" id="toc-about-this-site" class="nav-link" data-scroll-target="#about-this-site">About this site</a></li>
   <li><a href="#glossary-of-terms" id="toc-glossary-of-terms" class="nav-link" data-scroll-target="#glossary-of-terms">Glossary of terms</a></li>
   <li><a href="#troubleshooting" id="toc-troubleshooting" class="nav-link" data-scroll-target="#troubleshooting">Troubleshooting</a></li>
   <li><a href="#checklist" id="toc-checklist" class="nav-link" data-scroll-target="#checklist">Checklist</a></li>
@@ -149,9 +154,23 @@ ul.task-list li input[type="checkbox"] {
 <p>Getting your machine ready for software development can sometime be challenging, especially if over time you’ve accumulated lots of software on your computer.</p>
 <p>This site offers a process for preparing your computer for python development using VS code and Quarto from the command line. Those on Mac (zsh shell) and Linux (bash shell) have an easier time. Those on Windows have a tougher time because of the multitude of shells (e.g., CMD, powershell-5 or powershell-core).</p>
 <p>TLDR: Visit <a href="#troubleshooting">troubleshooting</a> or <a href="#checklist">checklist</a> below.</p>
+<section id="how-do-you-know-your-tools-are-working-together" class="level2">
+<h2 class="anchored" data-anchor-id="how-do-you-know-your-tools-are-working-together">How do you know your tools are working together?</h2>
+<p>If your install is good, you should be able to:</p>
+<ul>
+<li>switch pythons using pyenv.</li>
+<li>verify that the command <em>quarto check</em> uses the appropriate pyenv python.</li>
+<li>create a virtual environment using <em>poetry init</em>.</li>
+<li>verify that the command <em>poetry shell</em> works with the correct shell.</li>
+<li>while <em>poetry shell</em>ed into a venv, verify that <em>quarto check</em> is using python from the venv.</li>
+<li>while in VSCODE, verify that <em>ctrl-shift-k</em> renders a document using the correct venv.</li>
+<li>while in VSCODE, verify that the terminal opens the correct shell and uses the correct venv.</li>
+</ul>
+</section>
 <section id="about-this-site" class="level2">
 <h2 class="anchored" data-anchor-id="about-this-site">About this site</h2>
 <p>Each section on the site offers guidance on individual installation and configuration steps. The <a href="./finalsteps.html">final steps</a> section offers guidance on getting them all work together.</p>
+<p><a href="https://github.com/vcu-ssg/ssg-quarto-python-setup">Source code for the site is available on GITHUB</a>. Please improve the site!</p>
 </section>
 <section id="glossary-of-terms" class="level2">
 <h2 class="anchored" data-anchor-id="glossary-of-terms">Glossary of terms</h2>
@@ -197,7 +216,7 @@ an integrated development environment. While very handy when learning to code, t
 <ul class="task-list">
 <li><input type="checkbox">WINDOWS: disable python-related <a href="./prework.html">app execution aliases</a>.</li>
 <li><input type="checkbox">Verify that you can <a href="./terminals.html">open a terminal</a> NOT IN VSC.</li>
-<li><input type="checkbox">Verify <a href="./pyenv.html">pyenv and python</a>, <a href="./quarto.html">quarto</a>, <a href="./poetry.html">poetry</a> and <a href="./vscode.html">VSC</a> from a terminal.</li>
+<li><input type="checkbox">Verify <a href="./software.html">pyenv, python, quarto, poetry.qmd</a> and <a href="./vscode.html">VSC</a> from a terminal.</li>
 <li><input type="checkbox">Install and test missing pyenv, python, poetry, quarto and VSC.</li>
 <li><input type="checkbox">Verify environment variables are properly set using the $PROFILE (windows), .zschrc (mac), .bashrc (linux) files.</li>
 </ul>

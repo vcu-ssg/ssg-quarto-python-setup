@@ -56,32 +56,11 @@
     "text": "Troubleshooting\nIf you’re having trouble with one or more of the tools, try reinstalling and verify that you’re performing ALL the steps described in the installation.\nIf nothing is working, you can try uninstalling the tools and starting over.\nIf these tools aren’t working, then you’ll not be able to replicate the beautiful experience of our goal."
   },
   {
-    "objectID": "quarto.html",
-    "href": "quarto.html",
-    "title": "Quarto",
-    "section": "",
-    "text": "Quarto is a multi-language, next generation version of R Markdown from Posit, with many new new features and capabilities. Like R Markdown, Quarto uses knitr to execute R code, and is therefore able to render most existing Rmd files without modification.\nVisit this site to install Quarto:\nhttps://quarto.org/docs/get-started/\nHere is a link directly to the VSCODE install page:\nhttps://quarto.org/docs/get-started/hello/vscode.html"
-  },
-  {
-    "objectID": "quarto.html#safety-tips",
-    "href": "quarto.html#safety-tips",
-    "title": "Quarto",
-    "section": "Safety tips!",
-    "text": "Safety tips!\n\nInstall pyenv/python and VSC first\nInstall the vscode QUARTO extension (see the docs)\nDon’t just stop at installing the software. RTFM\nFINISH THE PAGE - you’ll see that there are several additional steps (like pip install jupyter matplotlib plotly)\n\nYou should be able to replicate the example in their guide."
-  },
-  {
-    "objectID": "quarto.html#troublshooting",
-    "href": "quarto.html#troublshooting",
-    "title": "Quarto",
-    "section": "Troublshooting",
-    "text": "Troublshooting\nYou can verify that all was installed correctly (except the VSC stuff) using the quarto check command.\n\nquarto check"
-  },
-  {
     "objectID": "prework.html",
     "href": "prework.html",
     "title": "Pre-work",
     "section": "",
-    "text": "It’s helpful to do these things prior to installing any software, but it’s OK to do them after stuff is installed. It may help fix a problem!\nOn windows we need to ensure that several features are disabled. On mac and linux, you should be good to go."
+    "text": "It’s helpful to do these things prior to installing any software, but it’s OK to do them after stuff is installed. It may help fix a problem!\nOn windows we need to ensure that several features are disabled. On mac and linux, you should be good to go.\nIf you are on windows and your installation is a chocolate mess, you might want to consider uninstalling older versions of python using Add-Remove programs and clean up your User and System PATH environment variables."
   },
   {
     "objectID": "prework.html#os-specific-customizations",
@@ -91,46 +70,11 @@
     "text": "OS-specific customizations\n\nPick your OS -&gt;MacLinuxWindows\n\n\nSelect from one of the tabs above to see if your OS requires any unique fixes.\n\n\nIn NASCAR you’re called the lucky dog\nI’m not aware of any Mac specific fixes that are required.\n\n\nI’m not aware of any Linux-specific pre-work required to get all this stuff running.\n\n\nSorry - you’ve got some work to do!\nWindows offers a number of settings that makes it easier to download software from the Micrsoft Store. These features actually get in the way of user installed tools.\n\nDisable python-related execution aliases\n\n\nOpen the execution alias screen\n\nPress the windows key on the bottom left of your keyboard to bring up the menu shown below.\nIn the search bar enter execution and then select the option as show in the figure below.\n\n\n\n\nScan the list\nYour list may vary depending on you have installed. Scan the list and disable stuff that looks related to python.\n\n\nYour done!"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Welcome",
+    "objectID": "goal.html",
+    "href": "goal.html",
+    "title": "Goal",
     "section": "",
-    "text": "Our goal is pyenv, python, poetry, vscode and quarto working seamlessly with python virtual environments from a command line.\nGetting your machine ready for software development can sometime be challenging, especially if over time you’ve accumulated lots of software on your computer.\nThis site offers a process for preparing your computer for python development using VS code and Quarto from the command line. Those on Mac (zsh shell) and Linux (bash shell) have an easier time. Those on Windows have a tougher time because of the multitude of shells (e.g., CMD, powershell-5 or powershell-core).\nTLDR: Visit troubleshooting or checklist below."
-  },
-  {
-    "objectID": "index.html#about-this-site",
-    "href": "index.html#about-this-site",
-    "title": "Welcome",
-    "section": "About this site",
-    "text": "About this site\nEach section on the site offers guidance on individual installation and configuration steps. The final steps section offers guidance on getting them all work together."
-  },
-  {
-    "objectID": "index.html#glossary-of-terms",
-    "href": "index.html#glossary-of-terms",
-    "title": "Welcome",
-    "section": "Glossary of terms",
-    "text": "Glossary of terms\nTo eliminate confusion I’ll be using the following terms on this site:\n\nVSC\n\nvisual studio code. An awesome code editor and more. See IDE below.\n\nterminal\n\nA command line windows NOT inside VSC. On windows we’ll use a terminal window with powershell. On mac you’ll use terminal window with ZSH. On linux you’ll use a terminal windows with bash.\n\nGUI\n\na graphic user interface, often directly associated with the underlying operating system.\n\nIDE\n\nan integrated development environment. While very handy when learning to code, they quickly become a crutch for software engineers and coders. PyCharm is one example of an IDE.\n\n\nIn closing, VSC is NOT an IDE although many people use it like an IDE. VSC includes many features of an IDE and is very extensible. However, VSC can also be used as a regular code editor, like VIM, EMACS or others. Learn to use VSC from the command line!"
-  },
-  {
-    "objectID": "index.html#troubleshooting",
-    "href": "index.html#troubleshooting",
-    "title": "Welcome",
-    "section": "Troubleshooting",
-    "text": "Troubleshooting\nFor the most part everyone has their tools already installed and the challenge is getting them to all work together. Here are some tips:\n\nBe patient and methodical. Debugging can be frustrating. YOU GOT THIS!\nGet everything running outside of VSC before you try running inside VSC. (See terminal)\nVerify that you did ALL the required install steps. I’ve seen people not read the instructions completely and are left with half-working software. This is VERY hard to debug!\nVerify that the individual tools are working by themselves.\nUse quarto check to see how things are working together.\nOnce everything runs from a terminal then jump inside VSC to get it all running there.\nIf you still have trouble, consider uninstalling/remove the tools and starting over.\n\nMany of the problems that I’ve seen result from not completing the install. For most software engineering tools, simply installing the software is only the first part.\nMany software tools require second or third steps that make the use of the installed software easier from the command line. RTFM"
-  },
-  {
-    "objectID": "index.html#checklist",
-    "href": "index.html#checklist",
-    "title": "Welcome",
-    "section": "Checklist",
-    "text": "Checklist\nIf your system is not working or if you’re starting from scratch, here is a general checklist:\n\nWINDOWS: disable python-related app execution aliases.\nVerify that you can open a terminal NOT IN VSC.\nVerify pyenv and python, quarto, poetry and VSC from a terminal.\nInstall and test missing pyenv, python, poetry, quarto and VSC.\nVerify environment variables are properly set using the $PROFILE (windows), .zschrc (mac), .bashrc (linux) files.\n\nIf the tools are completely installed in the correct order, everything should work out of the box in mac and linux. The PC will require a few more tweaks. (See final steps)"
-  },
-  {
-    "objectID": "index.html#what-do-i-do-now",
-    "href": "index.html#what-do-i-do-now",
-    "title": "Welcome",
-    "section": "What do I do now?",
-    "text": "What do I do now?\nI’m here because my system isn’t working. How do I get started? What do I do now? Start with the Checklist!"
+    "text": "Our goal is pyenv, python, poetry, vscode and quarto working seamlessly with python virtual environments from a command line.\nThe video below offers a glimpse of what a typical homework assignment should look like.\n(a video will eventually be dropped here.)"
   },
   {
     "objectID": "finalsteps.html",
@@ -154,46 +98,74 @@
     "text": "Coordinating all the tools\nTo make everyting work properly, our desire is for:\n\npoetry to shell into the correct virtual environment, and\nquarto to recognize correct version of python for the virtual environments created by poetry.\n\nWe do this by storing the correct version of python in the environment of the shell. Each shell (e.g., powershell, zsh and bash) is slightly different but they work about the same.\nEach time a terminal window opens the shell executes commands found in a special “run command” file. This approach permits the shell to dynamically adapt to the state of the computer at the time a shell opens.\nTo get all the programs to smoothly work together we need to add (or verify) that a few commands exist in these run command (or rc) files.\n\nPick your OS -&gt;MacLinuxWindows\n\n\nSelect your OS from one of the tabs.\n\n\nA mac uses the zsh shell. Configuration commands are stored in the .zshrc file stored in the users home (~) directory.\n(add stuff here)\n\n\nYour linux machine most probably uses the bash shell. Configuration commands are stored in the .bashrc file stored in the users home (~) directory.\n\n\nWindows uses several different shells: CMD, powershell and powershell-core. Our preferred shell for this activity is powershell.\nPowershell stores it’s run commands in the file: $ENV:USERPROFILE\\Documents\\PowerShell\\Microsoft.PowerShell_profile.ps1. I know, kill me. BUT, powershell gives the abbreviation $PROFILE to permit easier access.\nOn some machines, the $PROFILE folder may not yet, so we’ll want to create the folder before we edit the file.\nOpen a powershell terminal and paste the following command\n# Read the folder path from $PROFILE variable\n$folderPath = [System.IO.Path]::GetDirectoryName($PROFILE)\n\n# Check if the folder exists and do your thing\nif (-not (Test-Path -Path $folderPath -PathType Container)) {\n    New-Item -Path $folderPath -ItemType Directory\n    Write-Host \"Folder created: $folderPath\"\n} else {\n    Write-Host \"Folder already exists: $folderPath\"\n}\nNow, let’s edit (or create) the $PROFILE\ncode $profile\nand look for the following commands. If they don’t exist, paste them to the bottom of the file. If they exists, make sure that those in the $PROFILE match those below.\n# These settings disable annoying quarto messages\n$env:DENO_NO_UPDATE_CHECK=1               # to warning about deno upgrades\n$env:DENO_TLS_CA_STORE=\"system\"           # to stop the BAD CERTIFICATE deno warning\n$env:PYDEVD_DISABLE_FILE_VALIDATION=1     # for Python 3.11 above, to disable warning message RE: debugging\n$env:VIRTUAL_ENV_DISABLE_PROMPT=0         # set to 1 to disable venv prompt change\n\n# This is the code that syncs everything up\n$env:QUARTO_PYTHON=$(pyenv which python)  # to work with pyenv global or local python\n$var = $(poetry env info -e 2&gt; $null)\nif ($var -ne $null) {\n  Write-Output \"QUARTO_PYTHON set to Poetry VENV\"\n  $env:QUARTO_PYTHON=$var                 # override with venv python as needed\n} else {\n  Write-Output \"QUARTO_PYTHON set to $(pyenv version)\"\n}\nSave the profile, close your shell and reopen your shell. At the open you should see the appropriate message."
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome",
     "section": "",
-    "text": "About this site"
+    "text": "Our goal is pyenv, python, poetry, vscode and quarto working seamlessly with python virtual environments from a command line.\nGetting your machine ready for software development can sometime be challenging, especially if over time you’ve accumulated lots of software on your computer.\nThis site offers a process for preparing your computer for python development using VS code and Quarto from the command line. Those on Mac (zsh shell) and Linux (bash shell) have an easier time. Those on Windows have a tougher time because of the multitude of shells (e.g., CMD, powershell-5 or powershell-core).\nTLDR: Visit troubleshooting or checklist below."
   },
   {
-    "objectID": "goal.html",
-    "href": "goal.html",
-    "title": "Goal",
-    "section": "",
-    "text": "Our goal is pyenv, python, poetry, vscode and quarto working seamlessly with python virtual environments from a command line.\nThe video below offers a glimpse of what a typical homework assignment should look like."
+    "objectID": "index.html#how-do-you-know-your-tools-are-working-together",
+    "href": "index.html#how-do-you-know-your-tools-are-working-together",
+    "title": "Welcome",
+    "section": "How do you know your tools are working together?",
+    "text": "How do you know your tools are working together?\nIf your install is good, you should be able to:\n\nswitch pythons using pyenv.\nverify that the command quarto check uses the appropriate pyenv python.\ncreate a virtual environment using poetry init.\nverify that the command poetry shell works with the correct shell.\nwhile poetry shelled into a venv, verify that quarto check is using python from the venv.\nwhile in VSCODE, verify that ctrl-shift-k renders a document using the correct venv.\nwhile in VSCODE, verify that the terminal opens the correct shell and uses the correct venv."
   },
   {
-    "objectID": "poetry.html",
-    "href": "poetry.html",
-    "title": "Getting started with pyenv",
-    "section": "",
-    "text": "Poetry should be installed outside of your current version python, that is DO NOT USE pip install poetry. Why? If you install using pip then the command poetry shell will most probably fail.\nBelow are links to the instructions on the web.\n\nWindows install of poetry\nMac install of poetry\nLinux install of pietry\n\nI summarize the installs in the tabset below. The instructions below were accurate at the time they were included in this document, but over time things may change. Refer to the links above."
+    "objectID": "index.html#about-this-site",
+    "href": "index.html#about-this-site",
+    "title": "Welcome",
+    "section": "About this site",
+    "text": "About this site\nEach section on the site offers guidance on individual installation and configuration steps. The final steps section offers guidance on getting them all work together.\nSource code for the site is available on GITHUB. Please improve the site!"
   },
   {
-    "objectID": "pyenv.html",
-    "href": "pyenv.html",
-    "title": "Installing pyenv",
-    "section": "",
-    "text": "pyenv is a manager program for python. It lets you maintain several different versions of python on your computers. This is GREAT if you’re developing more than one program over a longer period of time. Pythons change and you don’t want to have to constantly update older code when things change.\n\nInstall software\nLink to install instructions here\n# open an administrator Window\n\nSet-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine;\nInvoke-WebRequest -UseBasicParsing -Uri \"https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/install-pyenv-win.ps1\" -OutFile \"./install-pyenv-win.ps1\"; &\"./install-pyenv-win.ps1\";"
+    "objectID": "index.html#glossary-of-terms",
+    "href": "index.html#glossary-of-terms",
+    "title": "Welcome",
+    "section": "Glossary of terms",
+    "text": "Glossary of terms\nTo eliminate confusion I’ll be using the following terms on this site:\n\nVSC\n\nvisual studio code. An awesome code editor and more. See IDE below.\n\nterminal\n\nA command line windows NOT inside VSC. On windows we’ll use a terminal window with powershell. On mac you’ll use terminal window with ZSH. On linux you’ll use a terminal windows with bash.\n\nGUI\n\na graphic user interface, often directly associated with the underlying operating system.\n\nIDE\n\nan integrated development environment. While very handy when learning to code, they quickly become a crutch for software engineers and coders. PyCharm is one example of an IDE.\n\n\nIn closing, VSC is NOT an IDE although many people use it like an IDE. VSC includes many features of an IDE and is very extensible. However, VSC can also be used as a regular code editor, like VIM, EMACS or others. Learn to use VSC from the command line!"
   },
   {
-    "objectID": "references.html",
-    "href": "references.html",
-    "title": "References",
-    "section": "",
-    "text": "Learning about VS Code virtual environments\nUnattended install of chocolatey"
+    "objectID": "index.html#troubleshooting",
+    "href": "index.html#troubleshooting",
+    "title": "Welcome",
+    "section": "Troubleshooting",
+    "text": "Troubleshooting\nFor the most part everyone has their tools already installed and the challenge is getting them to all work together. Here are some tips:\n\nBe patient and methodical. Debugging can be frustrating. YOU GOT THIS!\nGet everything running outside of VSC before you try running inside VSC. (See terminal)\nVerify that you did ALL the required install steps. I’ve seen people not read the instructions completely and are left with half-working software. This is VERY hard to debug!\nVerify that the individual tools are working by themselves.\nUse quarto check to see how things are working together.\nOnce everything runs from a terminal then jump inside VSC to get it all running there.\nIf you still have trouble, consider uninstalling/remove the tools and starting over.\n\nMany of the problems that I’ve seen result from not completing the install. For most software engineering tools, simply installing the software is only the first part.\nMany software tools require second or third steps that make the use of the installed software easier from the command line. RTFM"
   },
   {
-    "objectID": "references.html#references",
-    "href": "references.html#references",
-    "title": "References",
+    "objectID": "index.html#checklist",
+    "href": "index.html#checklist",
+    "title": "Welcome",
+    "section": "Checklist",
+    "text": "Checklist\nIf your system is not working or if you’re starting from scratch, here is a general checklist:\n\nWINDOWS: disable python-related app execution aliases.\nVerify that you can open a terminal NOT IN VSC.\nVerify pyenv, python, quarto, poetry.qmd and VSC from a terminal.\nInstall and test missing pyenv, python, poetry, quarto and VSC.\nVerify environment variables are properly set using the $PROFILE (windows), .zschrc (mac), .bashrc (linux) files.\n\nIf the tools are completely installed in the correct order, everything should work out of the box in mac and linux. The PC will require a few more tweaks. (See final steps)"
+  },
+  {
+    "objectID": "index.html#what-do-i-do-now",
+    "href": "index.html#what-do-i-do-now",
+    "title": "Welcome",
+    "section": "What do I do now?",
+    "text": "What do I do now?\nI’m here because my system isn’t working. How do I get started? What do I do now? Start with the Checklist!"
+  },
+  {
+    "objectID": "quarto.html",
+    "href": "quarto.html",
+    "title": "Quarto",
     "section": "",
-    "text": "Learning about VS Code virtual environments\nUnattended install of chocolatey"
+    "text": "Quarto is a multi-language, next generation version of R Markdown from Posit, with many new new features and capabilities. Like R Markdown, Quarto uses knitr to execute R code, and is therefore able to render most existing Rmd files without modification.\nVisit this site to install Quarto:\nhttps://quarto.org/docs/get-started/\nHere is a link directly to the VSCODE install page:\nhttps://quarto.org/docs/get-started/hello/vscode.html"
+  },
+  {
+    "objectID": "quarto.html#safety-tips",
+    "href": "quarto.html#safety-tips",
+    "title": "Quarto",
+    "section": "Safety tips!",
+    "text": "Safety tips!\n\nInstall pyenv/python and VSC first\nInstall the vscode QUARTO extension (see the docs)\nDon’t just stop at installing the software. RTFM\nFINISH THE PAGE - you’ll see that there are several additional steps (like pip install jupyter matplotlib plotly)\n\nYou should be able to replicate the example in their guide."
+  },
+  {
+    "objectID": "quarto.html#troublshooting",
+    "href": "quarto.html#troublshooting",
+    "title": "Quarto",
+    "section": "Troublshooting",
+    "text": "Troublshooting\nYou can verify that all was installed correctly (except the VSC stuff) using the quarto check command.\n\nquarto check"
   },
   {
     "objectID": "terminals.html",

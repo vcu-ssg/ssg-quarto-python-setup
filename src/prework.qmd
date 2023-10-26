@@ -6,6 +6,9 @@ It's helpful to do these things prior to installing any software, but it's OK to
 
 On windows we need to ensure that several features are disabled.  On mac and linux, you should be good to go.
 
+If you are on windows and your installation is a chocolate mess, you might want to consider uninstalling older versions of python using *Add-Remove programs*
+and clean up your User and System PATH environment variables.
+
 ## OS-specific customizations
 
 ::: {.panel-tabset}
