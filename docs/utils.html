@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>A Terminal Coding Experience - Final steps</title>
+<title>A Terminal Coding Experience - Useful utilities</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -132,7 +132,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Software</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./finalsteps.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="./finalsteps.html" rel="" target="">
  <span class="menu-text">Final Steps</span></a>
   </li>  
   <li class="nav-item">
@@ -140,7 +140,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">vscode</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./utils.html" rel="" target="">
+    <a class="nav-link active" href="./utils.html" rel="" target="" aria-current="page">
  <span class="menu-text">Utilities</span></a>
   </li>  
 </ul>
@@ -159,8 +159,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#testing-your-installation" id="toc-testing-your-installation" class="nav-link active" data-scroll-target="#testing-your-installation">Testing your installation</a></li>
-  <li><a href="#coordinating-all-the-tools" id="toc-coordinating-all-the-tools" class="nav-link" data-scroll-target="#coordinating-all-the-tools">Coordinating all the tools</a></li>
+  <li><a href="#display-environment-variables" id="toc-display-environment-variables" class="nav-link active" data-scroll-target="#display-environment-variables">Display environment variables</a></li>
+  <li><a href="#display-listing-of-path-variables" id="toc-display-listing-of-path-variables" class="nav-link" data-scroll-target="#display-listing-of-path-variables">Display listing of path variables</a></li>
+  <li><a href="#add-these-utilities-to-your-shell" id="toc-add-these-utilities-to-your-shell" class="nav-link" data-scroll-target="#add-these-utilities-to-your-shell">Add these utilities to your shell</a></li>
   </ul>
 </nav>
     </div>
@@ -169,7 +170,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Final steps</h1>
+<h1 class="title">Useful utilities</h1>
 </div>
 
 
@@ -184,225 +185,74 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<p>Ok, you’ve got everything installed.</p>
-<p>Now comes the trickest part, but the most important from a quality-of-life perspective.</p>
-<section id="testing-your-installation" class="level2">
-<h2 class="anchored" data-anchor-id="testing-your-installation">Testing your installation</h2>
-<p>You should be able to run these commands from a terminal on any OS.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>pyenv <span class="op">--</span>version</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>pyenv global 3<span class="op">.</span><span class="fu">11</span><span class="op">.</span><span class="fu">6</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>python <span class="op">--</span>version</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>poetry <span class="op">--</span>version</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>gh <span class="op">--</span>version</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>git <span class="op">--</span>version</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>code <span class="op">--</span>version</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>quarto check</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>In the final <em>quarto check</em>, verify that jupyter runs and that the python version in quarto matches the python you installed with pyenv.</p>
-</section>
-<section id="coordinating-all-the-tools" class="level2">
-<h2 class="anchored" data-anchor-id="coordinating-all-the-tools">Coordinating all the tools</h2>
-<p>To make everyting work properly, our desire is for:</p>
-<ul>
-<li><em>poetry</em> to shell into the correct virtual environment, and</li>
-<li><em>quarto</em> to recognize correct version of <em>python</em> for the virtual environments created by <em>poetry</em>.</li>
-</ul>
-<p>We do this by storing the correct version of python in the <em>environment</em> of the shell. Each shell (e.g., powershell, zsh and bash) is slightly different but they work about the same.</p>
-<p>Each time a terminal window opens the shell executes commands found in a special “run command” file. This approach permits the shell to dynamically adapt to the state of the computer at the time a shell opens.</p>
-<p>To get all the programs to smoothly work together we need to add (or verify) that a few commands exist in these run command (or rc) files.</p>
+<p>A set of useful utilities for exploring your setup are collected and shared below.</p>
+<section id="display-environment-variables" class="level2">
+<h2 class="anchored" data-anchor-id="display-environment-variables">Display environment variables</h2>
+<p>Cut and paste the command into a terminal window.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Pick your OS -&gt;</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Mac</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Linux</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-4" role="tab" aria-controls="tabset-1-4" aria-selected="false">Windows</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Windows (powershell)</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Mac (zsh)</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Linux (bash)</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<p>Select your OS from one of the tabs.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Get-ChildItem</span> Env<span class="op">:</span> <span class="op">|</span> <span class="fu">Sort-Object</span> Name <span class="op">|</span> <span class="fu">Format-Table</span> Name<span class="op">,</span> Value <span class="op">-</span>AutoSize</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<p>A mac uses the <em>zsh</em> shell. Configuration commands are stored in the <em>.zshrc</em> file stored in the users home (~) directory.</p>
-<p>(add stuff here)</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">printenv</span> <span class="kw">|</span> <span class="fu">sort</span> <span class="kw">|</span> <span class="ex">column</span> <span class="at">-t</span> <span class="at">-s</span> <span class="st">'='</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
-<p>Your linux machine most probably uses the <em>bash</em> shell. Configuration commands are stored in the <em>.bashrc</em> file stored in the users home (~) directory.</p>
-</div>
-<div id="tabset-1-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-4-tab">
-<p>Windows uses several different shells: <em>CMD</em>, <em>powershell</em> and <em>powershell-core</em>. Our preferred shell for this activity is <em>powershell</em>.</p>
-<p><em>Powershell</em> stores it’s run commands in the file: <em><code>$ENV:USERPROFILE\Documents\PowerShell\Microsoft.PowerShell_profile.ps1</code></em>. I know, kill me. BUT, powershell gives the abbreviation <em>$PROFILE</em> to permit easier access.</p>
-<p>On some machines, the $PROFILE folder may not yet, so we’ll want to create the folder before we edit the file.</p>
-<p>Open a powershell terminal and paste the following command</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Read the folder path from $PROFILE variable</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="va">$folderPath</span> <span class="op">=</span> <span class="op">[</span>System<span class="op">.</span><span class="fu">IO</span><span class="op">.</span><span class="fu">Path</span><span class="op">]::</span>GetDirectoryName<span class="op">(</span><span class="va">$PROFILE</span><span class="op">)</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Check if the folder exists and do your thing</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="kw">if</span> <span class="op">(-</span>not <span class="op">(</span><span class="fu">Test-Path</span> <span class="op">-</span>Path <span class="va">$folderPath</span> <span class="op">-</span>PathType Container<span class="op">))</span> <span class="op">{</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="fu">New-Item</span> <span class="op">-</span>Path <span class="va">$folderPath</span> <span class="op">-</span>ItemType Directory</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">Write-Host</span> <span class="st">"Folder created: $folderPath"</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="op">}</span> <span class="kw">else</span> <span class="op">{</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">Write-Host</span> <span class="st">"Folder already exists: $folderPath"</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Now, let’s edit (or create) the $PROFILE</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>code <span class="va">$profile</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>and look for the following commands. If they don’t exist, paste them to the bottom of the file. If they exists, make sure that those in the $PROFILE match those below.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># These settings disable annoying quarto messages</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="va">$env</span><span class="op">:</span>DENO_NO_UPDATE_CHECK<span class="op">=</span>1               <span class="co"># to warning about deno upgrades</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="va">$env</span><span class="op">:</span>DENO_TLS_CA_STORE<span class="op">=</span><span class="st">"system"</span>           <span class="co"># to stop the BAD CERTIFICATE deno warning</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="va">$env</span><span class="op">:</span>PYDEVD_DISABLE_FILE_VALIDATION<span class="op">=</span>1     <span class="co"># for Python 3.11 above, to disable warning message RE: debugging</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="va">$env</span><span class="op">:</span>VIRTUAL_ENV_DISABLE_PROMPT<span class="op">=</span>0         <span class="co"># set to 1 to disable venv prompt change</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co"># This is the code that syncs everything up</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="va">$env</span><span class="op">:</span>QUARTO_PYTHON<span class="op">=</span>$<span class="op">(</span>pyenv which python<span class="op">)</span>  <span class="co"># to work with pyenv global or local python</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="va">$var</span> <span class="op">=</span> $<span class="op">(</span>poetry env info <span class="op">-</span>e 2<span class="op">&gt;</span> <span class="va">$null</span><span class="op">)</span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="kw">if</span> <span class="op">(</span><span class="va">$var</span> <span class="op">-</span>ne <span class="va">$null</span><span class="op">)</span> <span class="op">{</span></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">Write-Output</span> <span class="st">"QUARTO_PYTHON set to Poetry VENV"</span></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>  <span class="va">$env</span><span class="op">:</span>QUARTO_PYTHON<span class="op">=</span><span class="va">$var</span>                 <span class="co"># override with venv python as needed</span></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="op">}</span> <span class="kw">else</span> <span class="op">{</span></span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">Write-Output</span> <span class="st">"QUARTO_PYTHON set to $(pyenv version)"</span></span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Save the profile, close your shell and reopen your shell. At the open you should see the appropriate message.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">printenv</span> <span class="kw">|</span> <span class="fu">sort</span> <span class="kw">|</span> <span class="ex">column</span> <span class="at">-t</span> <span class="at">-s</span> <span class="st">'='</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
+</section>
+<section id="display-listing-of-path-variables" class="level2">
+<h2 class="anchored" data-anchor-id="display-listing-of-path-variables">Display listing of path variables</h2>
+<p>Cut and paste the command into a terminal window.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Windows (powershell)</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Mac (zsh)</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false">Linux (bash)</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<div class="sourceCode" id="cb4"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="va">$env</span><span class="op">:</span>PATH <span class="op">-</span>split <span class="st">";"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<div class="sourceCode" id="cb5"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">$path</span> <span class="kw">|</span> <span class="fu">tr</span> <span class="st">':'</span> <span class="st">'\n'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
+<div class="sourceCode" id="cb6"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="bu">echo</span> <span class="va">$PATH</span> <span class="kw">|</span> <span class="fu">tr</span> <span class="st">':'</span> <span class="st">'\n'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="add-these-utilities-to-your-shell" class="level2">
+<h2 class="anchored" data-anchor-id="add-these-utilities-to-your-shell">Add these utilities to your shell</h2>
+<p>Do you like these snippet? Do you have others that you use regularly?</p>
+<p>Command shells like powershell, zsh and bash allow users to add their own commands to the shell. See below.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true">Windows (powershell)</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false">Mac (zsh)</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-3" role="tab" aria-controls="tabset-3-3" aria-selected="false">Linux (bash)</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
+<p>Cut and paste these commands to the your $PROFILE. Freshen the comment as necessary. When done, close and reopen the shell and enter the command <em>listpath</em> and <em>listenv</em> to test.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>code <span class="va">$PROFILE</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Aliases added on 10/29/2023 by JL</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co">## The powershell SET-ALIAS function doesn't accept arguments, so we'll use function instead</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> ListPath <span class="op">{</span><span class="va">$env</span><span class="op">:</span>PATH <span class="op">-</span>split <span class="st">";"</span><span class="op">}</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="kw">function</span> ListEnv <span class="op">{</span><span class="fu">Get-ChildItem</span> Env<span class="op">:</span> <span class="op">|</span> <span class="fu">Sort-Object</span> Name <span class="op">|</span> <span class="fu">Format-Table</span> Name<span class="op">,</span> Value <span class="op">-</span>AutoSize<span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
+<p>Cut and paste these commands to the your <em>~/.zshrc</em>. Freshen the comment as necessary. When done, close and reopen the shell and enter the command <em>listpath</em> and <em>listenv</em> to test.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> ~/.zshrc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Aliases added 10/29/2023 by JL</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="bu">alias</span> listpath=<span class="st">"echo </span><span class="va">$PATH</span><span class="st"> | tr ':' '\n'"</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="bu">alias</span> listenv=<span class="st">"printenv | sort | column -t -s '='"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div id="tabset-3-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-3-tab">
+<p>Cut and paste these commands to the your <em>~/.bashrc</em>. Freshen the comment as necessary. When done, close and reopen the shell and enter the command <em>listpath</em> and <em>listenv</em> to test.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> ~/.bashrc</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co">## Aliases added 10/29/2023 by JL</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="bu">alias</span> listpath=<span class="st">"echo </span><span class="va">$PATH</span><span class="st"> | tr ':' '\n'"</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="bu">alias</span> listenv=<span class="st">"printenv | sort | column -t -s '='"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</div>
 
 
 </section>

@@ -1,0 +1,116 @@
+---
+title: Useful utilities
+---
+
+A set of useful utilities for exploring your setup are collected and shared below.
+
+
+## Display environment variables
+
+Cut and paste the command into a terminal window.
+
+::: {.panel-tabset}
+
+## Windows (powershell)
+
+```powershell
+Get-ChildItem Env: | Sort-Object Name | Format-Table Name, Value -AutoSize
+```
+
+## Mac (zsh)
+
+```zsh
+printenv | sort | column -t -s '='
+```
+
+## Linux (bash)
+
+```bash
+printenv | sort | column -t -s '='
+```
+
+:::
+
+## Display listing of path variables
+
+Cut and paste the command into a terminal window.
+
+::: {.panel-tabset}
+
+## Windows (powershell)
+
+```powershell
+$env:PATH -split ";"
+```
+
+## Mac (zsh)
+
+```zsh
+echo $path | tr ':' '\n'
+```
+
+## Linux (bash)
+
+```bash
+echo $PATH | tr ':' '\n'
+```
+
+:::
+
+## Add these utilities to your shell
+
+Do you like these snippet?  Do you have others that you use regularly?
+
+Command shells like powershell, zsh and bash allow users to add their own commands to the shell.  See below.
+
+::: {.panel-tabset}
+
+## Windows (powershell)
+
+Cut and paste these commands to the your $PROFILE. Freshen the comment as necessary.  When done, close
+and reopen the shell and enter the command *listpath* and *listenv* to test.
+
+```powershell
+code $PROFILE
+```
+
+```powershell
+## Aliases added on 10/29/2023 by JL
+## The powershell SET-ALIAS function doesn't accept arguments, so we'll use function instead
+function ListPath {$env:PATH -split ";"}
+function ListEnv {Get-ChildItem Env: | Sort-Object Name | Format-Table Name, Value -AutoSize}
+```
+
+## Mac (zsh)
+
+Cut and paste these commands to the your *~/.zshrc*. Freshen the comment as necessary.  When done, close
+and reopen the shell and enter the command *listpath* and *listenv* to test.
+
+```zsh
+code ~/.zshrc
+```
+
+```zsh
+## Aliases added 10/29/2023 by JL
+alias listpath="echo $PATH | tr ':' '\n'"
+alias listenv="printenv | sort | column -t -s '='"
+```
+
+## Linux (bash)
+
+Cut and paste these commands to the your *~/.bashrc*. Freshen the comment as necessary.  When done, close
+and reopen the shell and enter the command *listpath* and *listenv* to test.
+
+```bash
+code ~/.bashrc
+```
+
+```bash
+## Aliases added 10/29/2023 by JL
+alias listpath="echo $PATH | tr ':' '\n'"
+alias listenv="printenv | sort | column -t -s '='"
+```
+
+:::
+
+

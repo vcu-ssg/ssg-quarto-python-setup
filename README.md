@@ -18,7 +18,7 @@ If you're sure that you have all the tools installed and you just want to make i
 
 ## Folders
 
-*.src* - contains source code for the web site.  The website is creating using quarto.
+*.websrc* - contains source code for the web site.  The website is creating using quarto.
 
 *.docs* - contains the html for the quarto generated web site.  Edit the source and *quarto render* the site.
 

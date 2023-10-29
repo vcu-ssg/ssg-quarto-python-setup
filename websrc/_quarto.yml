@@ -18,6 +18,8 @@ website:
               text: Final Steps
             - href: vscode.qmd
               text: vscode
+            - href: utils.qmd
+              text: Utilities
 
 format:
     html:

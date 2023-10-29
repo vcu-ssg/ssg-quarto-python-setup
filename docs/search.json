@@ -7,95 +7,32 @@
     "text": "Once your software is installed and working from the command line, you can now push on to get VSC working well with your terminal environment.\nVSC offers a bunch of command line options. Below are commands that you can paste into your shell and watch what happens.\ncode --list-extensions\nThese are the extensions that we need for our work.\ncode --install-extension quarto.quarto\ncode --install-extension ms-python.python\ncode --install-extension ms-python.python\ncode --install-extension ms-toolsai.jupyter\nOnce the extensions are installed, we need to tune the settings to make VSC work for us.\nThe “Setting” menu can be accessed from the bottom left of the screen, or directly by pressing ctrl-, (control-comma) or on Mac (command-comma)\nOnce the little command prompt line opens up, search for the appropriate setting by entering in the keywords provided below. Then make the appropriate change. I believe that it sticks when you leave the cell - I haven’t seen a “save” button.\n\nVSC: settings to use powershell: set to NULL\n\nPaste the keywords below into a VSC setting search.\nterminal integrated default profile windows\n\nVSC: setting to show current virtual environment: set to ALWAYS\n\nPaste the keywords below into a VSC setting search.\npython interpreter info"
   },
   {
-    "objectID": "software.html",
-    "href": "software.html",
-    "title": "Installing Software",
+    "objectID": "terminals.html",
+    "href": "terminals.html",
+    "title": "Using a terminal",
     "section": "",
-    "text": "If you want to replicate the beautiful experience of our goal, you’ll want to install the following tools:\nOnce the tools are installed and working, you’ll want to:\nYou can install these tools manually by visiting the links provided above.\nOR\nYou can install the tools from a terminal [RECOMMENDED!]"
+    "text": "Many of the problems that I see originate in VSC! The best way to make sure that everything is working is start with a command line terminal - a separate window OUTSIDE of VSC. Then we’ll get VSC working.\n\nLearn to work from a shell\nLearn to work without a mouse\n\nThis will help as you begin to create dev-ops actions and build docker containers. Containers don’t have GUI!\n\nAn example shell\nHere is an example shell. On any machine these can be opened using keystrokes only. Learn how!\n\n\n\nGetting to your shell without a mouse\nHere is some tips for opening a terminal without having to take your fingers off your keyboard.\n\nPick your OS -&gt;WindowsMacLinux\n\n\nSelect your OS from the tabs above.\n\n\nPress the windows key on the lower left of your keyboard.\nWithout touching the mouse start typing the keyword powershell into the search bar. You only need to enter the first few letters, then hit enter. The menu will learn from your keystrokes and eventually it will be the first option that shows up.\n\n\n\nPress %command% and [space-bar] at the same time. A mini search bar will appear on your screen.\nWithout touching the mouse starting typing the keyword terminal into the search bar. You only need to enter the first few letters, then hit enter.\n\n\nI’m sure it can, but it depends on your flavor of linux and the GUI you installed.\nIf you’re using Linux, I’m pretty sure that you’re good to go!"
   },
   {
-    "objectID": "software.html#wait---i-already-have-them-installed",
-    "href": "software.html#wait---i-already-have-them-installed",
-    "title": "Installing Software",
-    "section": "Wait - I already have them installed!",
-    "text": "Wait - I already have them installed!\nThat’s OK. Jump to testing your installation to verify that they’re all running, and then visit the final steps page."
-  },
-  {
-    "objectID": "software.html#caution-with-poetry",
-    "href": "software.html#caution-with-poetry",
-    "title": "Installing Software",
-    "section": "CAUTION WITH POETRY",
-    "text": "CAUTION WITH POETRY\nPoetry can be installed using pip install poetry. THIS IS NOT RECOMMENDED! Installing poetry this way will screw up the poetry shell command. Don’t do it!\nI recommand that you following the instructions listed above and install poetry without using PIP. Your life will be MUCH easier!"
-  },
-  {
-    "objectID": "software.html#installing-packages-from-a-terminal",
-    "href": "software.html#installing-packages-from-a-terminal",
-    "title": "Installing Software",
-    "section": "Installing packages from a terminal",
-    "text": "Installing packages from a terminal\nQuarto, gh, git and VSC can all be installed directly from a terminal without a bunch of mouse clicks. Pyenv, python and poetry require more hand-holding.\nFirst, let’s install big packages and then pick up the others later.\nAll operating systems offer tools for installing software OUTSIDE the GUI from a terminal.\nThis is how docker containers and virtual machines are created.\n\napt, yum, dmf and other tools are used on linux,\nhomebrew is used on mac, but can also run on linux, and\nchocolatey and winget are used on windows.\n\n\nPick your OS -&gt;WindowsMacLinux\n\n\nSelect your OS from the tabs shown.\n\n\n**Install *chocolatey**\nOpen a terminal using the “Run as administrator” option.\nSet-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine\nPowershell -command Invoke-WebRequest -Uri \"https://chocolatey.org/install.ps1\" -OutFile $env:temp\\install.ps1\npowershell -executionpolicy unrestricted -command Unblock-File $env:temp\\install.ps1; powershell -command $env:temp\\install.ps1\nClose the terminal and reopen again as “Run as administrator”\nInstall software using chocolatey\nchoco install quarto -y\nchoco install git.install -y\nchoco install gh -y\nchoco install visualstudiocode -y\nTest your install so far.\nClose your terminal and reopen a new regular terminal:\nquarto --version\ngit --version\ngh --version\ncode --version\nYou’re done installing the major block of tools.\n\n\nSoftware on a mac is installed automatically using Homebrew.\nInstall homebrew\n#\nInstall software using homebrew\n#\nTest your install so far\n#\n\n\nSoftware on Ubuntu linux is installed using apt. It comes installed on Ubuntu so we can jump directly to the software install\nInstall software using apt\n#\nTest your install so far\n#"
-  },
-  {
-    "objectID": "software.html#installing-pyenv-and-poetry",
-    "href": "software.html#installing-pyenv-and-poetry",
-    "title": "Installing Software",
-    "section": "Installing pyenv and poetry",
-    "text": "Installing pyenv and poetry\n\nSelect your OS -&gt;WindowsMacLinux\n\n\nSelect your OS from the tabs above.\n\n\n\nInstall pyenv\nPaste the following command into a terminal:\nInvoke-WebRequest -UseBasicParsing -Uri \"https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/install-pyenv-win.ps1\" -OutFile \"./install-pyenv-win.ps1\"; &\"./install-pyenv-win.ps1\"\nIf you get errors, then you’ll need to take a different approach.\nClose your terminal and reopen it with Run as Administrator, then paste the following commands:\nSet-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine\nInvoke-WebRequest -UseBasicParsing -Uri \"https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/install-pyenv-win.ps1\" -OutFile \"./install-pyenv-win.ps1\"; &\"./install-pyenv-win.ps1\"\nClose the admin terminal and reopen a regular terminal, and paste these commands:\nSet PYENV, PYENV_ROOT and PYENV_HOME User environment variables.\n[System.Environment]::SetEnvironmentVariable('PYENV',$env:USERPROFILE + \"\\.pyenv\\pyenv-win\\\",\"User\")\n[System.Environment]::SetEnvironmentVariable('PYENV_ROOT',$env:USERPROFILE + \"\\.pyenv\\pyenv-win\\\",\"User\")\n[System.Environment]::SetEnvironmentVariable('PYENV_HOME',$env:USERPROFILE + \"\\.pyenv\\pyenv-win\\\",\"User\")\nUpdate the user PATH\n[System.Environment]::SetEnvironmentVariable('path', $env:USERPROFILE + \"\\.pyenv\\pyenv-win\\bin;\" + $env:USERPROFILE + \"\\.pyenv\\pyenv-win\\shims;\" + [System.Environment]::GetEnvironmentVariable('path', \"User\"),\"User\")\nTest your install. Close the window and reopen a regular terminal:\npyenv --version\npyenv update\npyenv install 3.11.6\npyenv global 3.11.6\npython --version\n\n\nInstall poetry\nPoetry should be installed using these instructions … NOT using pip install poetry. Before installing this, run the command below to ensure that poetry is cleaned out of your python.\npip uninstall poetry\nVerify that you have pyenv and python running before you install poetry.\npyenv --version\npython --version\n** Now install Poetry **\n(Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | python -\nThen, add poetry to your User PATH.\n[System.Environment]::SetEnvironmentVariable('path', \"%APPDATA%\\Python\\Scripts;\" + [System.Environment]::GetEnvironmentVariable('path', \"User\"),\"User\")\nTest your install. Close the window and reopen a regular terminal\npoetry --version\nFinish the Quarto install\nQuarto was installed above, but still needs to be properly connected to python.\nThis code is for testing. However, it won’t stick. You need to visit final steps to create a more permanent fix.\n$ENV:QUARTO_PYTHON=$(pyenv which python)\npip install jupyter matplotlib plotly\nquarto check\n\n\n\n#\n\n\n#"
-  },
-  {
-    "objectID": "software.html#testing-your-installation",
-    "href": "software.html#testing-your-installation",
-    "title": "Installing Software",
-    "section": "Testing your installation",
-    "text": "Testing your installation\nAt this point your should be able to run these commands from ANY OS:\npyenv --version\npyenv global 3.11.6\npython --version\npoetry --version\ngh --version\ngit --version\ncode --version\nquarto check\nVerify that the python version displayed by quarto check matches the python version you installed (3.11.6)\nNow you can jump ahead to final steps to close the deal!"
-  },
-  {
-    "objectID": "software.html#troubleshooting",
-    "href": "software.html#troubleshooting",
-    "title": "Installing Software",
-    "section": "Troubleshooting",
-    "text": "Troubleshooting\nIf you’re having trouble with one or more of the tools, try reinstalling and verify that you’re performing ALL the steps described in the installation.\nIf nothing is working, you can try uninstalling the tools and starting over.\nIf these tools aren’t working, then you’ll not be able to replicate the beautiful experience of our goal."
-  },
-  {
-    "objectID": "prework.html",
-    "href": "prework.html",
-    "title": "Pre-work",
+    "objectID": "quarto.html",
+    "href": "quarto.html",
+    "title": "Quarto",
     "section": "",
-    "text": "It’s helpful to do these things prior to installing any software, but it’s OK to do them after stuff is installed. It may help fix a problem!\nOn windows we need to ensure that several features are disabled. On mac and linux, you should be good to go.\nIf you are on windows and your installation is a chocolate mess, you might want to consider uninstalling older versions of python using Add-Remove programs and clean up your User and System PATH environment variables."
+    "text": "Quarto is a multi-language, next generation version of R Markdown from Posit, with many new new features and capabilities. Like R Markdown, Quarto uses knitr to execute R code, and is therefore able to render most existing Rmd files without modification.\nVisit this site to install Quarto:\nhttps://quarto.org/docs/get-started/\nHere is a link directly to the VSCODE install page:\nhttps://quarto.org/docs/get-started/hello/vscode.html"
   },
   {
-    "objectID": "prework.html#os-specific-customizations",
-    "href": "prework.html#os-specific-customizations",
-    "title": "Pre-work",
-    "section": "OS-specific customizations",
-    "text": "OS-specific customizations\n\nPick your OS -&gt;MacLinuxWindows\n\n\nSelect from one of the tabs above to see if your OS requires any unique fixes.\n\n\nIn NASCAR you’re called the lucky dog\nI’m not aware of any Mac specific fixes that are required.\n\n\nI’m not aware of any Linux-specific pre-work required to get all this stuff running.\n\n\nSorry - you’ve got some work to do!\nWindows offers a number of settings that makes it easier to download software from the Micrsoft Store. These features actually get in the way of user installed tools.\n\nDisable python-related execution aliases\n\n\nOpen the execution alias screen\n\nPress the windows key on the bottom left of your keyboard to bring up the menu shown below.\nIn the search bar enter execution and then select the option as show in the figure below.\n\n\n\n\nScan the list\nYour list may vary depending on you have installed. Scan the list and disable stuff that looks related to python.\n\n\nYour done!"
+    "objectID": "quarto.html#safety-tips",
+    "href": "quarto.html#safety-tips",
+    "title": "Quarto",
+    "section": "Safety tips!",
+    "text": "Safety tips!\n\nInstall pyenv/python and VSC first\nInstall the vscode QUARTO extension (see the docs)\nDon’t just stop at installing the software. RTFM\nFINISH THE PAGE - you’ll see that there are several additional steps (like pip install jupyter matplotlib plotly)\n\nYou should be able to replicate the example in their guide."
   },
   {
-    "objectID": "goal.html",
-    "href": "goal.html",
-    "title": "Goal",
-    "section": "",
-    "text": "Our goal is pyenv, python, poetry, vscode and quarto working seamlessly with python virtual environments from a command line.\nThe video below offers a glimpse of what a typical homework assignment should look like.\n(a video will eventually be dropped here.)"
-  },
-  {
-    "objectID": "finalsteps.html",
-    "href": "finalsteps.html",
-    "title": "Final steps",
-    "section": "",
-    "text": "Ok, you’ve got everything installed.\nNow comes the trickest part, but the most important from a quality-of-life perspective."
-  },
-  {
-    "objectID": "finalsteps.html#testing-your-installation",
-    "href": "finalsteps.html#testing-your-installation",
-    "title": "Final steps",
-    "section": "Testing your installation",
-    "text": "Testing your installation\nYou should be able to run these commands from a terminal on any OS.\npyenv --version\npyenv global 3.11.6\npython --version\npoetry --version\ngh --version\ngit --version\ncode --version\nquarto check\nIn the final quarto check, verify that jupyter runs and that the python version in quarto matches the python you installed with pyenv."
-  },
-  {
-    "objectID": "finalsteps.html#coordinating-all-the-tools",
-    "href": "finalsteps.html#coordinating-all-the-tools",
-    "title": "Final steps",
-    "section": "Coordinating all the tools",
-    "text": "Coordinating all the tools\nTo make everyting work properly, our desire is for:\n\npoetry to shell into the correct virtual environment, and\nquarto to recognize correct version of python for the virtual environments created by poetry.\n\nWe do this by storing the correct version of python in the environment of the shell. Each shell (e.g., powershell, zsh and bash) is slightly different but they work about the same.\nEach time a terminal window opens the shell executes commands found in a special “run command” file. This approach permits the shell to dynamically adapt to the state of the computer at the time a shell opens.\nTo get all the programs to smoothly work together we need to add (or verify) that a few commands exist in these run command (or rc) files.\n\nPick your OS -&gt;MacLinuxWindows\n\n\nSelect your OS from one of the tabs.\n\n\nA mac uses the zsh shell. Configuration commands are stored in the .zshrc file stored in the users home (~) directory.\n(add stuff here)\n\n\nYour linux machine most probably uses the bash shell. Configuration commands are stored in the .bashrc file stored in the users home (~) directory.\n\n\nWindows uses several different shells: CMD, powershell and powershell-core. Our preferred shell for this activity is powershell.\nPowershell stores it’s run commands in the file: $ENV:USERPROFILE\\Documents\\PowerShell\\Microsoft.PowerShell_profile.ps1. I know, kill me. BUT, powershell gives the abbreviation $PROFILE to permit easier access.\nOn some machines, the $PROFILE folder may not yet, so we’ll want to create the folder before we edit the file.\nOpen a powershell terminal and paste the following command\n# Read the folder path from $PROFILE variable\n$folderPath = [System.IO.Path]::GetDirectoryName($PROFILE)\n\n# Check if the folder exists and do your thing\nif (-not (Test-Path -Path $folderPath -PathType Container)) {\n    New-Item -Path $folderPath -ItemType Directory\n    Write-Host \"Folder created: $folderPath\"\n} else {\n    Write-Host \"Folder already exists: $folderPath\"\n}\nNow, let’s edit (or create) the $PROFILE\ncode $profile\nand look for the following commands. If they don’t exist, paste them to the bottom of the file. If they exists, make sure that those in the $PROFILE match those below.\n# These settings disable annoying quarto messages\n$env:DENO_NO_UPDATE_CHECK=1               # to warning about deno upgrades\n$env:DENO_TLS_CA_STORE=\"system\"           # to stop the BAD CERTIFICATE deno warning\n$env:PYDEVD_DISABLE_FILE_VALIDATION=1     # for Python 3.11 above, to disable warning message RE: debugging\n$env:VIRTUAL_ENV_DISABLE_PROMPT=0         # set to 1 to disable venv prompt change\n\n# This is the code that syncs everything up\n$env:QUARTO_PYTHON=$(pyenv which python)  # to work with pyenv global or local python\n$var = $(poetry env info -e 2&gt; $null)\nif ($var -ne $null) {\n  Write-Output \"QUARTO_PYTHON set to Poetry VENV\"\n  $env:QUARTO_PYTHON=$var                 # override with venv python as needed\n} else {\n  Write-Output \"QUARTO_PYTHON set to $(pyenv version)\"\n}\nSave the profile, close your shell and reopen your shell. At the open you should see the appropriate message."
+    "objectID": "quarto.html#troublshooting",
+    "href": "quarto.html#troublshooting",
+    "title": "Quarto",
+    "section": "Troublshooting",
+    "text": "Troublshooting\nYou can verify that all was installed correctly (except the VSC stuff) using the quarto check command.\n\nquarto check"
   },
   {
     "objectID": "index.html",
@@ -147,31 +84,122 @@
     "text": "What do I do now?\nI’m here because my system isn’t working. How do I get started? What do I do now? Start with the Checklist!"
   },
   {
-    "objectID": "quarto.html",
-    "href": "quarto.html",
-    "title": "Quarto",
+    "objectID": "finalsteps.html",
+    "href": "finalsteps.html",
+    "title": "Final steps",
     "section": "",
-    "text": "Quarto is a multi-language, next generation version of R Markdown from Posit, with many new new features and capabilities. Like R Markdown, Quarto uses knitr to execute R code, and is therefore able to render most existing Rmd files without modification.\nVisit this site to install Quarto:\nhttps://quarto.org/docs/get-started/\nHere is a link directly to the VSCODE install page:\nhttps://quarto.org/docs/get-started/hello/vscode.html"
+    "text": "Ok, you’ve got everything installed.\nNow comes the trickest part, but the most important from a quality-of-life perspective."
   },
   {
-    "objectID": "quarto.html#safety-tips",
-    "href": "quarto.html#safety-tips",
-    "title": "Quarto",
-    "section": "Safety tips!",
-    "text": "Safety tips!\n\nInstall pyenv/python and VSC first\nInstall the vscode QUARTO extension (see the docs)\nDon’t just stop at installing the software. RTFM\nFINISH THE PAGE - you’ll see that there are several additional steps (like pip install jupyter matplotlib plotly)\n\nYou should be able to replicate the example in their guide."
+    "objectID": "finalsteps.html#testing-your-installation",
+    "href": "finalsteps.html#testing-your-installation",
+    "title": "Final steps",
+    "section": "Testing your installation",
+    "text": "Testing your installation\nYou should be able to run these commands from a terminal on any OS.\npyenv --version\npyenv global 3.11.6\npython --version\npoetry --version\ngh --version\ngit --version\ncode --version\nquarto check\nIn the final quarto check, verify that jupyter runs and that the python version in quarto matches the python you installed with pyenv."
   },
   {
-    "objectID": "quarto.html#troublshooting",
-    "href": "quarto.html#troublshooting",
-    "title": "Quarto",
-    "section": "Troublshooting",
-    "text": "Troublshooting\nYou can verify that all was installed correctly (except the VSC stuff) using the quarto check command.\n\nquarto check"
+    "objectID": "finalsteps.html#coordinating-all-the-tools",
+    "href": "finalsteps.html#coordinating-all-the-tools",
+    "title": "Final steps",
+    "section": "Coordinating all the tools",
+    "text": "Coordinating all the tools\nTo make everyting work properly, our desire is for:\n\npoetry to shell into the correct virtual environment, and\nquarto to recognize correct version of python for the virtual environments created by poetry.\n\nWe do this by storing the correct version of python in the environment of the shell. Each shell (e.g., powershell, zsh and bash) is slightly different but they work about the same.\nEach time a terminal window opens the shell executes commands found in a special “run command” file. This approach permits the shell to dynamically adapt to the state of the computer at the time a shell opens.\nTo get all the programs to smoothly work together we need to add (or verify) that a few commands exist in these run command (or rc) files.\n\nPick your OS -&gt;MacLinuxWindows\n\n\nSelect your OS from one of the tabs.\n\n\nA mac uses the zsh shell. Configuration commands are stored in the .zshrc file stored in the users home (~) directory.\n(add stuff here)\n\n\nYour linux machine most probably uses the bash shell. Configuration commands are stored in the .bashrc file stored in the users home (~) directory.\n\n\nWindows uses several different shells: CMD, powershell and powershell-core. Our preferred shell for this activity is powershell.\nPowershell stores it’s run commands in the file: $ENV:USERPROFILE\\Documents\\PowerShell\\Microsoft.PowerShell_profile.ps1. I know, kill me. BUT, powershell gives the abbreviation $PROFILE to permit easier access.\nOn some machines, the $PROFILE folder may not yet, so we’ll want to create the folder before we edit the file.\nOpen a powershell terminal and paste the following command\n# Read the folder path from $PROFILE variable\n$folderPath = [System.IO.Path]::GetDirectoryName($PROFILE)\n\n# Check if the folder exists and do your thing\nif (-not (Test-Path -Path $folderPath -PathType Container)) {\n    New-Item -Path $folderPath -ItemType Directory\n    Write-Host \"Folder created: $folderPath\"\n} else {\n    Write-Host \"Folder already exists: $folderPath\"\n}\nNow, let’s edit (or create) the $PROFILE\ncode $profile\nand look for the following commands. If they don’t exist, paste them to the bottom of the file. If they exists, make sure that those in the $PROFILE match those below.\n# These settings disable annoying quarto messages\n$env:DENO_NO_UPDATE_CHECK=1               # to warning about deno upgrades\n$env:DENO_TLS_CA_STORE=\"system\"           # to stop the BAD CERTIFICATE deno warning\n$env:PYDEVD_DISABLE_FILE_VALIDATION=1     # for Python 3.11 above, to disable warning message RE: debugging\n$env:VIRTUAL_ENV_DISABLE_PROMPT=0         # set to 1 to disable venv prompt change\n\n# This is the code that syncs everything up\n$env:QUARTO_PYTHON=$(pyenv which python)  # to work with pyenv global or local python\n$var = $(poetry env info -e 2&gt; $null)\nif ($var -ne $null) {\n  Write-Output \"QUARTO_PYTHON set to Poetry VENV\"\n  $env:QUARTO_PYTHON=$var                 # override with venv python as needed\n} else {\n  Write-Output \"QUARTO_PYTHON set to $(pyenv version)\"\n}\nSave the profile, close your shell and reopen your shell. At the open you should see the appropriate message."
   },
   {
-    "objectID": "terminals.html",
-    "href": "terminals.html",
-    "title": "Using a terminal",
+    "objectID": "goal.html",
+    "href": "goal.html",
+    "title": "Goal",
     "section": "",
-    "text": "Many of the problems that I see originate in VSC! The best way to make sure that everything is working is start with a command line terminal - a separate window OUTSIDE of VSC. Then we’ll get VSC working.\n\nLearn to work from a shell\nLearn to work without a mouse\n\nThis will help as you begin to create dev-ops actions and build docker containers. Containers don’t have GUI!\n\nAn example shell\nHere is an example shell. On any machine these can be opened using keystrokes only. Learn how!\n\n\n\nGetting to your shell without a mouse\nHere is some tips for opening a terminal without having to take your fingers off your keyboard.\n\nPick your OS -&gt;WindowsMacLinux\n\n\nSelect your OS from the tabs above.\n\n\nPress the windows key on the lower left of your keyboard.\nWithout touching the mouse start typing the keyword powershell into the search bar. You only need to enter the first few letters, then hit enter. The menu will learn from your keystrokes and eventually it will be the first option that shows up.\n\n\n\nPress %command% and [space-bar] at the same time. A mini search bar will appear on your screen.\nWithout touching the mouse starting typing the keyword terminal into the search bar. You only need to enter the first few letters, then hit enter.\n\n\nI’m sure it can, but it depends on your flavor of linux and the GUI you installed.\nIf you’re using Linux, I’m pretty sure that you’re good to go!"
+    "text": "Our goal is pyenv, python, poetry, vscode and quarto working seamlessly with python virtual environments from a command line.\nThe video below offers a glimpse of what a typical homework assignment should look like.\n(a video will eventually be dropped here.)"
+  },
+  {
+    "objectID": "prework.html",
+    "href": "prework.html",
+    "title": "Pre-work",
+    "section": "",
+    "text": "It’s helpful to do these things prior to installing any software, but it’s OK to do them after stuff is installed. It may help fix a problem!\nOn windows we need to ensure that several features are disabled. On mac and linux, you should be good to go.\nIf you are on windows and your installation is a chocolate mess, you might want to consider uninstalling older versions of python using Add-Remove programs and clean up your User and System PATH environment variables."
+  },
+  {
+    "objectID": "prework.html#os-specific-customizations",
+    "href": "prework.html#os-specific-customizations",
+    "title": "Pre-work",
+    "section": "OS-specific customizations",
+    "text": "OS-specific customizations\n\nPick your OS -&gt;MacLinuxWindows\n\n\nSelect from one of the tabs above to see if your OS requires any unique fixes.\n\n\nIn NASCAR you’re called the lucky dog\nI’m not aware of any Mac specific fixes that are required.\n\n\nI’m not aware of any Linux-specific pre-work required to get all this stuff running.\n\n\nSorry - you’ve got some work to do!\nWindows offers a number of settings that makes it easier to download software from the Micrsoft Store. These features actually get in the way of user installed tools.\n\nDisable python-related execution aliases\n\n\nOpen the execution alias screen\n\nPress the windows key on the bottom left of your keyboard to bring up the menu shown below.\nIn the search bar enter execution and then select the option as show in the figure below.\n\n\n\n\nScan the list\nYour list may vary depending on you have installed. Scan the list and disable stuff that looks related to python.\n\n\nYour done!"
+  },
+  {
+    "objectID": "software.html",
+    "href": "software.html",
+    "title": "Installing Software",
+    "section": "",
+    "text": "If you want to replicate the beautiful experience of our goal, you’ll want to install the following tools:\nOnce the tools are installed and working, you’ll want to:\nYou can install these tools manually by visiting the links provided above.\nOR\nYou can install the tools from a terminal [RECOMMENDED!]"
+  },
+  {
+    "objectID": "software.html#wait---i-already-have-them-installed",
+    "href": "software.html#wait---i-already-have-them-installed",
+    "title": "Installing Software",
+    "section": "Wait - I already have them installed!",
+    "text": "Wait - I already have them installed!\nThat’s OK. Jump to testing your installation to verify that they’re all running, and then visit the final steps page."
+  },
+  {
+    "objectID": "software.html#caution-with-poetry",
+    "href": "software.html#caution-with-poetry",
+    "title": "Installing Software",
+    "section": "CAUTION WITH POETRY",
+    "text": "CAUTION WITH POETRY\nPoetry can be installed using pip install poetry. THIS IS NOT RECOMMENDED! Installing poetry this way will screw up the poetry shell command. Don’t do it!\nI recommand that you following the instructions listed above and install poetry without using PIP. Your life will be MUCH easier!"
+  },
+  {
+    "objectID": "software.html#installing-packages-from-a-terminal",
+    "href": "software.html#installing-packages-from-a-terminal",
+    "title": "Installing Software",
+    "section": "Installing packages from a terminal",
+    "text": "Installing packages from a terminal\nQuarto, gh, git and VSC can all be installed directly from a terminal without a bunch of mouse clicks. Pyenv, python and poetry require more hand-holding.\nFirst, let’s install big packages and then pick up the others later.\nAll operating systems offer tools for installing software OUTSIDE the GUI from a terminal.\nThis is how docker containers and virtual machines are created.\n\napt, yum, dmf and other tools are used on linux,\nhomebrew is used on mac, but can also run on linux, and\nchocolatey and winget are used on windows.\n\n\nPick your OS -&gt;WindowsMacLinux\n\n\nSelect your OS from the tabs shown.\n\n\n**Install *chocolatey**\nOpen a terminal using the “Run as administrator” option.\nSet-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine\nPowershell -command Invoke-WebRequest -Uri \"https://chocolatey.org/install.ps1\" -OutFile $env:temp\\install.ps1\npowershell -executionpolicy unrestricted -command Unblock-File $env:temp\\install.ps1; powershell -command $env:temp\\install.ps1\nClose the terminal and reopen again as “Run as administrator”\nInstall software using chocolatey\nchoco install quarto -y\nchoco install git.install -y\nchoco install gh -y\nchoco install visualstudiocode -y\nTest your install so far.\nClose your terminal and reopen a new regular terminal:\nquarto --version\ngit --version\ngh --version\ncode --version\nYou’re done installing the major block of tools.\n\n\nSoftware on a mac is installed automatically using Homebrew.\nInstall homebrew\n#\nInstall software using homebrew\n#\nTest your install so far\n#\n\n\nSoftware on Ubuntu linux is installed using apt. It comes installed on Ubuntu so we can jump directly to the software install\nInstall software using apt\n#\nTest your install so far\n#"
+  },
+  {
+    "objectID": "software.html#installing-pyenv-and-poetry",
+    "href": "software.html#installing-pyenv-and-poetry",
+    "title": "Installing Software",
+    "section": "Installing pyenv and poetry",
+    "text": "Installing pyenv and poetry\n\nSelect your OS -&gt;WindowsMacLinux\n\n\nSelect your OS from the tabs above.\n\n\n\nInstall pyenv\nPaste the following command into a terminal:\nInvoke-WebRequest -UseBasicParsing -Uri \"https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/install-pyenv-win.ps1\" -OutFile \"./install-pyenv-win.ps1\"; &\"./install-pyenv-win.ps1\"\nIf you get errors, then you’ll need to take a different approach.\nClose your terminal and reopen it with Run as Administrator, then paste the following commands:\nSet-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine\nInvoke-WebRequest -UseBasicParsing -Uri \"https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/install-pyenv-win.ps1\" -OutFile \"./install-pyenv-win.ps1\"; &\"./install-pyenv-win.ps1\"\nClose the admin terminal and reopen a regular terminal, and paste these commands:\nSet PYENV, PYENV_ROOT and PYENV_HOME User environment variables.\n[System.Environment]::SetEnvironmentVariable('PYENV',$env:USERPROFILE + \"\\.pyenv\\pyenv-win\\\",\"User\")\n[System.Environment]::SetEnvironmentVariable('PYENV_ROOT',$env:USERPROFILE + \"\\.pyenv\\pyenv-win\\\",\"User\")\n[System.Environment]::SetEnvironmentVariable('PYENV_HOME',$env:USERPROFILE + \"\\.pyenv\\pyenv-win\\\",\"User\")\nUpdate the user PATH\n[System.Environment]::SetEnvironmentVariable('path', $env:USERPROFILE + \"\\.pyenv\\pyenv-win\\bin;\" + $env:USERPROFILE + \"\\.pyenv\\pyenv-win\\shims;\" + [System.Environment]::GetEnvironmentVariable('path', \"User\"),\"User\")\nTest your install. Close the window and reopen a regular terminal:\npyenv --version\npyenv update\npyenv install 3.11.6\npyenv global 3.11.6\npython --version\n\n\nInstall poetry\nPoetry should be installed using these instructions … NOT using pip install poetry. Before installing this, run the command below to ensure that poetry is cleaned out of your python.\npip uninstall poetry\nVerify that you have pyenv and python running before you install poetry.\npyenv --version\npython --version\n** Now install Poetry **\n(Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | python -\nThen, add poetry to your User PATH.\n[System.Environment]::SetEnvironmentVariable('path', \"%APPDATA%\\Python\\Scripts;\" + [System.Environment]::GetEnvironmentVariable('path', \"User\"),\"User\")\nTest your install. Close the window and reopen a regular terminal\npoetry --version\nFinish the Quarto install\nQuarto was installed above, but still needs to be properly connected to python.\nThis code is for testing. However, it won’t stick. You need to visit final steps to create a more permanent fix.\n$ENV:QUARTO_PYTHON=$(pyenv which python)\npip install jupyter matplotlib plotly\nquarto check\n\n\n\n#\n\n\n#"
+  },
+  {
+    "objectID": "software.html#testing-your-installation",
+    "href": "software.html#testing-your-installation",
+    "title": "Installing Software",
+    "section": "Testing your installation",
+    "text": "Testing your installation\nAt this point your should be able to run these commands from ANY OS:\npyenv --version\npyenv global 3.11.6\npython --version\npoetry --version\ngh --version\ngit --version\ncode --version\nquarto check\nVerify that the python version displayed by quarto check matches the python version you installed (3.11.6)\nNow you can jump ahead to final steps to close the deal!"
+  },
+  {
+    "objectID": "software.html#troubleshooting",
+    "href": "software.html#troubleshooting",
+    "title": "Installing Software",
+    "section": "Troubleshooting",
+    "text": "Troubleshooting\nIf you’re having trouble with one or more of the tools, try reinstalling and verify that you’re performing ALL the steps described in the installation.\nIf nothing is working, you can try uninstalling the tools and starting over.\nIf these tools aren’t working, then you’ll not be able to replicate the beautiful experience of our goal."
+  },
+  {
+    "objectID": "utils.html",
+    "href": "utils.html",
+    "title": "Useful utilities",
+    "section": "",
+    "text": "A set of useful utilities for exploring your setup are collected and shared below."
+  },
+  {
+    "objectID": "utils.html#display-environment-variables",
+    "href": "utils.html#display-environment-variables",
+    "title": "Useful utilities",
+    "section": "Display environment variables",
+    "text": "Display environment variables\nCut and paste the command into a terminal window.\n\nWindows (powershell)Mac (zsh)Linux (bash)\n\n\nGet-ChildItem Env: | Sort-Object Name | Format-Table Name, Value -AutoSize\n\n\nprintenv | sort | column -t -s '='\n\n\nprintenv | sort | column -t -s '='"
+  },
+  {
+    "objectID": "utils.html#display-listing-of-path-variables",
+    "href": "utils.html#display-listing-of-path-variables",
+    "title": "Useful utilities",
+    "section": "Display listing of path variables",
+    "text": "Display listing of path variables\nCut and paste the command into a terminal window.\n\nWindows (powershell)Mac (zsh)Linux (bash)\n\n\n$env:PATH -split \";\"\n\n\necho $path | tr ':' '\\n'\n\n\necho $PATH | tr ':' '\\n'"
+  },
+  {
+    "objectID": "utils.html#add-these-utilities-to-your-shell",
+    "href": "utils.html#add-these-utilities-to-your-shell",
+    "title": "Useful utilities",
+    "section": "Add these utilities to your shell",
+    "text": "Add these utilities to your shell\nDo you like these snippet? Do you have others that you use regularly?\nCommand shells like powershell, zsh and bash allow users to add their own commands to the shell. See below.\n\nWindows (powershell)Mac (zsh)Linux (bash)\n\n\nCut and paste these commands to the your $PROFILE. Freshen the comment as necessary. When done, close and reopen the shell and enter the command listpath and listenv to test.\ncode $PROFILE\n## Aliases added on 10/29/2023 by JL\n## The powershell SET-ALIAS function doesn't accept arguments, so we'll use function instead\nfunction ListPath {$env:PATH -split \";\"}\nfunction ListEnv {Get-ChildItem Env: | Sort-Object Name | Format-Table Name, Value -AutoSize}\n\n\nCut and paste these commands to the your ~/.zshrc. Freshen the comment as necessary. When done, close and reopen the shell and enter the command listpath and listenv to test.\ncode ~/.zshrc\n## Aliases added 10/29/2023 by JL\nalias listpath=\"echo $PATH | tr ':' '\\n'\"\nalias listenv=\"printenv | sort | column -t -s '='\"\n\n\nCut and paste these commands to the your ~/.bashrc. Freshen the comment as necessary. When done, close and reopen the shell and enter the command listpath and listenv to test.\ncode ~/.bashrc\n## Aliases added 10/29/2023 by JL\nalias listpath=\"echo $PATH | tr ':' '\\n'\"\nalias listenv=\"printenv | sort | column -t -s '='\""
   }
 ]
