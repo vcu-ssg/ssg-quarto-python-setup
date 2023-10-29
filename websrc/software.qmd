@@ -2,6 +2,9 @@
 title: Installing Software
 ---
 
+BEFORE YOU START, please scan all the instructions.  To many of you are jumping directly to one place and missing the other instructions.
+
+## These are the tools to install (but wait ...)
 If you want to replicate the beautiful experience of [our goal](goal.qmd), you'll want to install the following tools:
 
 * [pyenv and python](https://github.com/pyenv-win/pyenv-win#installation)
@@ -15,24 +18,30 @@ Once the tools are installed and working, you'll want to:
 
 * visit the [final steps](finalsteps.qmd) page to sync them all together, then
 * visit the [VSC page](vscode.qmd) to set up visual studio code properly.
+* check out the [utilities](utils.qmd) to help you examine the settings in your PATH and ENV.
 
-You can install these tools manually by visiting the links provided above. 
+
+## There are two approaches to installing them
+
+1. You can install these tools manually one-by-one following links provided above and following
+the instructions at each site.  Follow the instructions completely!  I've seen many of you miss/forget the final
+and often most importent instruction.
 
 &nbsp;&nbsp;**OR**
 
-You can install the tools from a terminal [RECOMMENDED!]
+2. You can install the tools from a terminal [RECOMMENDED!]
 
-## Wait - I already have them installed!
+## But wait - I already have one or more of them installed!
 
-That's OK.  Jump to [testing your installation](#testing-your-installation) to verify that they're all running, and then visit the [final steps](finalsteps.qmd) page.
+That's OK.  Jump to [testing your installation](#testing-your-installation) to verify that they're all running individualy, and then visit the [final steps](finalsteps.qmd) page to tie them all together.
 
 ## CAUTION WITH POETRY
 
 *Poetry* can be installed using *pip install poetry*.  THIS IS NOT RECOMMENDED! Installing poetry this way will screw up the *poetry shell* command.  Don't do it!
 
-I recommand that you following the instructions listed above and install poetry without using PIP.  Your life will be MUCH easier!
+I recommand that you following the instructions and install poetry without using PIP.  Your life will be MUCH easier!
 
-## Installing packages from a terminal
+## Installing packages from a terminal [recommended]
 
 *Quarto*, *gh*, *git* and *VSC* can all be installed directly from a terminal without a bunch of mouse clicks.  *Pyenv*, *python* and *poetry* require more hand-holding.
 
@@ -46,10 +55,6 @@ This is how docker containers and virtual machines are created.
 * *chocolatey* and *winget* are used on windows.
 
 ::: {.panel-tabset}
-
-## Pick your OS ->
-
-Select your OS from the tabs shown.
 
 ## Windows
 
@@ -84,7 +89,6 @@ quarto --version
 git --version
 gh --version
 code --version
-
 ```
 
 You're done installing the major block of tools.
@@ -93,22 +97,27 @@ You're done installing the major block of tools.
 
 Software on a mac is installed automatically using *Homebrew.*
 
-Install *homebrew*
+**Install *homebrew***
 
-```powershell
-#
+```zsh
+# I haven't pulled separate instructions.
+# visit the sites above to install the mac versions manually.
+# It generally works every time!
 ```
 
-Install software using *homebrew*
+**Install software using *homebrew***
 
-```powershell
-#
+```zsh
+# Instructions not added yet.
 ```
 
 Test your install so far
 
-```powershell
-#
+```zsh
+quarto --version
+git --version
+gh --version
+code --version
 ```
 
 
@@ -118,14 +127,19 @@ Software on Ubuntu linux is installed using *apt*. It comes installed on Ubuntu 
 
 Install software using *apt*
 
-```powershell
-#
+```bash
+# I haven't pulled separate instructions.
+# visit the sites above to install the mac versions manually.
+# It generally works every time!
 ```
 
 Test your install so far
 
-```powershell
-#
+```bash
+quarto --version
+git --version
+gh --version
+code --version
 ```
 
 
@@ -134,10 +148,6 @@ Test your install so far
 ## Installing pyenv and poetry
 
 ::: {.panel-tabset}
-
-## Select your OS ->
-
-Select your OS from the tabs above.
 
 ## Windows
 
@@ -206,7 +216,7 @@ python --version
 
 ```
 
-** Now install Poetry **
+**Now install Poetry**
 
 ```powershell
 (Invoke-WebRequest -Uri https://install.python-poetry.org -UseBasicParsing).Content | python -
@@ -241,14 +251,16 @@ quarto check
 
 ## Mac
 
-```powershell
-#
+```zsh
+pip install jupyter matplotlib plotly
+quarto check
 ```
 
 ## Linux
 
-```powershell
-#
+```bash
+pip install jupyter matplotlib plotly
+quarto check
 ```
 
 :::

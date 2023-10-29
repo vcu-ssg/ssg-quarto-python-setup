@@ -24,10 +24,6 @@ Here is some tips for opening a terminal without having to take your fingers off
 
 ::: {.panel-tabset}
 
-## Pick your OS ->
-
-Select your OS from the tabs above.
-
 ## Windows
 
 Press the *windows* key on the lower left of your keyboard.

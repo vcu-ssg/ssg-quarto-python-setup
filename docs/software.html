@@ -159,9 +159,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#wait---i-already-have-them-installed" id="toc-wait---i-already-have-them-installed" class="nav-link active" data-scroll-target="#wait---i-already-have-them-installed">Wait - I already have them installed!</a></li>
+  <li><a href="#these-are-the-tools-to-install-but-wait" id="toc-these-are-the-tools-to-install-but-wait" class="nav-link active" data-scroll-target="#these-are-the-tools-to-install-but-wait">These are the tools to install (but wait …)</a></li>
+  <li><a href="#there-are-two-approaches-to-installing-them" id="toc-there-are-two-approaches-to-installing-them" class="nav-link" data-scroll-target="#there-are-two-approaches-to-installing-them">There are two approaches to installing them</a></li>
+  <li><a href="#but-wait---i-already-have-one-or-more-of-them-installed" id="toc-but-wait---i-already-have-one-or-more-of-them-installed" class="nav-link" data-scroll-target="#but-wait---i-already-have-one-or-more-of-them-installed">But wait - I already have one or more of them installed!</a></li>
   <li><a href="#caution-with-poetry" id="toc-caution-with-poetry" class="nav-link" data-scroll-target="#caution-with-poetry">CAUTION WITH POETRY</a></li>
-  <li><a href="#installing-packages-from-a-terminal" id="toc-installing-packages-from-a-terminal" class="nav-link" data-scroll-target="#installing-packages-from-a-terminal">Installing packages from a terminal</a></li>
+  <li><a href="#installing-packages-from-a-terminal-recommended" id="toc-installing-packages-from-a-terminal-recommended" class="nav-link" data-scroll-target="#installing-packages-from-a-terminal-recommended">Installing packages from a terminal [recommended]</a></li>
   <li><a href="#installing-pyenv-and-poetry" id="toc-installing-pyenv-and-poetry" class="nav-link" data-scroll-target="#installing-pyenv-and-poetry">Installing pyenv and poetry</a></li>
   <li><a href="#testing-your-installation" id="toc-testing-your-installation" class="nav-link" data-scroll-target="#testing-your-installation">Testing your installation</a></li>
   <li><a href="#troubleshooting" id="toc-troubleshooting" class="nav-link" data-scroll-target="#troubleshooting">Troubleshooting</a></li>
@@ -188,6 +190,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
+<p>BEFORE YOU START, please scan all the instructions. To many of you are jumping directly to one place and missing the other instructions.</p>
+<section id="these-are-the-tools-to-install-but-wait" class="level2">
+<h2 class="anchored" data-anchor-id="these-are-the-tools-to-install-but-wait">These are the tools to install (but wait …)</h2>
 <p>If you want to replicate the beautiful experience of <a href="./goal.html">our goal</a>, you’ll want to install the following tools:</p>
 <ul>
 <li><a href="https://github.com/pyenv-win/pyenv-win#installation">pyenv and python</a></li>
@@ -201,21 +206,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>visit the <a href="./finalsteps.html">final steps</a> page to sync them all together, then</li>
 <li>visit the <a href="./vscode.html">VSC page</a> to set up visual studio code properly.</li>
+<li>check out the <a href="./utils.html">utilities</a> to help you examine the settings in your PATH and ENV.</li>
 </ul>
-<p>You can install these tools manually by visiting the links provided above.</p>
+</section>
+<section id="there-are-two-approaches-to-installing-them" class="level2">
+<h2 class="anchored" data-anchor-id="there-are-two-approaches-to-installing-them">There are two approaches to installing them</h2>
+<ol type="1">
+<li>You can install these tools manually one-by-one following links provided above and following the instructions at each site. Follow the instructions completely! I’ve seen many of you miss/forget the final and often most importent instruction.</li>
+</ol>
 <p>&nbsp;&nbsp;<strong>OR</strong></p>
-<p>You can install the tools from a terminal [RECOMMENDED!]</p>
-<section id="wait---i-already-have-them-installed" class="level2">
-<h2 class="anchored" data-anchor-id="wait---i-already-have-them-installed">Wait - I already have them installed!</h2>
-<p>That’s OK. Jump to <a href="#testing-your-installation">testing your installation</a> to verify that they’re all running, and then visit the <a href="./finalsteps.html">final steps</a> page.</p>
+<ol start="2" type="1">
+<li>You can install the tools from a terminal [RECOMMENDED!]</li>
+</ol>
+</section>
+<section id="but-wait---i-already-have-one-or-more-of-them-installed" class="level2">
+<h2 class="anchored" data-anchor-id="but-wait---i-already-have-one-or-more-of-them-installed">But wait - I already have one or more of them installed!</h2>
+<p>That’s OK. Jump to <a href="#testing-your-installation">testing your installation</a> to verify that they’re all running individualy, and then visit the <a href="./finalsteps.html">final steps</a> page to tie them all together.</p>
 </section>
 <section id="caution-with-poetry" class="level2">
 <h2 class="anchored" data-anchor-id="caution-with-poetry">CAUTION WITH POETRY</h2>
 <p><em>Poetry</em> can be installed using <em>pip install poetry</em>. THIS IS NOT RECOMMENDED! Installing poetry this way will screw up the <em>poetry shell</em> command. Don’t do it!</p>
-<p>I recommand that you following the instructions listed above and install poetry without using PIP. Your life will be MUCH easier!</p>
+<p>I recommand that you following the instructions and install poetry without using PIP. Your life will be MUCH easier!</p>
 </section>
-<section id="installing-packages-from-a-terminal" class="level2">
-<h2 class="anchored" data-anchor-id="installing-packages-from-a-terminal">Installing packages from a terminal</h2>
+<section id="installing-packages-from-a-terminal-recommended" class="level2">
+<h2 class="anchored" data-anchor-id="installing-packages-from-a-terminal-recommended">Installing packages from a terminal [recommended]</h2>
 <p><em>Quarto</em>, <em>gh</em>, <em>git</em> and <em>VSC</em> can all be installed directly from a terminal without a bunch of mouse clicks. <em>Pyenv</em>, <em>python</em> and <em>poetry</em> require more hand-holding.</p>
 <p>First, let’s install big packages and then pick up the others later.</p>
 <p>All operating systems offer tools for installing software OUTSIDE the GUI from a terminal.<br>
@@ -226,12 +240,9 @@ This is how docker containers and virtual machines are created.</p>
 <li><em>chocolatey</em> and <em>winget</em> are used on windows.</li>
 </ul>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Pick your OS -&gt;</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Mac</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-4" role="tab" aria-controls="tabset-1-4" aria-selected="false">Linux</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Mac</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Linux</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<p>Select your OS from the tabs shown.</p>
-</div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <p>**Install *chocolatey**</p>
 <p>Open a terminal using the “Run as administrator” option.</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Set-ExecutionPolicy</span> <span class="op">-</span>ExecutionPolicy RemoteSigned <span class="op">-</span>Scope LocalMachine</span>
@@ -251,21 +262,31 @@ This is how docker containers and virtual machines are created.</p>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>code <span class="op">--</span>version</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>You’re done installing the major block of tools.</p>
 </div>
-<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
 <p>Software on a mac is installed automatically using <em>Homebrew.</em></p>
-<p>Install <em>homebrew</em></p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Install software using <em>homebrew</em></p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Install <em>homebrew</em></strong></p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># I haven't pulled separate instructions.</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># visit the sites above to install the mac versions manually.</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># It generally works every time!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Install software using <em>homebrew</em></strong></p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Instructions not added yet.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Test your install so far</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> <span class="at">--version</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> <span class="at">--version</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="ex">gh</span> <span class="at">--version</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="tabset-1-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-4-tab">
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
 <p>Software on Ubuntu linux is installed using <em>apt</em>. It comes installed on Ubuntu so we can jump directly to the software install</p>
 <p>Install software using <em>apt</em></p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># I haven't pulled separate instructions.</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># visit the sites above to install the mac versions manually.</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># It generally works every time!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Test your install so far</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> <span class="at">--version</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> <span class="at">--version</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="ex">gh</span> <span class="at">--version</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -273,12 +294,9 @@ This is how docker containers and virtual machines are created.</p>
 <section id="installing-pyenv-and-poetry" class="level2">
 <h2 class="anchored" data-anchor-id="installing-pyenv-and-poetry">Installing pyenv and poetry</h2>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Select your OS -&gt;</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false">Mac</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-4" role="tab" aria-controls="tabset-2-4" aria-selected="false">Linux</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Mac</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false">Linux</a></li></ul>
 <div class="tab-content">
 <div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
-<p>Select your OS from the tabs above.</p>
-</div>
-<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
 <section id="install-pyenv" class="level3">
 <h3 class="anchored" data-anchor-id="install-pyenv">Install pyenv</h3>
 <p><strong>Paste the following command into a terminal:</strong></p>
@@ -308,7 +326,7 @@ This is how docker containers and virtual machines are created.</p>
 <p><strong>Verify that you have pyenv and python running before you install poetry.</strong></p>
 <div class="sourceCode" id="cb15"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>pyenv <span class="op">--</span>version</span>
 <span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>python <span class="op">--</span>version</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>** Now install Poetry **</p>
+<p><strong>Now install Poetry</strong></p>
 <div class="sourceCode" id="cb16"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="op">(</span><span class="fu">Invoke-WebRequest</span> <span class="op">-</span>Uri https<span class="op">://</span>install<span class="op">.</span><span class="fu">python</span><span class="op">-</span>poetry<span class="op">.</span><span class="fu">org</span> <span class="op">-</span>UseBasicParsing<span class="op">).</span><span class="fu">Content</span> <span class="op">|</span> python <span class="op">-</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>Then, add poetry to your User PATH.</strong></p>
 <div class="sourceCode" id="cb17"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="op">[</span>System<span class="op">.</span><span class="fu">Environment</span><span class="op">]::</span>SetEnvironmentVariable<span class="op">(</span><span class="st">'path'</span><span class="op">,</span> <span class="st">"%APPDATA%\Python\Scripts;"</span> <span class="op">+</span> <span class="op">[</span>System<span class="op">.</span><span class="fu">Environment</span><span class="op">]::</span>GetEnvironmentVariable<span class="op">(</span><span class="st">'path'</span><span class="op">,</span> <span class="st">"User"</span><span class="op">),</span><span class="st">"User"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -322,11 +340,13 @@ This is how docker containers and virtual machines are created.</p>
 <span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>quarto check</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </div>
-<div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
-<div class="sourceCode" id="cb20"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<div class="sourceCode" id="cb20"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install jupyter matplotlib plotly</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> check</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div id="tabset-2-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-4-tab">
-<div class="sourceCode" id="cb21"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="co">#</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
+<div class="sourceCode" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install jupyter matplotlib plotly</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> check</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>

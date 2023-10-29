@@ -13,22 +13,6 @@ and clean up your User and System PATH environment variables.
 
 ::: {.panel-tabset}
 
-## Pick your OS ->
-
-Select from one of the tabs above to see if your OS requires any
-unique fixes.
-
-## Mac
-
-In NASCAR you're called the [lucky dog](https://www.liveabout.com/lucky-dog-rule-explained-2470755)
-
-I'm not aware of any Mac specific fixes that are required.
-
-## Linux
-
-I'm not aware of any Linux-specific pre-work required to get all this stuff running.
-
-
 ## Windows
 
 Sorry - you've got some work to do!
@@ -55,6 +39,17 @@ Your list may vary depending on you have installed. Scan the list and disable st
 
 
 - [ ] Your done!
+
+## Mac
+
+In NASCAR you're called the [lucky dog](https://www.liveabout.com/lucky-dog-rule-explained-2470755)
+
+I'm not aware of any Mac specific fixes that are required.
+
+## Linux
+
+I'm not aware of any Linux-specific pre-work required to get all this stuff running.
+
 
 :::
 
