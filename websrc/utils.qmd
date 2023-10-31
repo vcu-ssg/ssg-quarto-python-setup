@@ -114,3 +114,29 @@ alias listenv="printenv | sort | column -t -s '='"
 :::
 
 
+## Editing the environment and PATH variables
+
+Windows provides a nice editor for visually editing your environment and PATH.
+
+**Locate the editors using the system menu**
+
+![](./assets/finding-env-editor.png)
+
+**Examine both the system and user environments**
+
+![](./assets/env-editors.png)
+
+**Sample of my PATH**
+
+![](./assets/example-path.png)
+
+
+**Safety tips**
+
+1. Manually expand any %APPDATA%, %SYSTEM% or other in the PATH variables.  These work with CMD but powershell
+does not properly expand them.
+
+1. Remove duplicates.
+
+1. Be attentive to ORDER.  Windows searches for programs following the order of the directories in the PATH and runs
+the first one it finds.

@@ -162,6 +162,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#display-environment-variables" id="toc-display-environment-variables" class="nav-link active" data-scroll-target="#display-environment-variables">Display environment variables</a></li>
   <li><a href="#display-listing-of-path-variables" id="toc-display-listing-of-path-variables" class="nav-link" data-scroll-target="#display-listing-of-path-variables">Display listing of path variables</a></li>
   <li><a href="#add-these-utilities-to-your-shell" id="toc-add-these-utilities-to-your-shell" class="nav-link" data-scroll-target="#add-these-utilities-to-your-shell">Add these utilities to your shell</a></li>
+  <li><a href="#editing-the-environment-and-path-variables" id="toc-editing-the-environment-and-path-variables" class="nav-link" data-scroll-target="#editing-the-environment-and-path-variables">Editing the environment and PATH variables</a></li>
   </ul>
 </nav>
     </div>
@@ -253,6 +254,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
+</section>
+<section id="editing-the-environment-and-path-variables" class="level2">
+<h2 class="anchored" data-anchor-id="editing-the-environment-and-path-variables">Editing the environment and PATH variables</h2>
+<p>Windows provides a nice editor for visually editing your environment and PATH.</p>
+<p><strong>Locate the editors using the system menu</strong></p>
+<p><img src="./assets/finding-env-editor.png" class="img-fluid"></p>
+<p><strong>Examine both the system and user environments</strong></p>
+<p><img src="./assets/env-editors.png" class="img-fluid"></p>
+<p><strong>Sample of my PATH</strong></p>
+<p><img src="./assets/example-path.png" class="img-fluid"></p>
+<p><strong>Safety tips</strong></p>
+<ol type="1">
+<li><p>Manually expand any %APPDATA%, %SYSTEM% or other in the PATH variables. These work with CMD but powershell does not properly expand them.</p></li>
+<li><p>Remove duplicates.</p></li>
+<li><p>Be attentive to ORDER. Windows searches for programs following the order of the directories in the PATH and runs the first one it finds.</p></li>
+</ol>
 
 
 </section>

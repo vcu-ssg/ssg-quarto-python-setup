@@ -194,5 +194,12 @@
     "title": "Useful utilities",
     "section": "Add these utilities to your shell",
     "text": "Add these utilities to your shell\nDo you like these snippet? Do you have others that you use regularly?\nCommand shells like powershell, zsh and bash allow users to add their own commands to the shell. See below.\n\nWindows (powershell)Mac (zsh)Linux (bash)\n\n\nCut and paste these commands to the your $PROFILE. Freshen the comment as necessary. When done, close and reopen the shell and enter the command listpath and listenv to test.\ncode $PROFILE\n## Aliases added on 10/29/2023 by JL\n## The powershell SET-ALIAS function doesn't accept arguments, so we'll use function instead\nfunction ListPath {$env:PATH -split \";\"}\nfunction ListEnv {Get-ChildItem Env: | Sort-Object Name | Format-Table Name, Value -AutoSize}\n\n\nCut and paste these commands to the your ~/.zshrc. Freshen the comment as necessary. When done, close and reopen the shell and enter the command listpath and listenv to test.\ncode ~/.zshrc\n## Aliases added 10/29/2023 by JL\nalias listpath=\"echo $PATH | tr ':' '\\n'\"\nalias listenv=\"printenv | sort | column -t -s '='\"\n\n\nCut and paste these commands to the your ~/.bashrc. Freshen the comment as necessary. When done, close and reopen the shell and enter the command listpath and listenv to test.\ncode ~/.bashrc\n## Aliases added 10/29/2023 by JL\nalias listpath=\"echo $PATH | tr ':' '\\n'\"\nalias listenv=\"printenv | sort | column -t -s '='\""
+  },
+  {
+    "objectID": "utils.html#editing-the-environment-and-path-variables",
+    "href": "utils.html#editing-the-environment-and-path-variables",
+    "title": "Useful utilities",
+    "section": "Editing the environment and PATH variables",
+    "text": "Editing the environment and PATH variables\nWindows provides a nice editor for visually editing your environment and PATH.\nLocate the editors using the system menu\n\nExamine both the system and user environments\n\nSample of my PATH\n\nSafety tips\n\nManually expand any %APPDATA%, %SYSTEM% or other in the PATH variables. These work with CMD but powershell does not properly expand them.\nRemove duplicates.\nBe attentive to ORDER. Windows searches for programs following the order of the directories in the PATH and runs the first one it finds."
   }
 ]
