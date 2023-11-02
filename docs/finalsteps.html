@@ -210,22 +210,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Each time a terminal window opens the shell executes commands found in a special “run command” file. This approach permits the shell to dynamically adapt to the state of the computer at the time a shell opens.</p>
 <p>To get all the programs to smoothly work together we need to add (or verify) that a few commands exist in these run command (or rc) files.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
-<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Pick your OS -&gt;</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Mac</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Linux</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-4" role="tab" aria-controls="tabset-1-4" aria-selected="false">Windows</a></li></ul>
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Mac</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Linux</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<p>Select your OS from one of the tabs.</p>
-</div>
-<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<p>A mac uses the <em>zsh</em> shell. Configuration commands are stored in the <em>.zshrc</em> file stored in the users home (~) directory.</p>
-<p>(add stuff here)</p>
-</div>
-<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
-<p>Your linux machine most probably uses the <em>bash</em> shell. Configuration commands are stored in the <em>.bashrc</em> file stored in the users home (~) directory.</p>
-</div>
-<div id="tabset-1-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-4-tab">
 <p>Windows uses several different shells: <em>CMD</em>, <em>powershell</em> and <em>powershell-core</em>. Our preferred shell for this activity is <em>powershell</em>.</p>
 <p><em>Powershell</em> stores it’s run commands in the file: <em><code>$ENV:USERPROFILE\Documents\PowerShell\Microsoft.PowerShell_profile.ps1</code></em>. I know, kill me. BUT, powershell gives the abbreviation <em>$PROFILE</em> to permit easier access.</p>
-<p>On some machines, the $PROFILE folder may not yet, so we’ll want to create the folder before we edit the file.</p>
+<p><strong>On some machines, the $PROFILE folder may not yet, so we’ll want to create the folder before we edit the file.</strong></p>
 <p>Open a powershell terminal and paste the following command</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Read the folder path from $PROFILE variable</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="va">$folderPath</span> <span class="op">=</span> <span class="op">[</span>System<span class="op">.</span><span class="fu">IO</span><span class="op">.</span><span class="fu">Path</span><span class="op">]::</span>GetDirectoryName<span class="op">(</span><span class="va">$PROFILE</span><span class="op">)</span></span>
@@ -237,9 +227,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="op">}</span> <span class="kw">else</span> <span class="op">{</span></span>
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    <span class="fu">Write-Host</span> <span class="st">"Folder already exists: $folderPath"</span></span>
 <span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Now, let’s edit (or create) the $PROFILE</p>
+<p><strong>Now, let’s edit (or create) the $PROFILE</strong></p>
 <div class="sourceCode" id="cb3"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>code <span class="va">$profile</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>and look for the following commands. If they don’t exist, paste them to the bottom of the file. If they exists, make sure that those in the $PROFILE match those below.</p>
+<p><strong>and look for the following commands.</strong></p>
+<p>If they don’t exist, paste them to the bottom of the file. If they exists, make sure that those in the $PROFILE match those below.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># These settings disable annoying quarto messages</span></span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="va">$env</span><span class="op">:</span>DENO_NO_UPDATE_CHECK<span class="op">=</span>1               <span class="co"># to warning about deno upgrades</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="va">$env</span><span class="op">:</span>DENO_TLS_CA_STORE<span class="op">=</span><span class="st">"system"</span>           <span class="co"># to stop the BAD CERTIFICATE deno warning</span></span>
@@ -255,154 +246,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="op">}</span> <span class="kw">else</span> <span class="op">{</span></span>
 <span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">Write-Output</span> <span class="st">"QUARTO_PYTHON set to $(pyenv version)"</span></span>
 <span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Save the profile, close your shell and reopen your shell. At the open you should see the appropriate message.</p>
+<p><strong>Save the profile, close your shell and reopen your shell.</strong></p>
+<p>At the open you should see an appropriate message printed by the code above. This code will be executed every time you open a new terminal or when you run <em>poetry shell</em>.</p>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p>A mac uses the <em>zsh</em> shell. Configuration commands are stored in the <em>.zshrc</em> file stored in the users home (~) directory.</p>
+<p>(add stuff here)</p>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<p>Your linux machine most probably uses the <em>bash</em> shell. Configuration commands are stored in the <em>.bashrc</em> file stored in the users home (~) directory.</p>
 </div>
 </div>
 </div>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
-<p>
-&nbsp;
-</p>
 
 
 </section>

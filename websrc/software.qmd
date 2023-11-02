@@ -226,7 +226,7 @@ python --version
 **Then, add poetry to your User PATH.**
 
 ```powershell
-[System.Environment]::SetEnvironmentVariable('path', "%APPDATA%\Python\Scripts;" + [System.Environment]::GetEnvironmentVariable('path', "User"),"User")
+[System.Environment]::SetEnvironmentVariable('path', $ENV:APPDATA + "\Python\Scripts;" + [System.Environment]::GetEnvironmentVariable('path', "User"),"User")
 
 ```
 

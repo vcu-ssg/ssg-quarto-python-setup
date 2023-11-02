@@ -40,27 +40,13 @@ To get all the programs to smoothly work together we need to add (or verify) tha
 
 ::: {.panel-tabset}
 
-## Pick your OS ->
-
-Select your OS from one of the tabs.
-
-## Mac
-
-A mac uses the *zsh* shell.  Configuration commands are stored in the *.zshrc* file stored in the users home (~) directory.
-
-(add stuff here)
-
-## Linux
-
-Your linux machine most probably uses the *bash* shell.  Configuration commands are stored in the *.bashrc* file stored in the users home (~) directory.
-
 ## Windows
 
 Windows uses several different shells:  *CMD*, *powershell* and *powershell-core*.  Our preferred shell for this activity is *powershell*.
 
 *Powershell* stores it's run commands in the file: *`$ENV:USERPROFILE\Documents\PowerShell\Microsoft.PowerShell_profile.ps1`*.  I know, kill me.  BUT, powershell gives the abbreviation *$PROFILE* to permit easier access.
 
-On some machines, the $PROFILE folder may not yet, so we'll want to create the folder before we edit the file.
+**On some machines, the $PROFILE folder may not yet, so we'll want to create the folder before we edit the file.**
 
 Open a powershell terminal and paste the following command
 
@@ -77,13 +63,15 @@ if (-not (Test-Path -Path $folderPath -PathType Container)) {
 }
 ```
 
-Now, let's edit (or create) the $PROFILE 
+**Now, let's edit (or create) the $PROFILE**
 
 ```powershell
 code $profile
 ```
 
-and look for the following commands.  If they don't exist, paste them to the bottom of the file.  If they exists, make sure
+**and look for the following commands.**
+
+If they don't exist, paste them to the bottom of the file.  If they exists, make sure
 that those in the $PROFILE match those below.
 
 ```powershell
@@ -105,55 +93,20 @@ if ($var -ne $null) {
 
 ```
 
-Save the profile, close your shell and reopen your shell.  At the open you should see the appropriate message.
+**Save the profile, close your shell and reopen your shell.**
+
+At the open you should see an appropriate message printed by the code above.  This code will be executed every time
+you open a new terminal or when you run *poetry shell*.
+
+## Mac
+
+A mac uses the *zsh* shell.  Configuration commands are stored in the *.zshrc* file stored in the users home (~) directory.
+
+(add stuff here)
+
+## Linux
+
+Your linux machine most probably uses the *bash* shell.  Configuration commands are stored in the *.bashrc* file stored in the users home (~) directory.
 
 :::
 
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
-<p>&nbsp;</p>
