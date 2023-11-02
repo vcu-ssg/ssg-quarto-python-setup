@@ -29,7 +29,7 @@ by pressing ctrl-, (control-comma) or on Mac (command-comma)
 
 Once the little command prompt line opens up, search for the appropriate setting by entering in the keywords provided below.  Then make the appropriate change.  I believe that it sticks when you leave the cell - I haven't seen a "save" button.
 
-- [ ] VSC: settings to use powershell: *set to NULL*
+- [ ] **VSC: settings to use powershell: *set to NULL***
 
 Paste the keywords below into a VSC setting search.
 
@@ -37,7 +37,7 @@ Paste the keywords below into a VSC setting search.
 terminal integrated default profile windows
 ```
 
-- [ ] VSC: setting to show current virtual environment: *set to ALWAYS*
+- [ ] **VSC: setting to show current virtual environment: *set to ALWAYS***
 
 Paste the keywords below into a VSC setting search.
 
