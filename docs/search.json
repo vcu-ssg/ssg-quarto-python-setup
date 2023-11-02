@@ -172,7 +172,7 @@
     "href": "utils.html",
     "title": "Useful utilities",
     "section": "",
-    "text": "A set of useful utilities for exploring your setup are collected and shared below."
+    "text": "A set of useful utilities for exploring your setup are collected and shared below.\nIf your programs don’t run from the command line or generate errors when they run, you’ve probably got an issue with your ENV variables or your PATH.\nThe commands and script below can help you chase down these errors by helping you print the environment, or list out the PATH variable that is stored in your environment."
   },
   {
     "objectID": "utils.html#display-environment-variables",
