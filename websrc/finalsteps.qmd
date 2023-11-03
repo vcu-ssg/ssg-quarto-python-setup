@@ -81,12 +81,14 @@ $env:DENO_TLS_CA_STORE="system"           # to stop the BAD CERTIFICATE deno war
 $env:PYDEVD_DISABLE_FILE_VALIDATION=1     # for Python 3.11 above, to disable warning message RE: debugging
 $env:VIRTUAL_ENV_DISABLE_PROMPT=0         # set to 1 to disable venv prompt change
 
-# This is the code that syncs everything up
+# This code ensures Quarto finds the correct python from pyenv or poetry if a venv exists.
 $env:QUARTO_PYTHON=$(pyenv which python)  # to work with pyenv global or local python
-$var = $(poetry env info -e 2> $null)
-if ($var -ne $null) {
-  Write-Output "QUARTO_PYTHON set to Poetry VENV"
-  $env:QUARTO_PYTHON=$var                 # override with venv python as needed
+$pythonPoetryPath = $(poetry env info -e 2> $null)
+if ($pythonPoetryPath -ne $null) {
+  # extract the venv name from the python poetry path
+  $venvName = Split-Path -Path $pythonPoetryPath -Parent | Split-Path -Parent | Split-Path -Leaf
+  Write-Output "QUARTO_PYTHON set to Poetry venv: $venvName"
+  $env:QUARTO_PYTHON=$var                 # override with poetry venv python as needed
 } else {
   Write-Output "QUARTO_PYTHON set to $(pyenv version)"
 }
