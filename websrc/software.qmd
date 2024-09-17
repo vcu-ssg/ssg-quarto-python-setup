@@ -37,19 +37,6 @@ If we run into problems, and you had older versions installed, you should consid
 
 I recommand that you following the instructions and install poetry without using PIP.  Your life will be MUCH easier!
 
-## Installing packages from a terminal [recommended]
-
-*Quarto*, *gh*, *git* and *VSC* can all be installed directly from a terminal without a bunch of mouse clicks.  *Pyenv*, *python* and *poetry* require more hand-holding.
-
-First, let's install big packages and then pick up the others later.
-
-All operating systems offer tools for installing software OUTSIDE the GUI from a terminal.  
-This is how docker containers and virtual machines are created.
-
-* *apt*, *yum*, *dmf* and other tools are used on linux,
-* *homebrew* is used on mac, but can also run on linux, and
-* *chocolatey* and *winget* are used on windows.
-
 ::: {.panel-tabset}
 
 ## Windows
