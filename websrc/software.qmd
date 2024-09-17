@@ -21,11 +21,15 @@ Once the tools are installed and working, you'll want to:
 * check out the [utilities](utils.qmd) to help you examine the settings in your PATH and ENV.
 
 
-## There are two approaches to installing them
+## Installing the tools
 
 You can install these tools manually one-by-one following links provided above and following
 the instructions at each site.  Follow the instructions completely!  I've seen many of you miss/forget the final
 and often most importent instruction.
+
+You may already have these tools installed!  Thats OK!  Install the ones that you don't and you'll be good to go.
+
+If we run into problems, and you had older versions installed, you should consider uninstalling and reinstalling these tools.
 
 ## CAUTION WITH POETRY
 

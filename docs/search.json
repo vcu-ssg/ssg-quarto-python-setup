@@ -133,11 +133,11 @@
     "text": "These are the tools to install (but wait …)\nIf you want to replicate the beautiful experience of our goal, you’ll want to install the following tools:\n\npyenv and python\npoetry\nquarto\ngh - GITHUB CLI\ngit\nvisual student code\n\nOnce the tools are installed and working, you’ll want to:\n\nvisit the final steps page to sync them all together, then\nvisit the VSC page to set up visual studio code properly.\ncheck out the utilities to help you examine the settings in your PATH and ENV."
   },
   {
-    "objectID": "software.html#there-are-two-approaches-to-installing-them",
-    "href": "software.html#there-are-two-approaches-to-installing-them",
+    "objectID": "software.html#installing-the-tools",
+    "href": "software.html#installing-the-tools",
     "title": "Installing Software",
-    "section": "There are two approaches to installing them",
-    "text": "There are two approaches to installing them\nYou can install these tools manually one-by-one following links provided above and following the instructions at each site. Follow the instructions completely! I’ve seen many of you miss/forget the final and often most importent instruction."
+    "section": "Installing the tools",
+    "text": "Installing the tools\nYou can install these tools manually one-by-one following links provided above and following the instructions at each site. Follow the instructions completely! I’ve seen many of you miss/forget the final and often most importent instruction.\nYou may already have these tools installed! Thats OK! Install the ones that you don’t and you’ll be good to go.\nIf we run into problems, and you had older versions installed, you should consider uninstalling and reinstalling these tools."
   },
   {
     "objectID": "software.html#caution-with-poetry",
