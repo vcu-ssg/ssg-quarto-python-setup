@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.551">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -45,7 +45,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -54,6 +60,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -68,9 +75,9 @@ ul.task-list li input[type="checkbox"] {
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">A Terminal Coding Experience</span>
     </a>
@@ -82,37 +89,37 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" rel="" target="" aria-current="page">
- <span class="menu-text">Home</span></a>
+    <a class="nav-link active" href="./index.html" aria-current="page"> 
+<span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./terminals.html" rel="" target="">
- <span class="menu-text">Terminals</span></a>
+    <a class="nav-link" href="./terminals.html"> 
+<span class="menu-text">Terminals</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./prework.html" rel="" target="">
- <span class="menu-text">Pre-work</span></a>
+    <a class="nav-link" href="./prework.html"> 
+<span class="menu-text">Pre-work</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./software.html" rel="" target="">
- <span class="menu-text">Software</span></a>
+    <a class="nav-link" href="./software.html"> 
+<span class="menu-text">Software</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./finalsteps.html" rel="" target="">
- <span class="menu-text">Final Steps</span></a>
+    <a class="nav-link" href="./finalsteps.html"> 
+<span class="menu-text">Final Steps</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./vscode.html" rel="" target="">
- <span class="menu-text">vscode</span></a>
+    <a class="nav-link" href="./vscode.html"> 
+<span class="menu-text">vscode</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./utils.html" rel="" target="">
- <span class="menu-text">Utilities</span></a>
+    <a class="nav-link" href="./utils.html"> 
+<span class="menu-text">Utilities</span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools ms-auto">
-</div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -152,7 +159,9 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
+
 </header>
+
 
 <p><strong><em><a href="./goal.html">Our goal</a> is pyenv, python, poetry, vscode and quarto working seamlessly with python virtual environments from a command line.</em></strong></p>
 <p>Getting your machine ready for software development can sometime be challenging, especially if over time you’ve accumulated lots of software on your computer.</p>
@@ -162,12 +171,12 @@ ul.task-list li input[type="checkbox"] {
 <h2 class="anchored" data-anchor-id="how-do-you-know-your-tools-are-working-together">How do you know your tools are working together?</h2>
 <p>If your install is good, you should be able to:</p>
 <ul>
-<li>switch pythons using pyenv.</li>
-<li>verify that the command <em>quarto check</em> uses the appropriate pyenv python.</li>
-<li>create a virtual environment using <em>poetry init</em>.</li>
-<li>verify that the command <em>poetry shell</em> works with the correct shell.</li>
-<li>while <em>poetry shell</em>ed into a venv, verify that <em>quarto check</em> is using python from the venv.</li>
-<li>while in VSCODE, verify that <em>ctrl-shift-k</em> renders a document using the correct venv.</li>
+<li>switch pythons using <code>pyenv</code>.</li>
+<li>verify that the command <code>quarto check</code> uses the appropriate pyenv python.</li>
+<li>create a virtual environment using <code>poetry init</code>.</li>
+<li>verify that the command <code>poetry shell</code> works with the correct shell.</li>
+<li>while <code>poetry shell</code>ed into a venv, verify that <code>quarto check</code> is using python from the venv.</li>
+<li>while in VSCODE, verify that <code>ctrl-shift-k</code> renders a document using the correct venv.</li>
 <li>while in VSCODE, verify that the terminal opens the correct shell and uses the correct venv.</li>
 </ul>
 </section>
@@ -207,7 +216,7 @@ an integrated development environment. While very handy when learning to code, t
 <li>Get everything running outside of VSC before you try running inside VSC. (See <a href="./terminals.html">terminal</a>)</li>
 <li>Verify that you did ALL the required install steps. I’ve seen people not read the instructions completely and are left with half-working software. This is VERY hard to debug!</li>
 <li>Verify that the individual tools are working by themselves.</li>
-<li>Use <em>quarto check</em> to see how things are working together.</li>
+<li>Use <code>quarto check</code> to see how things are working together.</li>
 <li>Once everything runs from a terminal then jump inside VSC to get it all running there.</li>
 <li>If you still have trouble, consider uninstalling/remove the tools and starting over.</li>
 </ul>
@@ -218,11 +227,11 @@ an integrated development environment. While very handy when learning to code, t
 <h2 class="anchored" data-anchor-id="checklist">Checklist</h2>
 <p>If your system is not working or if you’re starting from scratch, here is a general checklist:</p>
 <ul class="task-list">
-<li><input type="checkbox">WINDOWS: disable python-related <a href="./prework.html">app execution aliases</a>.</li>
-<li><input type="checkbox">Verify that you can <a href="./terminals.html">open a terminal</a> NOT IN VSC.</li>
-<li><input type="checkbox">Verify <a href="./software.html">pyenv, python, quarto, poetry.qmd</a> and <a href="./vscode.html">VSC</a> from a terminal.</li>
-<li><input type="checkbox">Install and test missing pyenv, python, poetry, quarto and VSC.</li>
-<li><input type="checkbox">Verify environment variables are properly set using the $PROFILE (windows), .zschrc (mac), .bashrc (linux) files.</li>
+<li><label><input type="checkbox">WINDOWS: disable python-related <a href="./prework.html">app execution aliases</a>.</label></li>
+<li><label><input type="checkbox">Verify that you can <a href="./terminals.html">open a terminal</a> NOT IN VSC.</label></li>
+<li><label><input type="checkbox">Verify <a href="./software.html"><code>pyenv</code>, <code>python</code>, <code>quarto</code>, <code>poetry</code></a> and <a href="./vscode.html">VSC</a> from a terminal.</label></li>
+<li><label><input type="checkbox">Install and test missing pyenv, python, poetry, quarto and VSC.</label></li>
+<li><label><input type="checkbox">Verify environment variables are properly set using the $PROFILE (windows), .zschrc (mac), .bashrc (linux) files.</label></li>
 </ul>
 <p>If the tools are <em>completely</em> installed in the correct order, everything should work out of the box in mac and linux. The PC will require a few more tweaks. (See <a href="./finalsteps.html">final steps</a>)</p>
 </section>
@@ -313,10 +322,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -326,8 +352,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -339,7 +374,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -383,6 +541,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -408,6 +567,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -468,6 +653,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+
 
 
 

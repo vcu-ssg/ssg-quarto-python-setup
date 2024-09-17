@@ -17,12 +17,12 @@ TLDR: Visit [troubleshooting](#troubleshooting) or [checklist](#checklist) below
 
 If your install is good, you should be able to:
 
-* switch pythons using pyenv.
-* verify that the command *quarto check* uses the appropriate pyenv python.
-* create a virtual environment using *poetry init*.
-* verify that the command *poetry shell* works with the correct shell.
-* while *poetry shell*ed into a venv, verify that *quarto check* is using python from the venv.
-* while in VSCODE, verify that *ctrl-shift-k* renders a document using the correct venv.
+* switch pythons using `pyenv`.
+* verify that the command `quarto check` uses the appropriate pyenv python.
+* create a virtual environment using `poetry init`.
+* verify that the command `poetry shell` works with the correct shell.
+* while `poetry shell`ed into a venv, verify that `quarto check` is using python from the venv.
+* while in VSCODE, verify that `ctrl-shift-k` renders a document using the correct venv.
 * while in VSCODE, verify that the terminal opens the correct shell and uses the correct venv.
 
 
@@ -59,7 +59,7 @@ For the most part everyone has their tools already installed and the challenge i
 * Get everything running outside of VSC before you try running inside VSC. (See [terminal](terminals.qmd))
 * Verify that you did ALL the required install steps.  I've seen people not read the instructions completely and are left with half-working software.  This is VERY hard to debug!
 * Verify that the individual tools are working by themselves.
-* Use *quarto check* to see how things are working together.
+* Use `quarto check` to see how things are working together.
 * Once everything runs from a terminal then jump inside VSC to get it all running there.
 * If you still have trouble, consider uninstalling/remove the tools and starting over.
 
@@ -73,7 +73,7 @@ If your system is not working or if you're starting from scratch, here is a gene
 
 - [ ] WINDOWS: disable python-related [app execution aliases](prework.qmd).
 - [ ] Verify that you can [open a terminal](terminals.qmd) NOT IN VSC.
-- [ ] Verify [pyenv, python, quarto, poetry.qmd](software.qmd) and [VSC](vscode.qmd) from a terminal.
+- [ ] Verify [`pyenv`, `python`, `quarto`, `poetry`](software.qmd) and [VSC](vscode.qmd) from a terminal.
 - [ ] Install and test missing pyenv, python, poetry, quarto and VSC.
 - [ ] Verify environment variables are properly set using the $PROFILE (windows), .zschrc (mac), .bashrc (linux) files.
 

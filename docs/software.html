@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.450">
+<meta name="generator" content="quarto-1.4.551">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -22,7 +22,7 @@ ul.task-list li input[type="checkbox"] {
 }
 /* CSS for syntax highlighting */
 pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span { line-height: 1.25; }
 pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
 code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -79,7 +79,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   "collapse-after": 3,
   "panel-placement": "end",
   "type": "overlay",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "No results",
     "search-matching-documents-text": "matching documents",
@@ -88,6 +94,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-more-match-text": "more match in this document",
     "search-more-matches-text": "more matches in this document",
     "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancel",
     "search-submit-button-title": "Submit",
     "search-label": "Search"
@@ -102,9 +109,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
-      <div class="navbar-brand-container">
+      <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
     <span class="navbar-title">A Terminal Coding Experience</span>
     </a>
@@ -116,37 +123,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html" rel="" target="">
- <span class="menu-text">Home</span></a>
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./terminals.html" rel="" target="">
- <span class="menu-text">Terminals</span></a>
+    <a class="nav-link" href="./terminals.html"> 
+<span class="menu-text">Terminals</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./prework.html" rel="" target="">
- <span class="menu-text">Pre-work</span></a>
+    <a class="nav-link" href="./prework.html"> 
+<span class="menu-text">Pre-work</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./software.html" rel="" target="" aria-current="page">
- <span class="menu-text">Software</span></a>
+    <a class="nav-link active" href="./software.html" aria-current="page"> 
+<span class="menu-text">Software</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./finalsteps.html" rel="" target="">
- <span class="menu-text">Final Steps</span></a>
+    <a class="nav-link" href="./finalsteps.html"> 
+<span class="menu-text">Final Steps</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./vscode.html" rel="" target="">
- <span class="menu-text">vscode</span></a>
+    <a class="nav-link" href="./vscode.html"> 
+<span class="menu-text">vscode</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./utils.html" rel="" target="">
- <span class="menu-text">Utilities</span></a>
+    <a class="nav-link" href="./utils.html"> 
+<span class="menu-text">Utilities</span></a>
   </li>  
 </ul>
-            <div class="quarto-navbar-tools ms-auto">
-</div>
           </div> <!-- /navcollapse -->
+          <div class="quarto-navbar-tools">
+</div>
       </div> <!-- /container-fluid -->
     </nav>
 </header>
@@ -161,10 +168,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#these-are-the-tools-to-install-but-wait" id="toc-these-are-the-tools-to-install-but-wait" class="nav-link active" data-scroll-target="#these-are-the-tools-to-install-but-wait">These are the tools to install (but wait …)</a></li>
   <li><a href="#there-are-two-approaches-to-installing-them" id="toc-there-are-two-approaches-to-installing-them" class="nav-link" data-scroll-target="#there-are-two-approaches-to-installing-them">There are two approaches to installing them</a></li>
-  <li><a href="#but-wait---i-already-have-one-or-more-of-them-installed" id="toc-but-wait---i-already-have-one-or-more-of-them-installed" class="nav-link" data-scroll-target="#but-wait---i-already-have-one-or-more-of-them-installed">But wait - I already have one or more of them installed!</a></li>
   <li><a href="#caution-with-poetry" id="toc-caution-with-poetry" class="nav-link" data-scroll-target="#caution-with-poetry">CAUTION WITH POETRY</a></li>
   <li><a href="#installing-packages-from-a-terminal-recommended" id="toc-installing-packages-from-a-terminal-recommended" class="nav-link" data-scroll-target="#installing-packages-from-a-terminal-recommended">Installing packages from a terminal [recommended]</a></li>
-  <li><a href="#installing-pyenv-and-poetry" id="toc-installing-pyenv-and-poetry" class="nav-link" data-scroll-target="#installing-pyenv-and-poetry">Installing pyenv and poetry</a></li>
+  <li><a href="#reminders-when-installing-pyenv-and-poetry" id="toc-reminders-when-installing-pyenv-and-poetry" class="nav-link" data-scroll-target="#reminders-when-installing-pyenv-and-poetry">Reminders when installing pyenv and poetry</a></li>
   <li><a href="#testing-your-installation" id="toc-testing-your-installation" class="nav-link" data-scroll-target="#testing-your-installation">Testing your installation</a></li>
   <li><a href="#troubleshooting" id="toc-troubleshooting" class="nav-link" data-scroll-target="#troubleshooting">Troubleshooting</a></li>
   </ul>
@@ -188,18 +194,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
   
 
+
 </header>
+
 
 <p>BEFORE YOU START, please scan all the instructions. To many of you are jumping directly to one place and missing the other instructions.</p>
 <section id="these-are-the-tools-to-install-but-wait" class="level2">
 <h2 class="anchored" data-anchor-id="these-are-the-tools-to-install-but-wait">These are the tools to install (but wait …)</h2>
 <p>If you want to replicate the beautiful experience of <a href="./goal.html">our goal</a>, you’ll want to install the following tools:</p>
 <ul>
-<li><a href="https://github.com/pyenv-win/pyenv-win#installation">pyenv and python</a></li>
-<li><a href="https://python-poetry.org/docs/#installation">poetry</a></li>
-<li><a href="https://quarto.org/docs/get-started/">quarto</a></li>
-<li><a href="https://cli.github.com/">gh - GITHUB CLI</a></li>
-<li><a href="https://github.com/git-guides/install-git">git</a></li>
+<li><a href="https://github.com/pyenv-win/pyenv-win#installation"><code>pyenv</code> and <code>python</code></a></li>
+<li><a href="https://python-poetry.org/docs/#installation"><code>poetry</code></a></li>
+<li><a href="https://quarto.org/docs/get-started/"><code>quarto</code></a></li>
+<li><a href="https://cli.github.com/"><code>gh</code> - GITHUB CLI</a></li>
+<li><a href="https://github.com/git-guides/install-git"><code>git</code></a></li>
 <li><a href="https://code.visualstudio.com/download">visual student code</a></li>
 </ul>
 <p>Once the tools are installed and working, you’ll want to:</p>
@@ -211,17 +219,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="there-are-two-approaches-to-installing-them" class="level2">
 <h2 class="anchored" data-anchor-id="there-are-two-approaches-to-installing-them">There are two approaches to installing them</h2>
-<ol type="1">
-<li>You can install these tools manually one-by-one following links provided above and following the instructions at each site. Follow the instructions completely! I’ve seen many of you miss/forget the final and often most importent instruction.</li>
-</ol>
-<p>&nbsp;&nbsp;<strong>OR</strong></p>
-<ol start="2" type="1">
-<li>You can install the tools from a terminal [RECOMMENDED!]</li>
-</ol>
-</section>
-<section id="but-wait---i-already-have-one-or-more-of-them-installed" class="level2">
-<h2 class="anchored" data-anchor-id="but-wait---i-already-have-one-or-more-of-them-installed">But wait - I already have one or more of them installed!</h2>
-<p>That’s OK. Jump to <a href="#testing-your-installation">testing your installation</a> to verify that they’re all running individualy, and then visit the <a href="./finalsteps.html">final steps</a> page to tie them all together.</p>
+<p>You can install these tools manually one-by-one following links provided above and following the instructions at each site. Follow the instructions completely! I’ve seen many of you miss/forget the final and often most importent instruction.</p>
 </section>
 <section id="caution-with-poetry" class="level2">
 <h2 class="anchored" data-anchor-id="caution-with-poetry">CAUTION WITH POETRY</h2>
@@ -243,56 +241,70 @@ This is how docker containers and virtual machines are created.</p>
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Mac</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Linux</a></li></ul>
 <div class="tab-content">
 <div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
-<p>**Install *chocolatey**</p>
-<p>Open a terminal using the “Run as administrator” option.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Set-ExecutionPolicy</span> <span class="op">-</span>ExecutionPolicy RemoteSigned <span class="op">-</span>Scope LocalMachine</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>Powershell <span class="op">-</span>command <span class="fu">Invoke-WebRequest</span> <span class="op">-</span>Uri <span class="st">"https://chocolatey.org/install.ps1"</span> <span class="op">-</span>OutFile <span class="va">$env</span><span class="op">:</span>temp\install<span class="op">.</span><span class="fu">ps1</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>powershell <span class="op">-</span>executionpolicy unrestricted <span class="op">-</span>command <span class="fu">Unblock-File</span> <span class="va">$env</span><span class="op">:</span>temp\install<span class="op">.</span><span class="fu">ps1</span><span class="op">;</span> powershell <span class="op">-</span>command <span class="va">$env</span><span class="op">:</span>temp\install<span class="op">.</span><span class="fu">ps1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Close the terminal and reopen again as “Run as administrator”</p>
-<p><strong>Install software using <em>chocolatey</em></strong></p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>choco install quarto <span class="op">-</span>y</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>choco install git<span class="op">.</span><span class="fu">install</span> <span class="op">-</span>y</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>choco install gh <span class="op">-</span>y</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>choco install visualstudiocode <span class="op">-</span>y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>**Follow the links to install the packages individually.</p>
+<ul>
+<li><a href="https://github.com/pyenv-win/pyenv-win#installation"><code>pyenv</code> and <code>python</code></a></li>
+<li><a href="https://python-poetry.org/docs/#installation"><code>poetry</code></a></li>
+<li><a href="https://quarto.org/docs/get-started/"><code>quarto</code></a></li>
+<li><a href="https://github.com/git-guides/install-git"><code>git</code></a></li>
+<li><a href="https://cli.github.com/"><code>gh</code> - GITHUB CLI</a></li>
+<li><a href="https://code.visualstudio.com/download">visual student code</a></li>
+</ul>
 <p><strong>Test your install so far.</strong></p>
 <p>Close your terminal and reopen a new regular terminal:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>quarto <span class="op">--</span>version</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>git <span class="op">--</span>version</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>gh <span class="op">--</span>version</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>code <span class="op">--</span>version</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>pyenv <span class="op">--</span>version</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>pyenv global <span class="dv">3.12</span><span class="op">.</span><span class="dv">6</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="dt">python</span> <span class="op">--</span>version</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>quarto <span class="op">--</span>version</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>git <span class="op">--</span>version</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>gh <span class="op">--</span>version</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>code <span class="op">--</span>version</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>You’re done installing the major block of tools.</p>
 </div>
 <div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
-<p>Software on a mac is installed automatically using <em>Homebrew.</em></p>
-<p><strong>Install <em>homebrew</em></strong></p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># I haven't pulled separate instructions.</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># visit the sites above to install the mac versions manually.</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># It generally works every time!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>Install software using <em>homebrew</em></strong></p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Instructions not added yet.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Test your install so far</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> <span class="at">--version</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> <span class="at">--version</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="ex">gh</span> <span class="at">--version</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Follow these links to install your tools</strong></p>
+<ul>
+<li><a href="https://github.com/pyenv-win/pyenv-win#installation"><code>pyenv</code> and <code>python</code></a></li>
+<li><a href="https://python-poetry.org/docs/#installation"><code>poetry</code></a></li>
+<li><a href="https://quarto.org/docs/get-started/"><code>quarto</code></a></li>
+<li><a href="https://github.com/git-guides/install-git"><code>git</code></a></li>
+<li><a href="https://cli.github.com/"><code>gh</code> - GITHUB CLI</a></li>
+<li><a href="https://code.visualstudio.com/download">visual student code</a></li>
+</ul>
+<p><strong>Test your install so far</strong></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pyenv</span> <span class="at">--version</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="ex">pyenv</span> global 3.12.6</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">--version</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> <span class="at">--version</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> <span class="at">--version</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="ex">gh</span> <span class="at">--version</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
-<p>Software on Ubuntu linux is installed using <em>apt</em>. It comes installed on Ubuntu so we can jump directly to the software install</p>
-<p>Install software using <em>apt</em></p>
-<div class="sourceCode" id="cb7"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># I haven't pulled separate instructions.</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="co"># visit the sites above to install the mac versions manually.</span></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="co"># It generally works every time!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Test your install so far</p>
-<div class="sourceCode" id="cb8"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> <span class="at">--version</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> <span class="at">--version</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="ex">gh</span> <span class="at">--version</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>Follow these links to install your tools</strong></p>
+<ul>
+<li><a href="https://github.com/pyenv-win/pyenv-win#installation"><code>pyenv</code> and <code>python</code></a></li>
+<li><a href="https://python-poetry.org/docs/#installation"><code>poetry</code></a></li>
+<li><a href="https://quarto.org/docs/get-started/"><code>quarto</code></a></li>
+<li><a href="https://github.com/git-guides/install-git"><code>git</code></a></li>
+<li><a href="https://cli.github.com/"><code>gh</code> - GITHUB CLI</a></li>
+<li><a href="https://code.visualstudio.com/download">visual student code</a></li>
+</ul>
+<p><strong>Test your install so far</strong></p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pyenv</span> <span class="at">--version</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">pyenv</span> global 3.12.6</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">--version</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> <span class="at">--version</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> <span class="at">--version</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="ex">gh</span> <span class="at">--version</span></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
 </section>
-<section id="installing-pyenv-and-poetry" class="level2">
-<h2 class="anchored" data-anchor-id="installing-pyenv-and-poetry">Installing pyenv and poetry</h2>
+<section id="reminders-when-installing-pyenv-and-poetry" class="level2">
+<h2 class="anchored" data-anchor-id="reminders-when-installing-pyenv-and-poetry">Reminders when installing pyenv and poetry</h2>
+<p>I added these reminders because pyenv and poetry include additional instructions AT THE END that are often missed.</p>
 <div class="tabset-margin-container"></div><div class="panel-tabset">
 <ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Windows</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Mac</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false">Linux</a></li></ul>
 <div class="tab-content">
@@ -300,53 +312,53 @@ This is how docker containers and virtual machines are created.</p>
 <section id="install-pyenv" class="level3">
 <h3 class="anchored" data-anchor-id="install-pyenv">Install pyenv</h3>
 <p><strong>Paste the following command into a terminal:</strong></p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Invoke-WebRequest</span> <span class="op">-</span>UseBasicParsing <span class="op">-</span>Uri <span class="st">"https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/install-pyenv-win.ps1"</span> <span class="op">-</span>OutFile <span class="st">"./install-pyenv-win.ps1"</span><span class="op">;</span> <span class="op">&amp;</span><span class="st">"./install-pyenv-win.ps1"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Invoke-WebRequest</span> <span class="op">-</span>UseBasicParsing <span class="op">-</span>Uri <span class="st">"https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/install-pyenv-win.ps1"</span> <span class="op">-</span>OutFile <span class="st">"./install-pyenv-win.ps1"</span><span class="op">;</span> <span class="op">&amp;</span><span class="st">"./install-pyenv-win.ps1"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>If you get errors, then you’ll need to take a different approach.</strong></p>
 <p>Close your terminal and reopen it with <em>Run as Administrator</em>, then paste the following commands:</p>
-<div class="sourceCode" id="cb10"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Set-ExecutionPolicy</span> <span class="op">-</span>ExecutionPolicy RemoteSigned <span class="op">-</span>Scope LocalMachine</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Invoke-WebRequest</span> <span class="op">-</span>UseBasicParsing <span class="op">-</span>Uri <span class="st">"https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/install-pyenv-win.ps1"</span> <span class="op">-</span>OutFile <span class="st">"./install-pyenv-win.ps1"</span><span class="op">;</span> <span class="op">&amp;</span><span class="st">"./install-pyenv-win.ps1"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">Set-ExecutionPolicy</span> <span class="op">-</span>ExecutionPolicy RemoteSigned <span class="op">-</span>Scope LocalMachine</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Invoke-WebRequest</span> <span class="op">-</span>UseBasicParsing <span class="op">-</span>Uri <span class="st">"https://raw.githubusercontent.com/pyenv-win/pyenv-win/master/pyenv-win/install-pyenv-win.ps1"</span> <span class="op">-</span>OutFile <span class="st">"./install-pyenv-win.ps1"</span><span class="op">;</span> <span class="op">&amp;</span><span class="st">"./install-pyenv-win.ps1"</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>Close the admin terminal and reopen a regular terminal, and paste these commands:</strong></p>
 <p>Set PYENV, PYENV_ROOT and PYENV_HOME User environment variables.</p>
-<div class="sourceCode" id="cb11"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="op">[</span>System<span class="op">.</span><span class="fu">Environment</span><span class="op">]::</span>SetEnvironmentVariable<span class="op">(</span><span class="st">'PYENV'</span><span class="op">,</span><span class="va">$env</span><span class="op">:</span>USERPROFILE <span class="op">+</span> <span class="st">"\.pyenv\pyenv-win\"</span><span class="op">,</span><span class="st">"User"</span><span class="op">)</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="op">[</span>System<span class="op">.</span><span class="fu">Environment</span><span class="op">]::</span>SetEnvironmentVariable<span class="op">(</span><span class="st">'PYENV_ROOT'</span><span class="op">,</span><span class="va">$env</span><span class="op">:</span>USERPROFILE <span class="op">+</span> <span class="st">"\.pyenv\pyenv-win\"</span><span class="op">,</span><span class="st">"User"</span><span class="op">)</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="op">[</span>System<span class="op">.</span><span class="fu">Environment</span><span class="op">]::</span>SetEnvironmentVariable<span class="op">(</span><span class="st">'PYENV_HOME'</span><span class="op">,</span><span class="va">$env</span><span class="op">:</span>USERPROFILE <span class="op">+</span> <span class="st">"\.pyenv\pyenv-win\"</span><span class="op">,</span><span class="st">"User"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="op">[</span>System<span class="op">.</span><span class="fu">Environment</span><span class="op">]::</span>SetEnvironmentVariable<span class="op">(</span><span class="st">'PYENV'</span><span class="op">,</span><span class="va">$env</span><span class="op">:</span><span class="va">USERPROFILE</span> <span class="op">+</span> <span class="st">"\.pyenv\pyenv-win\"</span><span class="op">,</span><span class="st">"User"</span><span class="op">)</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="op">[</span>System<span class="op">.</span><span class="fu">Environment</span><span class="op">]::</span>SetEnvironmentVariable<span class="op">(</span><span class="st">'PYENV_ROOT'</span><span class="op">,</span><span class="va">$env</span><span class="op">:</span><span class="va">USERPROFILE</span> <span class="op">+</span> <span class="st">"\.pyenv\pyenv-win\"</span><span class="op">,</span><span class="st">"User"</span><span class="op">)</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="op">[</span>System<span class="op">.</span><span class="fu">Environment</span><span class="op">]::</span>SetEnvironmentVariable<span class="op">(</span><span class="st">'PYENV_HOME'</span><span class="op">,</span><span class="va">$env</span><span class="op">:</span><span class="va">USERPROFILE</span> <span class="op">+</span> <span class="st">"\.pyenv\pyenv-win\"</span><span class="op">,</span><span class="st">"User"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>Update the user PATH</strong></p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="op">[</span>System<span class="op">.</span><span class="fu">Environment</span><span class="op">]::</span>SetEnvironmentVariable<span class="op">(</span><span class="st">'path'</span><span class="op">,</span> <span class="va">$env</span><span class="op">:</span>USERPROFILE <span class="op">+</span> <span class="st">"\.pyenv\pyenv-win\bin;"</span> <span class="op">+</span> <span class="va">$env</span><span class="op">:</span>USERPROFILE <span class="op">+</span> <span class="st">"\.pyenv\pyenv-win\shims;"</span> <span class="op">+</span> <span class="op">[</span>System<span class="op">.</span><span class="fu">Environment</span><span class="op">]::</span>GetEnvironmentVariable<span class="op">(</span><span class="st">'path'</span><span class="op">,</span> <span class="st">"User"</span><span class="op">),</span><span class="st">"User"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="op">[</span>System<span class="op">.</span><span class="fu">Environment</span><span class="op">]::</span>SetEnvironmentVariable<span class="op">(</span><span class="st">'path'</span><span class="op">,</span> <span class="va">$env</span><span class="op">:</span><span class="va">USERPROFILE</span> <span class="op">+</span> <span class="st">"\.pyenv\pyenv-win\bin;"</span> <span class="op">+</span> <span class="va">$env</span><span class="op">:</span><span class="va">USERPROFILE</span> <span class="op">+</span> <span class="st">"\.pyenv\pyenv-win\shims;"</span> <span class="op">+</span> <span class="op">[</span>System<span class="op">.</span><span class="fu">Environment</span><span class="op">]::</span>GetEnvironmentVariable<span class="op">(</span><span class="st">'path'</span><span class="op">,</span> <span class="st">"User"</span><span class="op">),</span><span class="st">"User"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>Test your install. Close the window and reopen a regular terminal:</strong></p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>pyenv <span class="op">--</span>version</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>pyenv update</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>pyenv install 3<span class="op">.</span><span class="fu">11</span><span class="op">.</span><span class="fu">6</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>pyenv global 3<span class="op">.</span><span class="fu">11</span><span class="op">.</span><span class="fu">6</span></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>python <span class="op">--</span>version</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>pyenv <span class="op">--</span>version</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>pyenv update</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>pyenv install <span class="dv">3.11</span><span class="op">.</span><span class="dv">6</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="dt">pyenv</span> global <span class="dv">3.11</span><span class="op">.</span><span class="dv">6</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="dt">python</span> <span class="op">--</span>version</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="install-poetry" class="level3">
 <h3 class="anchored" data-anchor-id="install-poetry">Install poetry</h3>
 <p>Poetry should be installed using these instructions … NOT using <em>pip install poetry</em>. Before installing this, run the command below to ensure that poetry is cleaned out of your python.</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>pip uninstall poetry</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>pip uninstall poetry</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>Verify that you have pyenv and python running before you install poetry.</strong></p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>pyenv <span class="op">--</span>version</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>python <span class="op">--</span>version</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>pyenv <span class="op">--</span>version</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>python <span class="op">--</span>version</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>Now install Poetry</strong></p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="op">(</span><span class="fu">Invoke-WebRequest</span> <span class="op">-</span>Uri https<span class="op">://</span>install<span class="op">.</span><span class="fu">python</span><span class="op">-</span>poetry<span class="op">.</span><span class="fu">org</span> <span class="op">-</span>UseBasicParsing<span class="op">).</span><span class="fu">Content</span> <span class="op">|</span> python <span class="op">-</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="op">(</span><span class="fu">Invoke-WebRequest</span> <span class="op">-</span>Uri https<span class="op">://</span>install<span class="op">.</span><span class="fu">python</span><span class="op">-</span>poetry<span class="op">.</span><span class="fu">org</span> <span class="op">-</span>UseBasicParsing<span class="op">).</span><span class="fu">Content</span> <span class="op">|</span> python <span class="op">-</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>Then, add poetry to your User PATH.</strong></p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="op">[</span>System<span class="op">.</span><span class="fu">Environment</span><span class="op">]::</span>SetEnvironmentVariable<span class="op">(</span><span class="st">'path'</span><span class="op">,</span> <span class="va">$ENV</span><span class="op">:</span>APPDATA <span class="op">+</span> <span class="st">"\Python\Scripts;"</span> <span class="op">+</span> <span class="op">[</span>System<span class="op">.</span><span class="fu">Environment</span><span class="op">]::</span>GetEnvironmentVariable<span class="op">(</span><span class="st">'path'</span><span class="op">,</span> <span class="st">"User"</span><span class="op">),</span><span class="st">"User"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="op">[</span>System<span class="op">.</span><span class="fu">Environment</span><span class="op">]::</span>SetEnvironmentVariable<span class="op">(</span><span class="st">'path'</span><span class="op">,</span> <span class="va">$ENV</span><span class="op">:</span><span class="va">APPDATA</span> <span class="op">+</span> <span class="st">"\Python\Scripts;"</span> <span class="op">+</span> <span class="op">[</span>System<span class="op">.</span><span class="fu">Environment</span><span class="op">]::</span>GetEnvironmentVariable<span class="op">(</span><span class="st">'path'</span><span class="op">,</span> <span class="st">"User"</span><span class="op">),</span><span class="st">"User"</span><span class="op">)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>Test your install. Close the window and reopen a regular terminal</strong></p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>poetry <span class="op">--</span>version</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>poetry <span class="op">--</span>version</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>Finish the Quarto install</strong></p>
 <p>Quarto was installed above, but still needs to be properly connected to python.</p>
 <p>This code is for testing. However, it won’t stick. You need to visit <a href="./finalsteps.html">final steps</a> to create a more permanent fix.</p>
-<div class="sourceCode" id="cb19"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="va">$ENV</span><span class="op">:</span>QUARTO_PYTHON<span class="op">=</span>$<span class="op">(</span>pyenv which python<span class="op">)</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>pip install jupyter matplotlib plotly</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>quarto check</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="va">$ENV</span><span class="op">:</span><span class="va">QUARTO_PYTHON</span><span class="op">=$(</span>pyenv which python<span class="op">)</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>pip install jupyter matplotlib plotly</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>quarto check</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </div>
 <div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
-<div class="sourceCode" id="cb20"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install jupyter matplotlib plotly</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> check</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode zsh code-with-copy"><code class="sourceCode zsh"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install jupyter matplotlib plotly</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> check</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
-<div class="sourceCode" id="cb21"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install jupyter matplotlib plotly</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> check</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install jupyter matplotlib plotly</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="ex">quarto</span> check</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </div>
 </div>
@@ -354,14 +366,14 @@ This is how docker containers and virtual machines are created.</p>
 <section id="testing-your-installation" class="level2">
 <h2 class="anchored" data-anchor-id="testing-your-installation">Testing your installation</h2>
 <p>At this point your should be able to run these commands from ANY OS:</p>
-<div class="sourceCode" id="cb22"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>pyenv <span class="op">--</span>version</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>pyenv global 3<span class="op">.</span><span class="fu">11</span><span class="op">.</span><span class="fu">6</span></span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>python <span class="op">--</span>version</span>
-<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>poetry <span class="op">--</span>version</span>
-<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>gh <span class="op">--</span>version</span>
-<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>git <span class="op">--</span>version</span>
-<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>code <span class="op">--</span>version</span>
-<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a>quarto check</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode powershell code-with-copy"><code class="sourceCode powershell"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>pyenv <span class="op">--</span>version</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>pyenv global <span class="dv">3.11</span><span class="op">.</span><span class="dv">6</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="dt">python</span> <span class="op">--</span>version</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>poetry <span class="op">--</span>version</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>gh <span class="op">--</span>version</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>git <span class="op">--</span>version</span>
+<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a>code <span class="op">--</span>version</span>
+<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>quarto check</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Verify that the python version displayed by <em>quarto check</em> matches the python version you installed (3.11.6)</p>
 <p>Now you can jump ahead to <a href="./finalsteps.html">final steps</a> to close the deal!</p>
 </section>
@@ -562,10 +574,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -575,8 +604,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -588,7 +626,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -632,6 +793,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -657,6 +819,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -717,6 +905,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 });
 </script>
 </div> <!-- /content -->
+
 
 
 

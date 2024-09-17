@@ -7,11 +7,11 @@ BEFORE YOU START, please scan all the instructions.  To many of you are jumping 
 ## These are the tools to install (but wait ...)
 If you want to replicate the beautiful experience of [our goal](goal.qmd), you'll want to install the following tools:
 
-* [pyenv and python](https://github.com/pyenv-win/pyenv-win#installation)
-* [poetry](https://python-poetry.org/docs/#installation)
-* [quarto](https://quarto.org/docs/get-started/)
-* [gh - GITHUB CLI](https://cli.github.com/)
-* [git](https://github.com/git-guides/install-git)
+* [`pyenv` and `python`](https://github.com/pyenv-win/pyenv-win#installation)
+* [`poetry`](https://python-poetry.org/docs/#installation)
+* [`quarto`](https://quarto.org/docs/get-started/)
+* [`gh` - GITHUB CLI](https://cli.github.com/)
+* [`git`](https://github.com/git-guides/install-git)
 * [visual student code](https://code.visualstudio.com/download)
 
 Once the tools are installed and working, you'll want to:
@@ -23,17 +23,9 @@ Once the tools are installed and working, you'll want to:
 
 ## There are two approaches to installing them
 
-1. You can install these tools manually one-by-one following links provided above and following
+You can install these tools manually one-by-one following links provided above and following
 the instructions at each site.  Follow the instructions completely!  I've seen many of you miss/forget the final
 and often most importent instruction.
-
-&nbsp;&nbsp;**OR**
-
-2. You can install the tools from a terminal [RECOMMENDED!]
-
-## But wait - I already have one or more of them installed!
-
-That's OK.  Jump to [testing your installation](#testing-your-installation) to verify that they're all running individualy, and then visit the [final steps](finalsteps.qmd) page to tie them all together.
 
 ## CAUTION WITH POETRY
 
@@ -58,33 +50,23 @@ This is how docker containers and virtual machines are created.
 
 ## Windows
 
-**Install *chocolatey**
+**Follow the links to install the packages individually.
 
-Open a terminal using the "Run as administrator" option.
-
-```powershell
-Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope LocalMachine
-Powershell -command Invoke-WebRequest -Uri "https://chocolatey.org/install.ps1" -OutFile $env:temp\install.ps1
-powershell -executionpolicy unrestricted -command Unblock-File $env:temp\install.ps1; powershell -command $env:temp\install.ps1
-
-```
-Close the terminal and reopen again as "Run as administrator"
-
-**Install software using *chocolatey***
-
-```powershell
-choco install quarto -y
-choco install git.install -y
-choco install gh -y
-choco install visualstudiocode -y
-
-```
+* [`pyenv` and `python`](https://github.com/pyenv-win/pyenv-win#installation)
+* [`poetry`](https://python-poetry.org/docs/#installation)
+* [`quarto`](https://quarto.org/docs/get-started/)
+* [`git`](https://github.com/git-guides/install-git)
+* [`gh` - GITHUB CLI](https://cli.github.com/)
+* [visual student code](https://code.visualstudio.com/download)
 
 **Test your install so far.**
 
 Close your terminal and reopen a new regular terminal:
 
 ```powershell
+pyenv --version
+pyenv global 3.12.6
+python --version
 quarto --version
 git --version
 gh --version
@@ -95,25 +77,22 @@ You're done installing the major block of tools.
 
 ## Mac
 
-Software on a mac is installed automatically using *Homebrew.*
+**Follow these links to install your tools**
 
-**Install *homebrew***
+* [`pyenv` and `python`](https://github.com/pyenv-win/pyenv-win#installation)
+* [`poetry`](https://python-poetry.org/docs/#installation)
+* [`quarto`](https://quarto.org/docs/get-started/)
+* [`git`](https://github.com/git-guides/install-git)
+* [`gh` - GITHUB CLI](https://cli.github.com/)
+* [visual student code](https://code.visualstudio.com/download)
 
-```zsh
-# I haven't pulled separate instructions.
-# visit the sites above to install the mac versions manually.
-# It generally works every time!
-```
 
-**Install software using *homebrew***
-
-```zsh
-# Instructions not added yet.
-```
-
-Test your install so far
+**Test your install so far**
 
 ```zsh
+pyenv --version
+pyenv global 3.12.6
+python --version
 quarto --version
 git --version
 gh --version
@@ -123,19 +102,21 @@ code --version
 
 ## Linux
 
-Software on Ubuntu linux is installed using *apt*. It comes installed on Ubuntu so we can jump directly to the software install
+**Follow these links to install your tools**
 
-Install software using *apt*
+* [`pyenv` and `python`](https://github.com/pyenv-win/pyenv-win#installation)
+* [`poetry`](https://python-poetry.org/docs/#installation)
+* [`quarto`](https://quarto.org/docs/get-started/)
+* [`git`](https://github.com/git-guides/install-git)
+* [`gh` - GITHUB CLI](https://cli.github.com/)
+* [visual student code](https://code.visualstudio.com/download)
+
+**Test your install so far**
 
 ```bash
-# I haven't pulled separate instructions.
-# visit the sites above to install the mac versions manually.
-# It generally works every time!
-```
-
-Test your install so far
-
-```bash
+pyenv --version
+pyenv global 3.12.6
+python --version
 quarto --version
 git --version
 gh --version
@@ -145,7 +126,10 @@ code --version
 
 :::
 
-## Installing pyenv and poetry
+## Reminders when installing pyenv and poetry
+
+I added these reminders because pyenv and poetry include additional instructions AT THE END that are often
+missed.
 
 ::: {.panel-tabset}
 
@@ -205,7 +189,6 @@ run the command below to ensure that poetry is cleaned out of your python.
 
 ```powershell
 pip uninstall poetry
-
 ```
 
 **Verify that you have pyenv and python running before you install poetry.**
