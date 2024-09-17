@@ -46,7 +46,7 @@
     "href": "finalsteps.html#testing-your-installation",
     "title": "Final steps",
     "section": "Testing your installation",
-    "text": "Testing your installation\nYou should be able to run these commands from a terminal on any OS.\npyenv --version\npyenv global 3.11.6\npython --version\npoetry --version\ngh --version\ngit --version\ncode --version\nquarto check\nIn the final quarto check, verify that jupyter runs and that the python version in quarto matches the python you installed with pyenv."
+    "text": "Testing your installation\nYou should be able to run these commands from a terminal on any OS.\npyenv --version\npyenv global 3.12.6\npython --version\npoetry --version\ngh --version\ngit --version\ncode --version\nquarto check\nIn the final quarto check, verify that jupyter runs and that the python version in quarto matches the python you installed with pyenv."
   },
   {
     "objectID": "finalsteps.html#coordinating-all-the-tools",
@@ -60,7 +60,21 @@
     "href": "index.html",
     "title": "Welcome",
     "section": "",
-    "text": "Our goal is pyenv, python, poetry, vscode and quarto working seamlessly with python virtual environments from a command line.\nGetting your machine ready for software development can sometime be challenging, especially if over time you’ve accumulated lots of software on your computer.\nThis site offers a process for preparing your computer for python development using VS code and Quarto from the command line. Those on Mac (zsh shell) and Linux (bash shell) have an easier time. Those on Windows have a tougher time because of the multitude of shells (e.g., CMD, powershell-5 or powershell-core).\nTLDR: Visit troubleshooting or checklist below."
+    "text": "Our goal is pyenv, python, poetry, vscode and quarto working seamlessly with python virtual environments from a command line.\nGetting your machine ready for software development can sometime be challenging, especially if over time you’ve accumulated lots of software on your computer.\nThis site offers a process for preparing your computer for python development using VS code and Quarto from the command line. Those on Mac (zsh shell) and Linux (bash shell) have an easier time. Those on Windows have a tougher time because of the multitude of shells (e.g., CMD, powershell-5 or powershell-core)."
+  },
+  {
+    "objectID": "index.html#getting-started",
+    "href": "index.html#getting-started",
+    "title": "Welcome",
+    "section": "Getting started",
+    "text": "Getting started\n\nVisit terminals to learn about command line terminals,\nVisit prework to make some adjustments before you install the tools,\nVisit software to find instructions and checklists for installing software in the correct order,\nVisit final steps to verify that all is working well,\nVisit vscode to properly configure VS Code.\nVisit utils for a few useful command line commands and utilities.\n\nThese are all menu options at the top of the page from left-to-right."
+  },
+  {
+    "objectID": "index.html#already-started-or-having-problems",
+    "href": "index.html#already-started-or-having-problems",
+    "title": "Welcome",
+    "section": "Already started, or having problems?",
+    "text": "Already started, or having problems?\nVisit troubleshooting or checklist below."
   },
   {
     "objectID": "index.html#how-do-you-know-your-tools-are-working-together",

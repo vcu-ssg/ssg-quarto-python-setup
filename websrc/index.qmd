@@ -11,7 +11,20 @@ Getting your machine ready for software development can sometime be challenging,
 
 This site offers a process for preparing your computer for python development using VS code and Quarto from the command line.  Those on Mac (zsh shell) and Linux (bash shell) have an easier time.  Those on Windows have a tougher time because of the multitude of shells (e.g., CMD, powershell-5 or powershell-core).
 
-TLDR: Visit [troubleshooting](#troubleshooting) or [checklist](#checklist) below.
+## Getting started
+
+1. Visit [terminals](terminals.qmd) to learn about command line terminals,
+1. Visit [prework](prework.qmd) to make some adjustments before you install the tools,
+1. Visit [software](software.qmd) to find instructions and checklists for installing software in the correct order,
+1. Visit [final steps](finalsteps.qmd) to verify that all is working well,
+1. Visit [vscode](vscode.qmd) to properly configure VS Code.
+1. Visit [utils](utils.qmd) for a few useful command line commands and utilities.
+
+These are all menu options at the top of the page from left-to-right.
+
+## Already started, or having problems?
+
+Visit [troubleshooting](#troubleshooting) or [checklist](#checklist) below.
 
 ## How do you know your tools are working together?
 

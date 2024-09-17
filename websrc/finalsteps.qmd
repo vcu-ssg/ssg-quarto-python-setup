@@ -12,7 +12,7 @@ You should be able to run these commands from a terminal on any OS.
 
 ```powershell
 pyenv --version
-pyenv global 3.11.6
+pyenv global 3.12.6
 python --version
 poetry --version
 gh --version
