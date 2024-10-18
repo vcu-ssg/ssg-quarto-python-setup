@@ -19,6 +19,8 @@ code --install-extension quarto.quarto
 code --install-extension ms-python.python
 code --install-extension ms-python.python
 code --install-extension ms-toolsai.jupyter
+code --install-extension mtxr.sqltools
+code --install-extension mtxr.sqltools-driver-mysql
 ```
 
 Once the extensions are installed, we need to tune the settings to
